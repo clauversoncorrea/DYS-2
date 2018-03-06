@@ -1,0 +1,46 @@
+<style>
+	#tabela .container_combo {
+		position: inherit;
+		margin-top: 2px !important;
+		width: 100% !important;
+		left: 0px !important;
+		border: 1px solid #b9b9b9 !important;
+		border-bottom-left-radius: 6px;
+		border-bottom-right-radius: 6px;
+	}
+	
+	#tabela .container_combo td {
+		line-height: 40px;
+	}
+	
+	.container_combo {
+		margin-top: 1px;
+		height: 210px;
+		position: absolute;
+		width: calc(100% - 5px);
+		overflow: auto;
+		left: 2px;
+		border-top: 0px !important;
+		border: 1px solid #ccc;
+		z-index: 999;
+		background: #FFF;
+	}
+	
+	.container_combo table.highlight > tbody > tr:hover {
+		background: #3c8dbc !important;
+		color: #FFF;
+	}
+</style>
+
+<input id="selectbox" ng-model="idCombo" class="form-control" onkeydown="g$.filterKeyDown()" onkeypress="g$.filterKeyPress()">
+<i id="selectbox" class="fa fa-sort-desc" style="position: absolute !important; top: -5px; right: 10px;" onclick="g$.openAndCloseCombo(true)"> </i>
+
+<div class="container_combo play-none">
+	<table class="table bordered striped highlight">
+		<tbody>
+			<tr ng-repeat="linha in linhas | filter: idCombo | limitTo: 50" data-irow="{{$index}}" onclick="g$.selecionarOption()" data-id="{{linha.id}}">
+				<td class="tdCombo" data-value="{{linha[value]}}" data-inner="{{linha[coluna]}}">{{linha[coluna]}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

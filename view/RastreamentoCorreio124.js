@@ -1,0 +1,1 @@
+app.controller('RastreamentoCorreio124', function ($scope){ g$.configTela('Rastreamento Correio');});

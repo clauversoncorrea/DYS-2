@@ -1,0 +1,1 @@
+app.controller('CadastrodeEstoque144', function ($scope){ g$.configTela('Cadastro de Estoque');g$.atualizarTabela("atualizarTabela | 2229", true);});

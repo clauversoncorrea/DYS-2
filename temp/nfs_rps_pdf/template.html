@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+ <html ng-app="myApp">
+<head>
+  <style type="text/css">
+  .divisor,hr{
+border-color:#000000;
+border-style:solid;
+border-width:1px;
+border-bottom:0px;
+border-top:0px;
+}
+.divcorte{
+border-color:#000000;
+border-style:solid;
+border-width:1px;
+width:100%;
+border-collapse: collapse; 
+}
+.a{
+  text-align: center;
+}
+html, body{
+     font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.titulo{  
+     font-size: 12px;
+}
+.valor{  
+     font-size: 14px;
+     font-weight: bold;
+}
+
+</style>
+
+  <title></title>
+</head>  
+<body ng-controller="inicial">
+<div ng-controller="template" style="width:90%;margin: 0px auto;border: 3px;" >
+<div class="divisor">
+<table class="a" border='1px' align="center" style="width:100%;height: 60px;border-collapse: collapse; ">
+  <tr >
+    <th rowspan="2" style="border:none;"><img src="http://labprodam.prefeitura.sp.gov.br/Organograma/imagens/BrasaoSaoPaulo.png" style="width:70px;height: 70px;"><br></th>
+    <th colspan="3" align="center" style="border:none; margin: 0px auto"><h3 style="margin: 0px auto" >PREFEITURA DO MUNICIPIO DE SÃO PAULO</h3></th>
+    <th border='1px' style="width: 22%;"><label class="titulo">Número de Nota </label><br><b> <label class="valor">{{rps.nf}}</label></b></th>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" style="border:none;"><b><h4 style="margin: 0px auto">SECRETARIA MUNICIPAL DE FINANÇAS</h4></b></td>
+    <td><label class="titulo"> Data e Hora de Emissão </label><br><b><label class="valor">{{rps.data_hora}}</label></b></td>
+  </tr>
+  <tr>
+    <td align="center" style="border:none;"></td>
+    <td colspan="3" align="center" style="border:none;"><b><h4 style="margin: 0px auto">NOTA FISCAL ELETRÔNICA DE SERVIÇOS. NFS-e</h4></b><label class="titulo">RPS Nº{{rps.numeroRps}} &nbsp;Série{{rps.Serie}}, &nbsp;emitido em &nbsp;{{rps.data}}</label></td>
+    <td ><label class="titulo">Código de Verificação</label><br><b><label class="valor">{{rps.verificacao}}</label></b></td>
+  </tr>
+  
+</table>
+
+<table class="a" border='0x' align="center" style="width:100%;border-collapse: collapse; ">
+  <tr>
+    <th colspan="2">PRESTADOR DE SERVIÇOS </th>
+  </tr>
+  <tr>
+    <td align="left"><label class="titulo">CPF/CNPJ:</label><b><label class="valor">{{empresa.cnpj}}</label></b></td>
+    <td ><label class="titulo">Inscrição Municipal: </label>&nbsp;<b><label class="valor">{{empresa.inscricao_municipal}}</label></b></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left"><label class="titulo">Razão Social: </label>&nbsp;<b><label class="valor">{{empresa.razao}}</label></b></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left"><label class="titulo">Endereço:</label> &nbsp;<label class="valor">{{empresa.endereco}} - {{empresa.bairro}} - {{empresa.numero}} - {{empresa.cep}}</label></td>
+  </tr>
+  <tr>
+    <td align="left"><label class="titulo">Municipio:</label><b><label class="valor">{{empresa.cidade}}</label></b></td>
+    <td align="left"><label class="titulo">UF:</label><b><label class="valor">{{empresa.uf}}</label></b></td>
+  </tr>
+</table>
+<div class="divcorte"></div>
+<table border='0px' align="center" style="width:100%;border-collapse: collapse; ">
+  <tr>
+    <th colspan="3">TOMADOR DE SERVIÇOS</th>
+  </tr>
+  <tr>
+    <td colspan="3"><label class="titulo">Nome/Razão Social:</label><label class="valor">{{rps.RazaoSocialTomador}}</label></td>
+  </tr>
+  <tr>
+    <td colspan="2"><label class="titulo">CPF/CNPJ:</label><label class="valor"> {{(rps.CnpjTomador)?rps.CnpjTomador:(rps.CpfTomador)?rps.CpfTomador:'----'}}</label></td>
+    <td><label class="titulo">Inscrição Municipal:</label><b></b></td>
+  </tr>
+  <tr>
+    <td colspan="3"><label class="titulo">Endereço:</label><label class="valor">{{rps.EnderecoTomador}} - {{rps.BairroTomador}} - {{rps.NumeroTomador}} - {{rps.ComplementoTomador}} - {{rps.CepTomador}}</label></td>
+  </tr>
+  <tr>
+    <td><label class="titulo">Municipio:</label><label class="valor">{{rps.cidadeTomador}}</label></td>
+    <td><label class="titulo">UF:</label><label class="valor">{{rps.UFTomador}}</label></td>
+    <td><label class="titulo">Email:</label><label class="valor">{{rps.EmailTomador}}</label></td>
+  </tr>
+</table>
+
+<div class="divcorte"></div>
+<table border='0px'  align="center" style="width:100%;border-collapse: collapse; ">
+  <tr>
+    <th colspan="2">INTERMEDIÁRIO DE SERVIÇOS</th>
+  </tr>
+  <tr>
+    <td><label class="titulo">CPF/CNPJ:</label><label class="valor">{{(rps.CnpjItermediarioServico)?rps.CnpjItermediarioServico:(rps.CpfItermediarioServico)?rps.CpfItermediarioServico:'----'}}</label></td>
+    <td><label class="titulo">Nome/Razão Social:</label><label class="valor">{{rps.RazaoSocialItermediarioServico}}</label></td>
+  </tr>
+</table>
+<div class="divcorte"></div>
+<table border='0px' align="center" style="width:100%;border-collapse: collapse; ">
+ 
+  <tr>
+    <th>DISCRIMINAÇÃO DOS SERVIÇOS</th>
+  </tr>
+  <tr>
+    <td style="vertical-align: text-top;height:300px;"><label class="titulo">{{rps.Discriminacao}}
+     - QTD:  {{'1'}}  - Valor unitario: R$ {{rps.ValorServicos}}</label> </td>
+  </tr>
+</table>
+
+<table border='1x'  align="center" style="width:100%;height:20px;border-collapse: collapse; ">
+  <tr>
+    <th colspan="5"><h4  style="margin: 0px auto">VALOR TOTAL DA NOTA = R$ {{rps.ValorLiquidoNfse}}</h4></th>
+  </tr>
+  <tr style="text-align: center;">
+    <td><label class="titulo">INSS (R$)</label><br><label class="valor">{{rps.ValorInss}}</label></td>
+    <td><label class="titulo">IRRF(R$)</label><br><label class="valor">{{rps.ValorIR}}</label></td>
+    <td><label class="titulo">CSLL(R$)</label><br><label class="valor">{{rps.ValorCsll}}</label></td>
+    <td><label class="titulo">COFINS(R$)</label><br><label class="valor">{{rps.ValorCofins}}</label></td>
+    <td><label class="titulo">PIS/PASEP(R$)</label><br><label class="valor">{{rps.ValorPis}}</label></td>
+  </tr>
+  <tr>
+    <td colspan="5" align="left"><label class="titulo">Código do Serviço</label><br>{{rps.idServico}}<br><br></td>
+  </tr>
+ <tr style="text-align: center;">
+    <td><label class="titulo">Valor Total das Deduções(R$)</label><br><label class="valor">{{rps.ValorDeducoes}}</label></td>
+    <td><label class="titulo">Base de Cálculo(R$)</label><br><label class="valor">{{rps.BaseCalculo}}</label></td>
+    <td><label class="titulo">Alíquota(%)</label><br><label class="valor">{{rps.Aliquota}}</label></td>
+    <td><label class="titulo">Valor do ISS(R$)</label><br><label class="valor">{{rps.ValorIss}}</label></td>
+    <td><label class="titulo">Crédito(R$)</label><br><b>-</b></td>
+  </tr>
+  <tr>
+    <td colspan="2"><center><label class="titulo">Municipio da Prestação do Serviço</label><br><label class="valor">{{rps.CodigoMunicipio}}</center></label></td>
+    <td><center><label class="titulo">Número inscrição da Obra</label><br>-</center></td>
+    <td colspan="2" ><center><label class="titulo">Valor aproximado dos Tributos/Fonte</label><br>-</center></td>
+  </tr>
+
+</table>
+
+<table border='0x' class ="a" align="center" style="width:100%;border-collapse: collapse; ">
+  <tr>
+    <th>OUTRAS INFORMAÇÕES</th>
+  </tr>
+  <tr>
+  <td align="left" style="vertical-align: text-top;height:50px"></td>
+  </tr>
+</table>
+<div class="divcorte"></div>
+</div>
+</div>
+<script type="text/javascript" src="../../lib/angular/angular.js" ></script>
+<script type="text/javascript" src="../../lib/jQuery/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="../../controller/app.js"></script>
+ <script type="text/javascript" src="../../temp/template.js"></script> 
+<script type="text/javascript" src="template.js"></script>
+
+<!-- <script type="text/javascript" src="../../lib/angular/angular.js"></script>> -->
+<!-- <script type="text/javascript" src="pedido.js"></script> -->
+</body>
+</html>

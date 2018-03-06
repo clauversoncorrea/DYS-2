@@ -1,0 +1,1 @@
+app.controller('RelatóriodeFaturamentoporProduto104', function ($scope){ g$.configTela('Relatório de Faturamento por Produto');g$.atualizarTabela("atualizarTabela | 1320", true);});

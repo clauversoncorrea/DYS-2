@@ -1,0 +1,1 @@
+app.controller('TempodeEspera953', function ($scope){ g$.configTela('Tempo de Espera');g$.carregaQuery("carregaQuery ¦1811 | SELECT unidade_id FROM »user.banco».cliente_fornecedor WHERE node_usuario_id = '»user.id»' | memo11", true);});

@@ -1,0 +1,1 @@
+app.controller('Status114', function ($scope){ g$.configTela('Status');g$.atualizarTabela("atualizarTabela ¦ 69 | 1136", true);});

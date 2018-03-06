@@ -1,0 +1,1 @@
+app.controller('GrupodeNumeraçãodaNFe218', function ($scope){ g$.configTela('Grupo de Numeração da NFe');g$.atualizarTabela("atualizarTabela | 3788", true);});

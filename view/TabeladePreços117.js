@@ -1,0 +1,1 @@
+app.controller('TabeladePreços117', function ($scope){ g$.configTela('Tabela de Preços');g$.atualizarTabela("atualizarTabela | 1201", true);});

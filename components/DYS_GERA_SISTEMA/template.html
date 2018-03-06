@@ -1,0 +1,43 @@
+<style>
+	#prop_gera_sistema div.row:first-child {
+		margin-top: 4px;
+	}
+	
+	#prop_gera_sistema div.row {
+		margin-bottom: 8px !important;
+	}
+	
+	#prop_gera_sistema div.row:not(:first-child) > div:first-child {
+		line-height: 32px;
+	}
+	
+	#prop_gera_sistema div.row .btn {
+		padding: 0px 10px;
+		margin: 4px 0px;
+		margin-right: 4px;
+		height: 36px;
+	}
+	
+	#prop_gera_sistema .form-control {
+		color: #ffeeee !important;
+		font-size: 17px;
+		background: transparent !important;
+		padding: 0px 7px !important;
+		margin-bottom: 8px;
+		border: 1px solid #444 !important;
+	}
+	/*#prop_menu_telas .col.s3, #prop_menu_telas .col.s2 {
+		line-height: 34px !important;
+	}*/
+</style>
+
+<div id="prop_gera_sistema">
+	<div class="row">
+		<div class="col s12">
+			<a ng-click="gerarTela()" class="waves-effect waves-light blue-grey darken-4 btn col s12">Gerar Tela</a>
+			<a ng-click="gerarModal()" class="waves-effect waves-light blue-grey darken-4 btn col s12">Gerar Modal</a>
+			<a ng-click="geraTemplateModals()" class="waves-effect waves-light blue-grey darken-4 btn col s12">Gera Template Modals</a>
+			<a ng-click="linksModals()" class="waves-effect waves-light blue-grey darken-4 btn col s12">Links Modals </a>
+		</div>
+	</div>
+</div>

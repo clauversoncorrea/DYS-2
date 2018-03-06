@@ -1,0 +1,1 @@
+app.controller('CurvaABCEstoque105', function ($scope){ g$.configTela('Curva ABC Estoque');g$.atualizarTabela("atualizarTabela | 894", true);$("[data-id=892]")[0].addEventListener("click", g$.criaTela.bind(null, "criaTela | Veiculo | Veiculo", false), false);$("[data-id=893]")[0].addEventListener("click", g$.criaTela.bind(null, "criaTela | Ativo | Ativo", false), false);});

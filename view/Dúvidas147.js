@@ -1,0 +1,1 @@
+app.controller('Dúvidas147', function ($scope){ g$.configTela('Dúvidas');g$.atualizarTabela("atualizarTabela | 2223", true);$("[data-id=2640]")[0].addEventListener("click", g$.atualizarTabela.bind(null, "atualizarTabela | 129", false), false);$("[data-id=2641]")[0].addEventListener("click", g$.leTela.bind(null, "leTela | 174 | SUPO.id='»g$.tblDuvidas»'", false), false);});

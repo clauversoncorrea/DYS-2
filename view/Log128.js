@@ -1,0 +1,1 @@
+app.controller('Log128', function ($scope){ g$.configTela('Log');g$.atualizarTabela("atualizarTabela | 1604", true);});

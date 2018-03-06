@@ -1,0 +1,103 @@
+<style>
+    #modal-perfil {
+        z-index: 9999 !important;
+        top: 0px !important;
+        width: 100% !important;
+        max-height: 100% !important;
+        height: 100%;
+        background: rgba(34, 34, 34, 0.62);
+    }
+    
+    #modal-perfil #popperfil {
+        position: absolute;
+        z-index: 99999999;
+        width: 35%;
+        max-height: 80%;
+        margin: 0px auto;
+        top: 12%;
+        left: 32%;
+    }
+    
+    #modal-perfil table {
+        width: 99%;
+    }
+    
+    #modal-perfil .card-content {
+        padding: 10px;
+        overflow: auto;
+    }
+    
+    #modal-perfil #popperfil .col {
+        margin-top: 0px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    #modal-perfil #popperfil label {
+        color: #656060 !important;
+        font-weight: normal !important;
+        font-size: 15px !important;
+    }
+    
+    #modal-perfil #popperfil .btn i {
+        font-size: 14px;
+    }
+</style>
+
+<div id="popperfil" ng-controller="perfil" class='popup card col s12 no-margin-tb no-padding'>
+    <div class='card-header'>
+        <div class='card-title'> Dados de Acesso </div>
+        <div class='card-icone'>
+            <i class='fa fa-close' onclick="g$.closeModal('modal-perfil')">  </i>
+        </div>
+    </div>
+    <div class='card-content'>
+        <div class="row margin-top">
+
+            <div class="col l8 s12 margin-top">
+                <label> Login </label>
+                <input id="email" type="text" ng-model="user.email" class="form-control">
+            </div>
+
+            <div class="col l4 s12">
+                <span>
+                    <input type='checkbox' class='new_check' id='alterarSenha' ng-model="alterarSenha" />
+		            <label for='alterarSenha' class='new_check'> Alterar Senha? </label>
+                </span>
+            </div>
+
+            <div class="col l12 s12 margin-top" ng-show="alterarSenha">
+                <label> Senha Antiga </label>
+                <input id="senhaAntiga" type="password" class="form-control">
+            </div>
+
+            <div class="col l12 s12 margin-top" ng-show="alterarSenha">
+                <label> Nova Senha </label>
+                <input id="novaSenha" type="password" class="form-control">
+            </div>
+
+            <div class="col l12 s12 margin-top" ng-show="alterarSenha">
+                <label> Confirmar Nova Senha </label>
+                <input id="confirmarSenha" type="password" class="form-control">
+            </div>
+
+            <div class="col l12 m12 s12">
+                <label> Foto </label>
+                <div class="file-field">
+                    <div class="file-path-wrapper" style="display: inline-block;width: 83%;">
+                        <input class="form-control" type="text" ng-model="user.foto" />
+                    </div>
+                    <div class="btn pull-right"> <i class="fa fa-search no-margin"></i> <input type="file" onchange="trocaFotoPerfil()"> </div>
+                </div>
+            </div>
+
+            <div class="col l12 m12 s12 text-center">
+                <img id="logoPerfil" src="{{user.foto}}" style="width: 100px; height: 100px;">
+            </div>
+
+            <div class="col s12 margin-top">
+                <a ng-click="salvarDadosPerfil()" class="waves-effect waves-light btn blue darken-4 fill-width"> Salvar Alterações </a>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+<style>
+	#combobox div.row:first-child {
+		margin-top: 4px;
+	}
+	
+	#combobox div.row .btn {
+		padding: 0px 10px;
+		margin: 4px 0px;
+		margin-right: 4px;
+	}
+</style>
+
+<div id="combobox">
+	
+	<div class="row">
+		<div class="col s3">
+			<label for="id">ID</label>
+		</div>
+		<div class="col s9">
+			<input id="id" class="form-control" ng-model="combobox.id" type="text" disabled> 
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col s3">
+			<label for="id">Tela</label>
+		</div>
+		<div class="col s9">
+			<input id="tela" class="form-control" ng-model="combobox.tela" type="text" required> 
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col s3">
+			<label for="pai">Pai</label>
+		</div>
+		<div class="col s9">
+			<input id="pai" class="form-control" ng-model="combobox.pai" type="text" required>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="tag">Tag</label>
+		</div>
+		<div class="col s9">
+			<input id="tag" class="form-control" ng-model="combobox.tag" type="text" required>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="combo_campo">Campo</label>
+		</div>
+		<div class="col s9">
+			<input id="combo_campo" class="form-control" ng-model="combobox.combo_campo" type="text" required>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="combo_tabela">Tabela</label>
+		</div>
+		<div class="col s9">
+			<input id="combo_tabela" class="form-control" ng-model="combobox.combo_tabela" type="text" required>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col s12">
+			<a ng-click="salvarCombobox()" class="waves-effect waves-light blue-grey darken-4 btn right">
+				<i class="material-icons">done</i></a>
+		</div>
+	</div>
+</div>

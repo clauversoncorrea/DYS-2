@@ -1,0 +1,115 @@
+<style>
+    #modal-popup {
+        z-index: 999999999999999 !important;
+        top: 0px !important;
+        width: 100% !important;
+        max-height: 100% !important;
+        height: 100%;
+        background: rgba(34, 34, 34, 0.62);
+    }
+    
+    #modal-popup #poppopup {
+        position: absolute;
+        width: 60%;
+        max-height: 58%;
+        top: 11%;
+        left: 19%;
+    }
+    
+    #modal-popup .card-content {
+        padding: 10px;
+    }
+    
+    #modal-popup #poppopup > .card-content {
+        background: #efefef;
+    }
+    
+    #modal-popup #poppopup > .card-content .popup {
+        width: 47% !important;
+        display: inline-block;
+        height: 200px !important;
+    }
+    
+    #modal-popup #poppopup .pop-1 .card-content,
+    #modal-popup #poppopup .pop-2 .card-content {
+        height: 150px !important;
+    }
+</style>
+
+<div id="poppopup" class='popup card col s12 no-margin-tb no-padding fill-height pop-2'>
+    <div class='card-header'>
+        <div class='card-title'> Modelos de Popups </div>
+        <div class='card-icone'>
+            <i class='fa fa-close' onclick="g$.closeModalCust('modal-popup')">  </i>
+        </div>
+    </div>
+    <div class='card-content'>
+
+        <div class="row margin-bottom">
+            <div class="col l3">
+                <input class="with-gap" name="modelo" type="radio" id="pop-1" onclick="g$.selecionaPopup()" />
+                <label for="pop-1"> Modelo 01 </label>
+            </div>
+
+            <div class="col l3">
+                <input class="with-gap" name="modelo" type="radio" id="pop-2" onclick="g$.selecionaPopup()" />
+                <label for="pop-2"> Modelo 02 </label>
+            </div>
+
+            <div class="col l3">
+                <input class="with-gap" name="modelo" type="radio" id="pop-3" onclick="g$.selecionaPopup()" />
+                <label for="pop-3"> Modelo 03 </label>
+            </div>
+
+            <div class="col l3 right">
+                <input class="with-gap" name="modelo" type="radio" id="pop-4" onclick="g$.selecionaPopup()" />
+                <label for="pop-4"> Modelo 04 </label>
+            </div>
+        </div>
+
+        <div class='popup card col l6 m6 s12 no-margin-tb no-padding pop-1'>
+            <div class='card-header'>
+                <div class='card-title'> Modelo 01 </div>
+                <div class='card-icone'>
+                    <i class='fa fa-question-circle'>  </i>
+                    <i class='fa fa-close'>  </i>
+                </div>
+            </div>
+            <div class='card-content no-borderelms'>
+            </div>
+        </div>
+
+        <div class='popup card col l6 m6 s12 no-margin-tb no-padding pop-2 right'>
+            <div class='card-header'>
+                <div class='card-title'> Modelo 02 </div>
+                <div class='card-icone'>
+                    <i class='fa fa-question-circle'>  </i>
+                    <i class='fa fa-close'>  </i>
+                </div>
+            </div>
+            <div class='card-content no-borderelms'>
+            </div>
+        </div>
+
+        <div class='popup card col l6 m6 s12 no-margin-tb no-padding pop-3'>
+            <div class='card-header'>
+                <div class='card-title'> Modelo 03 - Vazio </div>
+            </div>
+            <div class='card-content no-borderelms'>
+            </div>
+        </div>
+
+        <div class='popup card col l6 m6 s12 no-margin-tb no-padding pop-4 right' style="position: relative;right: 8px;">
+            <div class='card-header' style="background: transparent;">
+                <div class='card-title'> Modelo 04 </div>
+                <div class='card-icone'>
+                    <i class='fa fa-question-circle'>  </i>
+                    <i class='fa fa-close'>  </i>
+                </div>
+            </div>
+            <div class='card-content no-borderelms'>
+            </div>
+        </div>
+
+    </div>
+</div>

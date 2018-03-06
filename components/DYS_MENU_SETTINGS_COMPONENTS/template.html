@@ -1,0 +1,134 @@
+<style>
+	
+	#components > .col {
+		padding: 0px 10px;
+		margin: 4px 0px;
+	}
+	
+	#components .btn:hover {
+		cursor: move;
+	}
+	
+	#components .btn {
+		width: 100%;
+		text-align: left;
+		padding: 0px 10px;
+		background: transparent !important;
+		color: #FFF;
+		box-shadow: none;
+		border-radius: 10px;
+	}
+	
+	#components .btn:hover {
+		background: #1a2429 !important; 
+	}
+
+	#components .btn:hover .fa {
+		color: #FFF;
+	}
+
+	#components .fa {
+		color: #505354;
+		margin-right: 5px;
+		position: relative;
+		top: 3px;
+	}
+</style>
+
+<div id="components" class="row" ng-controller="customizador">
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="linha">
+			<i class="fa fa-align-justify"> </i> Linha </a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="coluna">
+			<i class="fa fa-columns"> </i> Coluna</a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="input">
+			<i class="fa fa-square-o"> </i> TextBox</a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="label">
+			<i class="fa fa-text-height"> </i> Label</a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="textarea">
+			<i class="fa fa-square-o"> </i> Textarea</a>
+	</div>
+
+	<!--<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="combobox">
+			<i class="fa fa-toggle-down"> </i> ComboBox</a>
+	</div>-->
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="icone">
+			<i class="fa fa-italic"> </i> Icone</a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="botao">
+			<i class="fa fa-play-circle"> </i> Botão</a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="selectbox">
+			<i class="fa fa-toggle-down"> </i> Select</a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="tabela">
+			<i class="fa fa-table"> </i> Tabela </a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="td">
+			<i class="fa fa-columns"> </i> Col Tabela</a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="tabs">
+			<i class="fa fa-list-alt"> </i> Tabs </a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="tab">
+			<i class="fa fa-server"> </i> Tab </a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="link">
+			<i class="fa fa-external-link-square"> </i> Link </a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="imagem">
+			<i class="fa fa-image"> </i> Imagem </a>
+	</div>
+	 
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="grafico">
+			<i class="fa fa-pie-chart"> </i> Gráfico Pizza </a>
+	</div>
+	
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="graficoTorre">
+			<i class="fa fa-bar-chart"> </i> Gráfico Torre </a>
+	</div>
+
+	<div class="col s6">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="marquee">
+			<i class="fa fa-angle-double-left" style="margin-right: 0px;"> </i> <i class="fa fa-angle-double-right"> </i> Marquee </a>
+	</div>
+
+	<!--<div class="col s12">
+		<a class="waves-effect blue-grey darken-4 btn" draggable="true" ondragstart="dragStart(this)" data-template="ltb"> Coluna - Label - Input </a>
+	</div>-->
+
+</div>

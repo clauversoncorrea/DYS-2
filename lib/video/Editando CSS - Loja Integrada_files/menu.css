@@ -1,0 +1,131 @@
+#mainNav .nav .store { padding: 2px 10px 2px 5px; margin: 0 15px 0 5px; /*border-right: 1px solid #666; box-shadow: 3px 0 3px rgba(0, 0, 0, 0.1);*/ }
+.lojaintegrada.loja-pro #mainNav .nav .store { border-color: #314257; /*box-shadow: 3px 0 3px rgba(0, 0, 0, 0.3);*/ }
+.lojaintegrada.loja-pro #mainNav .nav .store:not(.open):hover { background: #24263A; }
+#mainNav.navbar .store > a { padding: 0; color: #CCC; font-size: 12px; font-weight: 600; line-height: 24px; text-shadow: none; overflow: hidden; }
+#mainNav.navbar .store > a .name-inner { max-width: 120px; overflow: hidden; text-overflow: ellipsis; display: inline-block; white-space: nowrap; float: left; }
+.lojaintegrada.loja-pro #mainNav.navbar .store > a { color: #fff; }
+.lojaintegrada.loja-pro #mainNav.navbar .store.open > a { color: #999; }
+
+
+#mainNav.navbar .base-menu > li.open { background-color: #F4F4F2; padding-bottom: 14px; }
+#mainNav.navbar .base-menu > li.open a { background: none; color: #555; }
+#mainNav.navbar .base-menu .dropdown-menu { background-color: #F4F4F2; }
+#mainNav.navbar .base-menu .dropdown-menu li { line-height: 24px; }
+#mainNav.navbar .base-menu .dropdown-menu li.menu-topic { padding: 0 10px; }
+#mainNav.navbar .base-menu .dropdown-menu li.menu-topic b { color: #999; text-transform: uppercase; font-size: 11px; font-weight: 600; }
+#mainNav.navbar .base-menu .dropdown-menu li.menu-topic i { opacity: 0.3; }
+#mainNav.navbar .base-menu .store:not(.open):hover { background: #555; }
+#mainNav.navbar .base-menu .store li * { font-size: 12px; }
+#mainNav.navbar .base-menu .store li a { padding: 0 28px; line-height: inherit; }
+#mainNav.navbar .base-menu .store .caret { margin-top: 11px; border-top-color: #fff; float: right; }
+#mainNav.navbar .base-menu .store .glyphicon { margin-right: 3px; }
+
+#mainNav.navbar .base-menu .dropdown-menu { border-radius: 0; border: 1px solid #ccc; border-width: 0 1px 1px; min-width: 200px; left: -1px; padding-top: 10px; }
+#mainNav.navbar .base-menu .dropdown-menu li > span.as-item { display: block; padding: 3px 15px; color: #333; }
+#mainNav.navbar .base-menu .dropdown-menu li > span.as-item > .btn-primary { color: #FFF; margin-left: 0; }
+#mainNav.navbar .base-menu .dropdown-menu li > span.no-item { display: block; padding: 3px 15px; }
+
+#mainNav.navbar .base-menu .search { padding: 5px 10px; position: relative; }
+#mainNav.navbar .base-menu .search input[type="text"] { height:28px; font-size:12px; background-color:#FFF; color:#aaa; border-color:#888; border: 1px solid #DDD; box-shadow: none; margin:0; width:100%; box-sizing: border-box; padding: 0 25px 0 10px; border-radius: 3px; }
+#mainNav.navbar .base-menu .search input[type="text"]:focus { box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+#mainNav.navbar .base-menu .input-container button { position: absolute; top: 8px; right: 7px; border: none; background-color: transparent; opacity: 0.6; outline: none; }
+#mainNav.navbar .base-menu .search input[type="text"], x:-moz-any-link { width: auto; }
+@media (min-width: 768px) {
+#mainNav.navbar .base-menu .search input[type="text"] + button .glyphicon { font-size: 18px; top: 0; }
+}
+
+#mainNav.navbar .base-menu .dropdown-menu li > a:hover, #mainNav.navbar .base-menu .dropdown-menu .active > a, #mainNav.navbar .base-menu .dropdown-menu .active > a:hover,
+.dropdown-options li a:hover, .dropdown-options .active a, .dropdown-options .active a:hover,
+.dropdown-action li a:hover, .dropdown-action .active a, .dropdown-action .active a:hover { background-color: #E5E5E5; }
+
+#mainNav.navbar .base-menu > li > a:hover, #mainNav.navbar .base-menu > li > a:focus { background: none; }
+.base-menu .dropdown-menu li>a { display: block; padding: 3px 20px; clear: both; font-weight: normal; line-height: 20px; color: #333; white-space: nowrap; }
+
+#mainNav.navbar .store.open a .caret { border-top-color: #333; opacity: 1; }
+
+.menu-main-ul, #mainNav.navbar .base-menu { margin: 12px 0 0; }
+#mainNav.navbar .menu-main-ul + .base-menu { margin-top: 0; }
+.menu-main-ul > li { margin-right: 10px; }
+.menu-main-ul > li > a { display: block; border-radius: 20px; background-color: #666; background-image: linear-gradient(to top,rgba(51, 51, 51, 0.18),rgba(170, 170, 170, 0.15)); line-height: 26px; padding: 0 12px 2px; color: #fff; border: 0px solid #6f6f6f; box-shadow: 0 0 1px rgba(0, 0, 0, 0.4); text-shadow: none; font-weight: normal; }
+.menu-main-ul > li.no-style > a { margin-top: 5px; background: transparent !important; padding: 0; box-shadow: none; border: none; line-height: normal; }
+.menu-main-ul > li.item-round > a { padding: 7px; font-size: 12px; width: 28px; height: 28px; text-align: center; }
+.menu-main-ul > li.item-green > a { background: #318C04 !important; padding-left: 9px; }
+.menu-main-ul > li.item-red > a { background: #B51515 !important; }
+.menu-main-ul > li.open a:focus { background-color: #666; }
+.menu-main-ul.nav > li > a:focus, .menu-main-ul.nav > li.open > a:focus { border-color: #6f6f6f; }
+.menu-main-ul > li > a:hover { text-decoration: none; }
+.menu-main-ul > li.active > a, .menu-main-ul > li.active > a:hover { border-left-width: 0; border-left-color: #aebe37; }
+.menu-main-ul .caret, .nav .store-name .caret { vertical-align: middle; border-top-color: #fff; opacity: 0.3; }
+.lojaintegrada.loja-pro .menu-main-ul .caret, .lojaintegrada.loja-pro .nav .store-name .caret { opacity: 1; }
+.lojaintegrada.loja-pro .menu-main-ul > li > a { background-image: linear-gradient(to top,rgba(51, 51, 51, 0.35),rgba(151, 151, 151, 0.23)); }
+.menu-main-ul a > .caret { margin-left: 6px; display: none; }
+
+.lojaintegrada.loja-pro .menu-main-ul > li > a, .lojaintegrada.loja-pro .menu-main-ul > li > a:focus { background-color: #34384C; border-color: #576270; }
+.lojaintegrada.loja-pro .menu-main-ul > li.active > a, .lojaintegrada.loja-pro .menu-main-ul > li.active > a:focus { border-left-color: #9eae26; background-color: #515461; }
+
+.menu-main-ul > li { position: relative; }
+.menu-main-ul .sub-menu { display: none; position: absolute; top: 23px; left: 0; box-shadow: none; }
+.menu-main-ul > li > a .divider { display: inline-block; width: 1px; background-color: rgba(0, 0, 0, 0.2); border-right: 1px solid rgba(85, 85, 85, 0.8); margin: 0 12px; }
+
+/* Bordas coloridas no menu
+.menu-main-ul .section-green > a { border-left-color: #2db469; }
+.menu-main-ul .section-orange > a { border-left-color: #ff921c; }
+.menu-main-ul .section-red > a { border-left-color: #c72c3b; }
+.menu-main-ul .section-blue > a { border-left-color: #4093cd; }
+*/
+
+.sub-menu ul li a { border: 1px solid transparent; border-radius: 10px; }
+li:hover > .sub-menu { display: block; }
+/*.sub-menu ul li.active a { border-left: 4px solid #9eae26; padding-left: 21px !important; }*/
+.sub-menu ul li.active a { border-color: rgba(255,255,255,.2); }
+.sub-menu ul li.active a:before, .sub-menu ul li a:hover:before { content: ""; width: 5px; height: 17px; background: #aebe37; margin: 4px 0 0 -13px; float: left; display: none; }
+.sub-menu ul li.active a:before { display: none; }
+/*.sub-menu ul li a:hover, .sub-menu ul li.active a { background-color: #5b5b5b; }
+.lojaintegrada.loja-pro .sub-menu ul li a:hover, .lojaintegrada.loja-pro .sub-menu ul li.active a { background-color: #24263A; }*/
+
+/* Hover colorido do menu
+.section-green .sub-menu ul li a:hover { background-color: #2db469; }
+.section-orange .sub-menu ul li a:hover { background-color: #ff921c; }
+.section-red .sub-menu ul li a:hover { background-color: #c72c3b; }
+.section-blue .sub-menu ul li a:hover { background-color: #4093cd; }
+
+.section-green .sub-menu ul li.active a { border-color: #2db469; }
+.section-orange .sub-menu ul li.active a { border-color:  #ff921c; }
+.section-red .sub-menu ul li.active a { border-color: #c72c3b; }
+.section-blue .sub-menu ul li.active a { border-color: #4093cd; }
+*/
+
+.menu-main-ul .sub-menu .menu-container { min-width: 180px; padding: 10px 0; margin-top: 12px; border-radius: 10px; background-color: #686868; display: flex; }
+.menu-main-ul .menu-container:after { content: ""; display: table; clear: both; }
+.menu-main-ul .sub-menu ul { min-width: 180px; }
+.menu-main-ul .sub-menu.divided { min-width: 390px; }
+.menu-main-ul .sub-menu.divided ul { float: left; border-right: none; padding: 0 5px 0 0; align-items: stretch; }
+.menu-main-ul .dropdown-menu { background: none; padding: 13px 0 0; margin: 0; float: none; border: none; font-size: 14px; }
+
+.menu-main-ul .custom-caret.caret, .menu-main-ul .custom-caret .caret { opacity: 1; }
+.custom-caret { border-bottom: 8px solid #686868; position: absolute; left: 20px; border-left-width: 8px; border-right-width: 8px; margin: 4px 0 0; }
+.custom-caret, .custom-caret .caret { border-top: none; }
+.custom-caret .caret { position: absolute; top: 1px; left: -9px; border-bottom: 8px solid #777; border-left-width: 8px; border-right-width: 9px; }
+.custom-caret .caret + .caret { top: 2px; left: -7px; border-bottom: 7px solid #686868; border-left-width: 6px; border-right-width: 7px; }
+
+.lojaintegrada.loja-pro .custom-caret { border-bottom-color: #34384C; }
+
+.configurar-frete .form-group input[type="text"] { width: auto; }
+
+#mainNav.navbar .integrado img { max-height: 27px; }
+
+.actions-menu > li { float: left; }
+.actions-menu li.last { margin-right: 0; }
+.actions-menu a { display: block; }
+.actions-menu .custom-caret { left: auto; right: 25px; }
+.actions-menu .icon { display: inline-block; background: url(../img/actions-menu.png) 0 0; height: 17px; width: 17px; }
+.actions-menu .icon.star { width: 10px; height: 8px; background-position: -95px 0; vertical-align: 1px; }
+.actions-menu .icon.bar-uso { width: 23px; margin-left: 4px; }
+.actions-menu .icon.uso-inner { width: 23px; background-position: -25px 0; }
+.actions-menu .icon.play-loja { width: 21px; background-position: -70px 0; }
+.actions-menu .icon.exit { background-position: -50px 0; }
+.actions-menu .seja-pro { background: #CE4343; color: #FFF; font-size: 11px; padding: 1px 7px 2px; margin-top: -2px; }
+.actions-menu a:hover { text-decoration: none; }
+.actions-menu .text { color: #FFF; font-size: 11px; height: 17px; display: inline-block; vertical-align: top; line-height: 17px; }
+.actions-menu .tooltip .tooltip-inner { background-color: #5F6369; }
+.actions-menu .tooltip.bottom .tooltip-arrow { border-bottom-color: #5F6369; }

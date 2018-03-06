@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8"> </meta>
+    <title> PEDIDO </title>
+    <link rel="icon" type="image/png" href="../img/dys.png" />
+    <!-- Import otimização para mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        label, span, h2, p{
+            font-size:13px;
+            font-family: tahoma;
+        }
+        section{
+            width: 750px;
+            margin: auto;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        .inline{
+            display: inline-block;
+        }
+        .solic{
+            margin-left: 15%;
+        }
+        th, td{
+            padding: 5px;
+            font-family: tahoma;
+            font-size: 10px;
+            border: 1px solid black;
+        }
+        th{
+            background-color:#e2e5e5;
+        }
+        .foot td{
+            background-color:#ddd9c3;
+            text-align: right;
+        }
+        .bottom{
+            margin-bottom: 20px;
+        }
+        .separador{
+            border:1px solid;
+            background-color: #e2e5e5;
+            height:3px;
+            width:750px;
+        }
+        .center{
+            text-align: center;
+        }
+        .right{
+            text-align: right;
+        }
+        #termo div{
+            margin-left:0px;
+        }
+        #termo{
+            display: none;
+        }
+        .termos{
+            padding: 10px;
+            border: 2px solid black;
+            width: 750px;  
+            padding-top: 0px; 
+        }
+        .dadosEmpresa{
+            margin-left:17%;
+            margin-bottom: 20px;
+        }
+        .esq, .dir{
+            display: inline-block;
+            margin-bottom:20px;
+        }
+        .dir div{
+            float:right;
+        }
+        .esq{
+            width:49%;
+        }
+        .dir{
+            width:50%;
+        }
+    </style>
+
+</head>
+
+<body ng-controller="ped">
+    <section>
+        <div class="esq">
+            <div class="imgTopo bottom">
+                <a href="#">
+                    <img id="logo" src="../../magestetica/logogrande.png">
+                </a>
+            </div>
+            <div class="inline bottom">
+                <label>Data: <span id="data"></span></label><br>
+                <label>Cliente: <span id="nomeCliente"></span></label><br>
+                <label>Telefone: <span id="telCliente"></span></label><br>
+                <label>Endereço: <span id="endCliente"></span></label><br>
+                <label>Cep: <span id="cepCliente"></span></label>
+            </div>
+        
+        </div>
+        <div class="dir">
+            <div class="dadosEmpresa">
+                <label id="nomeEmpresa"></label><br>
+                <label>Endereço: Rua Tabajaras 431<span id="endEmpresa"></span></label><br>
+                <label>Telefone: (11)2065-7799<span id="telEmpresa"></span></label><br>
+                <label>Email: contato@magestetica.com.br<span id="emailEmpresa"></span></label><br>
+                <label>CNPJ:09281923000214 <span id="cnpjEmpresa"></span></label><br>
+                <label>Site: https://lojadomicropigmentador.com.br<a id="siteEmpresa"></a></label>
+            </div>
+            <div class="inline solic">
+                <label>Solicitado Por: <span id="solicNome"></span></label><br>
+                <label>Email: <span id="solicEmail"></span></label><br>
+                <label>Cel: <span id="solicCel"></span></label>
+            </div>
+        </div>
+        <div class="bottom">
+            <label><b><span id="ped">Pedido: </span><span id="nPedido"></span></b></label>
+        </div>
+        <div class="separador bottom"></div>
+        <div class="bottom">
+           <table width="750">
+                <thead>
+                    <tr>
+                        <th class="center" width="5">Item</th>
+                        <th class="center" width="14%">Imagem</th>
+                        <th class="center" width="7">Sku</th>
+                        <th class="center" width="200">Equipamentos e Serviços</th>
+                        <th class="center" width="5">Qt</th>
+                        <th class="center" width="5">Unid</th>
+                        <th class="center" width="50">Unit</th>
+                        <th class="center" width="50">Subtotal</th>
+                        <th class="center" width="50">Desc</th>
+                        <th class="center" width="40">%</th>
+                        <th class="center" width="50">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="bottom">
+            <label><b>Recibo de Pagamento: </b></label><br>
+            <span  id="recibo"></span>
+        </div>
+        <div class="bottom">
+            <label><b>Condições de Fornecimento: </b></label><br>
+            <label>Prazo de Entrega: <span id="prazo"></span></label><br>
+            <label>Frete: <span id="tipoFrete"></span></label>
+        </div>
+        <div class="bottom">
+            <label id="nomeDep"></label><br>
+            <label>Email: <span id="emailDep"></span></label><br>
+            <label>Fone: <span id="foneDep"></span></label><br>
+        </div>
+        <div id="termo">
+            <div>
+                <label>Termos e Condições</label>
+            </div>
+            <div class="termos">
+                
+            </div>
+        </div>
+    </section>
+</body>
+
+<!-- Scripts -->
+<script type="text/javascript" src="../../lib/jQuery/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript" src="pedidoOld.js"></script>
+
+</html>

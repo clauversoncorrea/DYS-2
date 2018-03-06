@@ -1,0 +1,1 @@
+app.controller('UnidadesdeSaúde304', function ($scope){ g$.configTela('Unidades de Saúde');g$.atualizarBloco("atualizarBloco ¦234 | 8421", true);});

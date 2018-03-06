@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8"> </meta>
+    <title> DYS </title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- <link rel="icon" type="image/png" href="logoDys.png" /> -->
+    <!-- Import MaterializeCss -->
+    <link rel="stylesheet" type="text/css" href="materialize/css/materialize.css"></link>
+    <!-- Import Fonts MaterializeCss -->
+    <!--<link rel="stylesheet" type="text/css" href="materialize/fonts/icon.css"></link>-->
+    <!-- Import otimização para mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            height: 100%;
+            background: linear-gradient(to bottom, #1e5799 0%, #2989d8 52%, #7db9e8 100%);
+        }
+        
+        .material-icons {
+            top: 12px;
+        }
+        
+        #view {
+            background: #2165ab;
+            border-radius: 5px;
+            color: #FFFFFF;
+        }
+        
+        label {
+            color: #FFFFFF !important;
+        }
+        
+        input {
+            color: #FFFFFF !important;
+            border-color: #FFFFFF !important;
+        }
+        
+        .input-field .prefix.active {
+            color: #FFFFFF;
+        }
+        
+        .logo {
+            width: 200px;
+        }
+        
+        .user {
+            padding-top: 0px;
+            margin-top: 0px;
+        }
+        
+        .btn {
+            text-transform: none;
+            padding: 0px 15px;
+            height: 38px;
+            line-height: 38px;
+            width: 100%;
+            color: #777;
+            font-size: 16px;
+            margin: 5px 0px;
+        }
+        
+        #facebook {
+            margin-right: 5px;
+        }
+
+        @media screen and (max-width: 800px) {
+            #view {
+                top: 2.0em !important;
+            }
+            .logo {width: 140px !important;}
+        }
+    </style>
+</head>
+
+<body ng-controller="autenticacao">
+
+    <section id="container" class="row no-margin-b">
+        <!-- View -->
+        <div id="view" class="z-depth-2 offset-s1 offset-l4 no-padding col l4 s10" style="position: relative; top: 7.5em;">
+            <div class="row">
+                <form class="col s12">
+                    <div class="col s12 foto center-align">
+                        <img class="logo" src="img/logoDys.png">
+                    </div>
+                    <div class="row" style="margin-bottom: 0px;">
+                        <div class="user input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="email" type="email" autofocus="on" autocomplete="off">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="pass input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="senha" type="password">
+                            <label for="senha">Senha</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l12">
+                        <a ng-click="autenticacaoDYS()" class="waves-effect waves-light btn white"> Iniciar Sessão </a>
+                    </div>
+                    <div class="col s12 m6 l12">
+                        <a id="facebook" ng-click="autenticacaoFace()" class="btn waves-effect waves-light white">Facebook</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<!-- Scripts -->
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular/angular-animate.js"></script>
+<script src="lib/ionic/js/ionic.js"></script>
+<script src="lib/ionic/js/ionic-angular.min.js"></script>
+<script src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+<!--<script type="text/javascript" src="cordova.js"></script>-->
+<script src="controller/notification.js"></script>
+<script src="lib/jQuery/jquery-2.1.1.js"></script>
+<script src="lib/materialize/js/materialize.js"></script>
+
+<!-- COMPONENTS -->
+<script src="controller/autenticacao.js"></script>
+
+</html>

@@ -1,0 +1,252 @@
+<style>
+    #filtros div.row {
+        margin-bottom: 12px;
+    }
+    
+    #filtros .col {
+        padding: 0px;
+    }
+    
+    #filtros .especializada .col label {
+        color: #74b676 !important;
+    }
+    
+    #filtros .col table {
+        position: relative;
+        width: 100%;
+        background: transparent !important;
+    }
+    
+    #filtros .col table tbody tr {
+        background: #222d32;
+        color: #FFF;
+    }
+    
+    #filtros .col table tbody tr #select {
+        height: 20px;
+    }
+    
+    #filtros .col table th {
+        background: #323e45;
+        color: #FFF;
+    }
+    
+    #filtros .col table td,
+    #filtros .col table th {
+        padding: 0px 5px !important;
+        border: 1px solid #535759;
+    }
+    
+    #filtros table i {
+        cursor: pointer;
+        line-height: inherit;
+        font-size: 21px;
+    }
+    
+    #filtros #table-consulta tr td:first-child label {
+        position: relative;
+        top: 4px;
+        left: 4px;
+    }
+    /*#filtros #table-consulta tr td:first-child,
+    #filtros #table-filtro tr td:first-child,
+    #tabela-consulta #tabelaConsulta tr td:first-child {
+        width: 30px;
+        text-align: center;
+    }*/
+    
+    #filtros td {
+        word-break: break-all;
+    }
+    /*#filtros #table-consulta tr th:nth-child(3),
+    #filtros #table-filtro tr th:nth-child(2),
+    #tabela-consulta #tabelaConsulta tr th:nth-child(2),
+    #filtros #table-consulta tr td:nth-child(3),
+    #filtros #table-filtro tr td:nth-child(2),
+    #tabela-consulta #tabelaConsulta tr td:nth-child(2) {
+        width: 264px;
+        word-break: break-all;
+    }*/
+    /*#filtros #table-consulta tr th:nth-child(4),
+    #filtros #table-filtro tr th:nth-child(3),
+    #tabela-consulta #tabelaConsulta tr th:nth-child(3),
+    #filtros #table-consulta tr td:nth-child(4),
+    #filtros #table-filtro tr td:nth-child(3),
+    #tabela-consulta #tabelaConsulta tr td:nth-child(3)
+    #tabela-consulta #tabelaConsulta tr td:nth-child(4) {
+        width: 33px;
+    }*/
+    
+    #tabela-consulta #tabelaConsulta tr td div {
+        line-height: 28px;
+        min-height: 32px;
+    }
+    
+    body.expand #filtros #table-consulta tr th:nth-child(3),
+    body.expand #filtros #table-filtro tr th:nth-child(2),
+    body.expand #filtros #tabela-tabela tr th:nth-child(2),
+    body.expand #filtros #table-consulta tr td:nth-child(3),
+    body.expand #tabela-consulta #tabelaConsulta tr td:nth-child(2),
+    body.expand #filtros #table-filtro tr td:nth-child(2) {
+        width: 89% !important;
+    }
+    
+    .combobox .table td {
+        padding: 7px 5px !important;
+        width: 100% !important;
+    }
+    
+    #settings #filtros-head {
+        background-color: #80a7ff !important;
+    }
+    
+    #settings #filtros-head .col {
+        padding: 10px !important;
+        padding-bottom: 0px !important;
+    }
+    
+    #settings #filtros-head .btn-propriedades {
+        min-height: 30px;
+        line-height: 30px;
+        float: right;
+        margin-top: 4px;
+    }
+    
+    #settings #filtros-head .icon-propriedades {
+        font-size: 1rem;
+    }
+    
+    #settings #filtros-head .form-control {
+        width: 70% !important;
+        background: #FFF !important;
+        color: #444 !important;
+        margin-left: 5px;
+    }
+</style>
+
+<div id="filtros">
+
+    <div id="filtros-head" class="row indigo lighten-4">
+        <div class="col s12">
+            <label> ID da Tela </label>
+            <input id="filtro-tela" class="form-control filtro-propriedades margin-bottom" />
+
+            <a onclick="g$.requeryConsulta()" title="Carregar todas as consultas da Tela" class="waves-effect waves-light blue darken-3 btn right btn-propriedades">
+                <i class="fa fa-refresh icon-propriedades"></i></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="consulta" class="col s12">
+            <div class="row especializada">
+                <div class="col s12">
+                    <label> Consultas da Tela {{tela}} </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <table id="table-consulta" class="bordered responsive-table striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 48px;"> </th>
+                                <th style="width: 50px;"> ID </th>
+                                <th style="width: 315px;"> Consulta </th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="consulta in consultas" data-id="{{consulta.id}}" data-irow={{$index}}>
+                                <td style="width: 48px;">
+                                    <input class="with-gap" name="group3" type="radio" id="{{'consulta' + $index}}" ng-click="selecionaColsulta(consulta)" />
+                                    <label for="{{'consulta' + $index}}"></label>
+                                </td>
+                                <td style="width: 50px;">
+                                    <div>{{consulta.id}}</div>
+                                </td>
+                                <td style="width: 315px;" ng-click="colocaElmconsulta()">
+                                    {{consulta.consulta}}
+                                </td>
+                                <td class="text-center"> <i ng-click="deleteConsulta(consulta)" class="material-icons"> delete </i> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabela-tabela" class="col s12">
+            <div class="row especializada">
+                <div class="col s12">
+                    <label> Tabelas da Consulta {{nomeconsulta}} </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <table id="tabelaConsulta" class="bordered responsive-table striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 48px;"> ID </th>
+                                <th> Tabela </th>
+                                <th style="width: 50px;"> Ordem </th>
+                                <th style="width: 38px;"> </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="tabelaconsulta in tabelaconsultas" data-irow={{$index}}>
+                                <td style="width: 48px;">
+                                    {{tabelaconsulta.id}}
+                                </td>
+                                <td ng-click="colocaComboTabela()">
+                                    {{tabelaconsulta.tabela}}
+                                </td>
+                                <td style="width: 50px;" ng-click="colocaElmordem()">
+                                    {{tabelaconsulta.ordem}}
+                                </td>
+                                <td style="width: 38px;"> <i ng-click="deleteTabelaConsulta(tabelaconsulta)" class="material-icons"> delete </i> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="filtro" class="col s12">
+            <div class="row especializada">
+                <div class="col s12">
+                    <label> Filtros da Consulta {{nomeconsulta}} </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <table id="table-filtro" class="bordered responsive-table striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;"> ID </th>
+                                <th style="width: 367px;"> Filtro </th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="filtro in filtros" data-id="{{filtro.id}}" data-irow={{$index}}>
+                                <td style="width: 50px;">
+                                    {{filtro.id}}
+                                </td>
+                                <td style="width: 367px;" ng-click="colocaElmFiltro()">
+                                    {{filtro.filtro}}
+                                </td>
+                                <td> <i ng-click="deleteFiltro(filtro)" class="material-icons"> delete </i> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

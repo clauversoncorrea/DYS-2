@@ -1,0 +1,1 @@
+app.controller('CRM445', function ($scope){ g$.configTela('CRM');g$.atualizarTabela("atualizarTabela | 11412", true);});

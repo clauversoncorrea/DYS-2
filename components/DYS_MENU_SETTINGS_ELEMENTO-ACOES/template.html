@@ -1,0 +1,188 @@
+<style>
+    
+    #acoes div.row {
+        margin-bottom: 12px;
+    }
+    
+    #acoes .col {
+        padding: 0px;
+    }
+
+    #acoes .especializada .col label {
+        color: #fbfc6d !important;
+    }
+    
+    #acoes .col table {
+        position: relative;
+        width: 100%;
+        display: block;
+        background: transparent !important;
+    }
+    
+    #acoes .col table tbody {
+        /*position: absolute;*/
+        z-index: 9999999;
+        overflow: auto;
+        background: #FFF;
+    }
+
+    #acoes .col table tbody tr {
+        background: #222d32;
+        color: #FFF;
+    }
+
+    #acoes .col table tbody > tr:nth-child(odd) {
+        /*background: #323e45;*/
+    }
+    
+    #acoes .col table th {
+        background: #323e45;
+        color: #FFF;
+    }
+    
+    #acoes .col table td,
+    #acoes .col table th {
+        padding: 0px 5px !important;
+        border: 1px solid #535759;
+    }
+    
+    #acoes table i {
+        cursor: pointer;
+        line-height: inherit;
+        font-size: 21px;
+    }
+    
+    #acoes #table-acoes {
+        height: 158px;
+    }
+    
+    #acoes #table-acoes tr td:first-child label {
+        position: relative;
+        top: 4px;
+        left: 4px;
+    }
+    
+    #acoes #table-acoes tr td:first-child {
+        width: 30px;
+        text-align: center;
+    }
+    
+    #acoes #table-acoes tr th:nth-child(2),
+    #acoes #table-acoes tr td:nth-child(2) {
+        width: 264px;
+        word-break: break-all;
+    }
+
+    body.expand #acoes #table-acoes {
+        padding: 0px 10px;
+    }
+
+    body.expand #acoes #table-acoes tr th:nth-child(2),
+    body.expand #acoes #table-acoes tr td:nth-child(2) {
+        width: 90%;
+    }
+    
+    #acoes #table-acoes tr th:nth-child(3),
+    #acoes #table-acoes tr td:nth-child(3) {
+        width: 83px;
+    }
+
+    #acoes #table-acoes tr th:nth-child(4),
+    #acoes #table-acoes tr td:nth-child(4) {
+        width: 20px;
+    }
+
+    #acoes #table-acoes tr th:nth-child(5),
+    #acoes #table-acoes tr td:nth-child(5) {
+        width: 30px;
+    }
+
+    #settings #acoes-head {
+        background-color: #80a7ff !important;
+    }
+    
+    #settings #acoes-head .col {
+        padding: 10px !important;
+        padding-bottom: 0px !important;
+    }
+    
+    #settings #acoes-head .btn-propriedades {
+        min-height: 30px;
+        line-height: 30px;
+        float: right;
+        margin-top: 4px;
+    }
+    
+    #settings #acoes-head .icon-propriedades {
+        font-size: 1rem;
+    }
+    
+    #settings #acoes-head .form-control {
+        width: 83% !important;
+        background: #FFF !important;
+        color: #444 !important;
+        margin-left: 5px;
+    }
+</style>
+
+<div id="acoes">
+
+    <div id="acoes-head" class="row indigo lighten-4">
+        <div class="col s12">
+            <label> ID </label>
+            <input id="acoesIDElemento" class="form-control filtro-propriedades margin-bottom" />
+
+            <a onclick="g$.requeryAcoes()" title="Carregar todas as consultas da Tela" class="waves-effect waves-light blue darken-3 btn right btn-propriedades">
+                <i class="fa fa-refresh icon-propriedades"></i></a>
+        </div>
+    </div>
+
+    <div class="row especializada">
+        <div class="col s12">
+            <label> Funções para o Elemento {{elemento.nome}} </label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <table id="table-acoes" class="bordered responsive-table striped">
+                <thead>
+                    <tr>
+                        <th> ID </th>
+                        <th> Função  </th>
+                        <th> Evento  </th>
+                        <th> Ord </th>
+                        <th> Depois  </th>
+                        <th> Consulta  </th>
+                        <th> </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="acao in acoes" data-id="{{filtro.id}}" data-irow={{$index}}>
+                        <td>
+                            {{acao.id}}
+                        </td>
+                        <td ng-click="colocaComboAcao()">
+                            {{acao.funcao}}
+                        </td>
+                        <td ng-click="colocaComboEvento()">
+                            {{acao.evento}}
+                        </td>
+                        <td ng-click="colocaElmentoAcao('ordem')">
+                            {{acao.ordem}}
+                        </td>
+                        <td ng-click="colocaElmentoAcao('depois')">
+                            {{acao.depois}}
+                        </td>
+                        <td ng-click="colocaElmentoAcao('consulta')">
+                            {{acao.consulta}}
+                        </td>
+                        <td data-index-row={{$index}}> <i ng-click="deleteAcao(acao)" class="material-icons"> delete </i> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

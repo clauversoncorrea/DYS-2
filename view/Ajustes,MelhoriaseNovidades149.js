@@ -1,0 +1,1 @@
+app.controller('Ajustes,MelhoriaseNovidades149', function ($scope){ g$.configTela('Ajustes, Melhorias e Novidades');g$.atualizarTabela("atualizarTabela | 2236", true);});

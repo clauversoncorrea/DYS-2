@@ -1,0 +1,184 @@
+<style>
+    
+    #telaacoes div.row {
+        margin-bottom: 12px;
+    }
+    
+    #telaacoes .col {
+        padding: 0px;
+    }
+
+    #telaacoes .especializada .col label {
+        color: #fbfc6d !important;
+    }
+    
+    #telaacoes .col table {
+        position: relative;
+        width: 100%;
+        display: block;
+        background: transparent !important;
+    }
+    
+    #telaacoes .col table tbody {
+        /*position: absolute;*/
+        z-index: 9999999;
+        overflow: auto;
+        background: #FFF;
+    }
+
+    #telaacoes .col table tbody tr {
+        background: #222d32;
+        color: #FFF;
+    }
+
+    #telaacoes .col table tbody > tr:nth-child(odd) {
+        /*background: #323e45;*/
+    }
+    
+    #telaacoes .col table th {
+        background: #323e45;
+        color: #FFF;
+    }
+    
+    #telaacoes .col table td,
+    #telaacoes .col table th {
+        padding: 0px 5px !important;
+        border: 1px solid #535759;
+    }
+    
+    #telaacoes table i {
+        cursor: pointer;
+        line-height: inherit;
+        font-size: 21px;
+    }
+    
+    #telaacoes #table-telaacoes {
+        height: 158px;
+    }
+    
+    #telaacoes #table-telaacoes tr td:first-child label {
+        position: relative;
+        top: 4px;
+        left: 4px;
+    }
+    
+    #telaacoes #table-telaacoes tr td:first-child {
+        width: 30px;
+        text-align: center;
+    }
+    
+    #telaacoes #table-telaacoes tr th:nth-child(2),
+    #telaacoes #table-telaacoes tr td:nth-child(2) {
+        width: 264px;
+        word-break: break-all;
+    }
+
+    body.expand #telaacoes #table-telaacoes {
+        padding: 0px 10px;
+    }
+
+    body.expand #telaacoes #table-telaacoes tr th:nth-child(2),
+    body.expand #telaacoes #table-telaacoes tr td:nth-child(2) {
+        width: 90%;
+    }
+    
+    #telaacoes #table-telaacoes tr th:nth-child(3),
+    #telaacoes #table-telaacoes tr td:nth-child(3) {
+        width: 83px;
+    }
+
+    #acoes #table-telaacoes tr th:nth-child(4),
+    #acoes #table-telaacoes tr td:nth-child(4) {
+        width: 20px;
+    }
+
+    #acoes #table-telaacoes tr th:nth-child(5),
+    #acoes #table-telaacoes tr td:nth-child(5) {
+        width: 30px;
+    }
+
+    #settings #telaacoes-head {
+        background-color: #80a7ff !important;
+    }
+    
+    #settings #telaacoes-head .col {
+        padding: 10px !important;
+        padding-bottom: 0px !important;
+    }
+    
+    #settings #telaacoes-head .btn-propriedades {
+        min-height: 30px;
+        line-height: 30px;
+        float: right;
+        margin-top: 4px;
+    }
+    
+    #settings #telaacoes-head .icon-propriedades {
+        font-size: 1rem;
+    }
+    
+    #settings #telaacoes-head .form-control {
+        width: 70% !important;
+        background: #FFF !important;
+        color: #444 !important;
+        margin-left: 5px;
+    }
+</style>
+
+<div id="telaacoes">
+
+    <div id="telaacoes-head" class="row indigo lighten-4">
+        <div class="col s12">
+            <label> ID da Tela </label>
+            <input id="filtro-telaacoes" class="form-control filtro-propriedades margin-bottom" />
+
+            <a onclick="g$.requeryTelaAcoes()" title="Carregar todas as consultas da Tela" class="waves-effect waves-light blue darken-3 btn right btn-propriedades">
+                <i class="fa fa-refresh icon-propriedades"></i></a>
+        </div>
+    </div>
+
+    <div class="row especializada">
+        <div class="col s12">
+            <label> Funções para a Tela </label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <table id="table-telaacoes" class="bordered responsive-table striped">
+                <thead>
+                    <tr>
+                        <th> ID </th>
+                        <th> Função  </th>
+                        <th> Evento  </th>
+                        <th> Ord  </th>
+                        <th> Depois  </th>
+                        <th> </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="telaacao in telaacoes" data-id="{{filtro.id}}" data-irow={{$index}}>
+                        <td>
+                            {{telaacao.id}}
+                        </td>
+                        <td ng-click="colocaComboTelaAcao()">
+                            {{telaacao.funcao}}
+                        </td>
+                        <td ng-click="colocaComboEventoTela()">
+                            {{telaacao.evento}}
+                        </td>
+                        <td ng-click="colocaElmTelaAcao('ordem')">
+                            {{telaacao.ordem}}
+                        </td>
+                        <td ng-click="colocaElmTelaAcao('depois')">
+                            {{telaacao.depois}}
+                        </td>
+                        <td data-index-row={{$index}}> <i ng-click="deleteTelaAcao(telaacao)" class="material-icons"> delete </i> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

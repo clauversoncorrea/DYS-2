@@ -1,0 +1,1 @@
+app.controller('Estado74', function ($scope){ g$.configTela('Estado');g$.atualizarTabela("atualizarTabela | 572", true);$("[data-id=570]")[0].addEventListener("click", g$.criaTela.bind(null, "criaTela | Orçamento | Orçamento", false), false);$("[data-id=571]")[0].addEventListener("click", g$.criaTela.bind(null, "criaTela | Avisos | Avisos", false), false);});

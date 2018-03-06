@@ -1,0 +1,1 @@
+app.controller('Origem763', function ($scope){ g$.configTela('Origem');g$.atualizarTabela("atualizarTabela | 22328", true);$("[data-id=22327]")[0].addEventListener("click", g$.memo.bind(null, "memo ¦5459| memo1 |", false), false);});

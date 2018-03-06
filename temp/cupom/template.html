@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+	<!--<script src="JsBarcode.all.min.js"></script>-->
+	<script>
+		function imprimir(){
+			if (event.ctrlKey && event.keyCode == "80") {
+				
+				document.querySelectorAll("table")[0].style.margin = "0 auto"
+				document.querySelector(".divisor").style.width="100%";
+				document.querySelector(".divisor").style.textAlign="center";         
+    		}
+    	}
+	</script>
+</head>
+<style>
+	hr {
+		border-style: dotted;
+		font-size: 5pt;
+	}
+	@media print {
+		@page { margin: 0; }
+		body { margin: 1.6cm; }
+	}
+
+	.divisor {
+		background: #fcf8cf;
+		width: 100%;
+		font-family: Arial;
+		font-size: 12px;
+	}
+	.produtos{
+		margin-bottom:3px;
+	}
+</style>
+
+<body ng-controller="inicial" onkeydown="imprimir()">
+
+	<div ng-controller="template">
+		<div class="divisor">
+
+
+			<table border='0px' style="width:98%;height:100%;margin:5px;border-collapse:collapse;">
+
+				<tr>
+					<td style="text-align:center;" ><img style="max-width: 200px; max-height: 150px" id='logoEmpresa' alt="Logo Empresa" height="100%" width=auto></td>
+				</tr>
+				<tr>
+				
+					<td style="text-align:center;" ><b style="text-transform: uppercase;">{{xml.xNome}}</b><br>{{xml.xLgr}} - {{xml.xBairro}} - {{xml.nro}}
+						<br> {{xml.xMun}} - {{xml.CEP}} - {{xml.UF}} <br> Telefone:{{xml.fone}}
+						<br> CNPJ:{{xml.CNPJ}} {{xml.IE}} {{xml.IM}}</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<hr>
+					</td>
+				</tr>
+				<tr>
+					<td  style="text-align:center;" colspan="2">DANFE NFC-e - Documento Auxiliar da Nota Fiscal Eletrônica para Consumidor Final - Via Consumidor
+						<br> NFC-e não permite aproveitamento de crédito de ICMS
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<hr>
+					</td>
+				</tr>
+				<tr>
+					<td  style="text-align:center;" colspan="2">NFC-e nº: {{xml.nNF}} Série: {{xml.nNF}} Data de Emissão: {{xml.dhRecbto | date: 'dd/MM/yyyy HH:mm:ss'}}
+					<br>Consulte pela Chave de Acesso em {{xml.linkConsulta}}
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<hr>
+					</td>
+				</tr>
+				<tr><td colspan="2">CPF/CNPJ do Consumidor: &nbsp&nbsp {{xml.dest_CNPJ}}{{xml.dest_CPF}}</td></tr>
+			</table>
+
+			<table border=0px style="width:100%;border-collapse: collapse;">
+				<tr>
+					<td style="width:5%;text-align: center;">#</td>
+					<td style="width:5%;text-align: left;">COD</td>
+					<td style="width:40%;text-align: left;">DESC</td>
+					<td style="width:5%;text-align: center;">QTD</td>
+					<td style="width:5%;text-align: center;">UN</td>
+					<td style="width:10%;text-align: right;">VL UN </td>
+					<td style="width:15%;text-align: right;">VL ITEM </td>
+					<td style="width:1%;text-align: right;"></td>
+					<hr>
+
+				</tr>
+				<tr>
+					<td colspan="8">
+						<hr>
+					</td>
+				</tr>
+				<tr ng-repeat="prod in xml.produto" class='produtos'>
+					<td style="width:5%;text-align: center;">{{prod.counter}}</td>
+					<td style="width:5%;text-align: left;">{{prod.cProd}}</td>
+					<td style="width:40%;text-align: left;">{{prod.xProd}}</td>
+					<td style="width:5%;text-align: center;">{{prod.qCom}}</td>
+					<td style="width:5%;text-align: center;">{{prod.uCom}}</td>
+					<td style="width:10%;text-align: right;">{{prod.vUnCom}}</td>
+					<td style="width:15%;text-align: right;">{{prod.vProd}}</td>
+					<td style="width:1%;text-align: right;"></td>
+				</tr>
+				<tr>
+					<td style="text-align:right;" colspan='6'>Total:</td>
+					<td style="text-align:right;">{{xml.total_vNF}}</td>
+				</tr>
+			</table>
+			<hr style="opacity: 0.9;">
+			<table border=0px style="width:97%;height:100%;margin:5px;border-collapse: collapse;">
+				<tr ng-repeat="pagamento in xml.pagamento" class='pagamento'>
+					<td style="text-align:left;">{{pagamento.tPag}}</td>
+					<td style="text-align:right;">{{pagamento.vPag}}</td>
+				</tr>
+				<tr>
+					<td style="text-align:left;">Valor Pago:</td>
+					<td style="text-align:right;">{{xml.valorPago}}</td>
+				</tr>
+				<tr>
+					<td style="text-align:left;">Troco:</td>
+					<td style="text-align:right;">{{xml.troco}}</td>
+				</tr>
+			</table>
+			<hr>
+
+			<table border=0px style="width:100%;margin:5px;border-collapse: collapse;">				
+				<tr>
+					<td style="text-align:center;">CHAVE DE ACESSO</td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">{{xml.chNFe}}</td>
+				</tr>
+				<tr>
+					<td style="text-align:center;font-size: 10px;">
+						<svg id="barcode"></svg>
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">
+						Protocolo de Autorização:{{xml.nProt}}						
+					</td>
+				</tr>
+				
+				<tr>
+					<td style="text-align:center;">
+						<br>
+						<br>
+						<div id="qrcode" style="width:120px; height:120px; margin-top:15px; margin: 0 auto;"></div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<center><label>NFC-e pelo Sistema DyS</label></center>
+			<br>
+
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../../controller/app.js"></script> 
+<script src="../../lib/angular/angular.js" type="text/javascript"></script>
+<script src="../../temp/template.js" type="text/javascript"></script>
+<script src="../../lib/qrcode/qrcode.js" type="text/javascript"></script>
+<!-- <script src="../../lib/barcode/barcode.js"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.8.0/barcodes/JsBarcode.codabar.min.js' type="text/javascript"></script>
+<script src="template.js" type="text/javascript"></script>
+</body>
+
+</html>

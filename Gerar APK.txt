@@ -1,0 +1,119 @@
+Regras para gerar um APK
+
+** Alterar no arquivo inicial.js
+descomentar a linha campos[i].addEventListener("keydown", g$.nextElemento, false);
+if (obj.tipo == "number" && obj.max_length != "") // tirar a validacao de obj.tipo
+campos[i].addEventListener("keydown", g$.validaTamanho.bind(null, obj.max_length, false), false); // mudar para keyup
+
+** Alterar no arquivo comboTela.js, linha 10
+de: templateUrl: "../controller/DYS_COMBO_DYS/template.html",
+para: templateUrl: "controller/DYS_COMBO_DYS/template.html"
+
+** Alterar no arquivo combo_DYS controller
+descomentar a linha initCombo cordova.plugins.Keyboard.close();
+comentar linha // $("#search-combo")[0].focus();
+
+** Alterar no arquivo menutelas/controller.js, linha 4
+de: templateUrl: "../components/DYS_MENU_TELAS/template.html",
+para: templateUrl: "components/DYS_MENU_TELAS/template.html",
+
+** Alterar no arquivo notification.js
+descomentar a linha 26
+comentar a linha 27
+
+** Alterar no arquivo app.js
+descomentar a linha 3
+comentar a linha 4
+linha 31 desktop: 0
+
+descomentar na funcao openLink no arquivo app.js
+descomentar na funcao openFile no arquivo funcao.js
+
+** Alterar no arquivo inicial.js
+funcao $scope.logout -- location.href = "index.html";
+
+** Alterar no arquivo autenticacao.js
+tirar a variavel dir na linha 22 e 23
+
+** Alterar na inicial.html
+view { height: 92%; }
+.main-sidebar,
+    .left-side {
+      height: 97%;
+    }
+
+** Alterar no arquivo AdminLte.css
+comentar 
+@media (max-width: 767px) {
+  .sidebar-open .content-wrapper,
+  .sidebar-open .right-side,
+  .sidebar-open .main-footer {
+    /* -webkit-transform: translate(230px, 0); */
+    -ms-transform: translate(230px, 0);
+    -o-transform: translate(230px, 0);
+    /* transform: translate(230px, 0); */
+    /* background: rgba(255, 255, 255, 0.61); */
+    /* will-change: opacity; */
+  }
+}
+
+linha 579 e linha 59
+comentar o margin-left
+
+linha 583
+mudar o width para 0px;
+
+** modals
+** Alterar todos os ../ dos templates para vazio
+
+** Baixar o logopequeno, e a index no ftp
+** Alterar todos os ../ para vazio no arquivo index.html
+
+** Alterar o nome no arquivo config.xml
+
+** Alterar no index.html 
+	Descomentar o cordova linha 127
+	Comentar o angular linha 121
+
+** Alterar no inicial.html 
+	Descomentar o cordova
+
+cordova platform add android --save
+cordova requirements android    
+cordova build android --verbose
+
+
+C:\Users\Mestra\Desktop\APP_SAUDE\platforms\android\build\outputs\apk
+C:\Users\Mestra\DESktop\DYS\
+
+
+
+Cordova para Gerar
+cordova plugin add cordova-plugin-inappbrowser --save
+cordova plugin add onesignal-cordova-plugin --save
+cordova add plugin cordova-plugin-whitelist --save
+Quando alterar: cordovar compile e so buidar novamente, nao precisa adicionar a sdk novamente
+
+
+<preference name="AndroidPersistentFileLocation" value="Internal" />
+<preference name="AndroidPersistentFileLocation" value="Compatibility" />
+
+CAMERA:
+cordova plugin add cordova-plugin-camera --save 
+
+
+
+
+
+
+Ta me invejando no meu começo, imagina no meio.. SURTA FDP
+Afoguei e perdi a prancha mais que 2k18 vezes kkk stand up top
+Só brother, 21 anos!! so faltou @Vitinho.. tmj rapa <3
+
+
+
+
+
+Oi Tia, Vanete, venho informar através desse recado, infelizmente Eu e Cecília terminamos no domingo passado, dia 07/01. Não foi por motivo de brigas, não foi por motivo de traição(até porque fomos fiel namorando até o último ponto), não foi por motivo de gastação(de deixar a desejar, até porque eu sempre procurava impressioná-la e nos gostamos e amamos muito tambem, um ao outro) e sim por um motivo pessoal dela, em um momento e ano decisivo para carreira e o futuro dela, em que ela pretende focar em seus estudos.. Se eu gostaria que fosse assim? Claro que não, não gostaria de deixá-la de nenhum jeito, mas se eu pretendo ter alguma coisa futuramente com ela, com a educação que meus pais me deram, eu sei que eu tenho que respeitar a opinião dela, apoia-la em todos momentos, proteje-la(assim como vocês) e ajudar ela crescer, ela pediu pra eu esperar, então eu vou esperar e ajudando com os conselhos como sempre, como amigo.. Confesso que é um momento muito triste pra mim e aprender a lidar com essa situação dificil, pois eu gosto muito dela, eu venho caridosamente agradecer a você por todo apoio que nos deu, todo carinho, todo amor, todo aconchego.
+
+

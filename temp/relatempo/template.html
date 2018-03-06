@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+ <html ng-app="myApp">
+<head>
+  <title></title>
+</head>
+<body ng-controller="inicial">
+
+<div ng-controller="template">
+<table border=1 align="center" style="width:100%;border-collapse: collapse; ">
+
+<tr>
+<td>
+<h1>Relatório de Tempo Gasto</h1>
+</td>
+
+</table>
+<br /> <br />
+
+<br /> <br />
+<table border=1 align="center" style="width:100%;border-collapse: collapse; ">
+
+<tr style="font-weight: bold;">
+<td>Projeto</td>
+<td>Atividade</td>
+<td>Funcionário</td>
+<td>Tempo Total</td>
+
+</tr>
+<tr ng-repeat="rela_tempo_total in relatorio_tempo_total">
+<td>{{rela_tempo_total.e_22179}}</td>
+<td>{{rela_tempo_total.e_22168}}</td>
+<td>{{rela_tempo_total.e_22167}}</td>
+<td>{{rela_tempo_total.e_22181}}</td>
+
+</tr>
+
+</table>
+</div>
+<div>
+<script src="../../lib/angular/angular.js" type="text/javascript"></script>
+</div>
+<div>
+<script src="../../temp/template.js" type="text/javascript"></script>
+</div>
+<div>
+<script src="template.js" type="text/javascript"></script>
+</div>

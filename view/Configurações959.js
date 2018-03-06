@@ -1,0 +1,1 @@
+app.controller('Configurações959', function ($scope){ g$.configTela('Configurações');g$.leTela("leTela | view | 2213 ", true);$("[data-id=45234]")[0].addEventListener("click", g$.salvarTela.bind(null, "salvarTela | view | ", false), false);});

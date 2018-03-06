@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../../lib/materialize/css/materialize.css"></link>
+</head>
+
+<body ng-controller="inicial"> 
+
+  <div ng-controller="template">
+    <!-- acessar um atributo da variavel visita do scope -->
+    <h5> PRONTUÁRIO DE ATENDIMENTO </h5>
+
+    <div class="row"  style="margin:2px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">NOME COMPLETO: {{agenda.nome}}</div>
+    </div>
+    <div class="row"  style="margin:2px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">TELEFONE: {{agenda.telefone}}</div>
+    </div>
+
+    <div class="row"  style="margin:2px;">
+      <div class="col s6" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">DATA NASC.: {{agenda.nascimento}}</div>
+      <div class="col s6" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">SEXO: {{agenda.sexo}}</div>
+    </div>
+    <div class="row"  style="margin:2px;">
+      <div class="col s6" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">CPF: {{agenda.cpf}}</div>
+      <div class="col s6" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">RG: {{agenda.rg}}</div>
+    </div>
+    <div class="row"  style="margin:2px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">NOME DA MÃE: {{agenda.nome_mae}}</div>
+    </div>
+    <div class="row"  style="margin:2px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">NOME DO PAI: {{agenda.nome_pai}}</div>
+    </div>
+    <div class="row"  style="margin:2px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">EMAIL: {{agenda.email}}</div>
+    </div>
+    <div class="row"  style="margin:2px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">ENDEREÇO: {{agenda.endereco}}</div>
+    </div>
+    <div class="row"  style="margin:2px;">
+      <div class="col s6" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">BAIRRO: {{agenda.bairro}}</div>
+      <div class="col s6" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">CEP: {{agenda.cep}}</div>
+    </div>
+    <div class="row"  style="margin:2px;">
+      <div class="col s6" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">CIDADE: {{agenda.cidade}}</div>
+      <div class="col s6" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">ESTADO: {{agenda.estado}}</div>
+    </div>
+    <div class="row"  style="margin:2px;">
+      <div class="col s6" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">PROFISSÃO: {{agenda.profissao}}</div>
+      <div class="col s6" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">FONTE: {{agenda.fonte}}</div>
+    </div>
+    <div class="row"  style="margin:2px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">ESPECIALIDADE: {{agenda.especialidade}}</div>
+    </div>
+    <div class="row"  style="margin:2px 2px 20px 2px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">DATA: {{agenda.data}}</div>
+    </div>
+    <h6> ATENDIMENTO </h6>
+    <hr/>
+    <div class="row"  style="margin:10px 0px 100px 0px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">QUEIXA PRINCIPAL</div>
+    </div>
+    <div class="row"  style="margin:10px 0px 100px 0px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">HDA - HISTÓRICO DE DOENÇAS ATUAL</div>
+    </div>
+    <div class="row"  style="margin:10px 0px 100px 0px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">EXAME FÍSICO</div>
+    </div>
+    <div class="row"  style="margin:10px 0px 100px 0px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">OBSERVAÇÕES</div>
+    </div>
+    <div class="row"  style="margin:10px 0px 100px 0px;">
+      <div class="col s12" style="padding: 0px 0px 0px; font-size: 13px; font-family: Roboto; !important;">DOENÇAS</div>
+    </div>
+  </div>
+
+</body>
+
+<script type="text/javascript" src="../../controller/app.js"></script>
+<script type="text/javascript" src="../../lib/angular/angular.js"></script>
+<script type="text/javascript" src="../../temp/template.js"></script>
+<script type="text/javascript" src="template.js"></script>
+
+</html>

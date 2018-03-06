@@ -1,0 +1,1 @@
+app.controller('Gerenciamentodenotificações314', function ($scope){ g$.configTela('Gerenciamento de notificações');g$.atualizarTabela("atualizarTabela | 8467", true);});

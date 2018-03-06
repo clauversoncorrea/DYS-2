@@ -1,0 +1,1 @@
+app.controller('ConciliaçãoBancária142', function ($scope){ g$.configTela('Conciliação Bancária');g$.atualizarTabela("atualizarTabela | 2129", true);g$.atualizarTabela("atualizarTabela | 2148", true);g$.atualizarTabela("atualizarTabela | 2166", true);});

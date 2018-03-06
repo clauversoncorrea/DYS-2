@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.company.saude" version="0.0.1">
+    <name>Saúde em Dia</name>
+    <description>
+        Saúde em Dia
+    </description>
+    <author email="douglasantunesbarreto@gmail.com" href="http://cordova.io">
+        Douglas Antunes
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="Fullscreen" value="false" />
+    <preference name="WebViewBounce" value="true" />
+    <preference name="orientation" value="portrait" />
+    <preference name="android-minSdkVersion" value="16" />
+    <platform name="android">
+        <icon density="ldpi" src="www/logopeq.png" />
+        <splash density="land-ldpi" src="www/load.png" />
+        <splash density="land-mdpi" src="www/load.png" />
+        <splash density="land-hdpi" src="www/load.png" />
+        <splash density="land-xhdpi" src="www/load.png" />
+        <splash density="land-xxhdpi" src="www/load.png" />
+        <splash density="land-xxxhdpi" src="www/load.png" />
+        <splash density="port-ldpi" src="www/load.png" />
+        <splash density="port-mdpi" src="www/load.png" />
+        <splash density="port-hdpi" src="www/load.png" />
+        <splash density="port-xhdpi" src="www/load.png" />
+        <splash density="port-xxhdpi" src="www/load.png" />
+        <splash density="port-xxxhdpi" src="www/load.png" />
+    </platform>
+    <access launch-external="yes" origin="tel:*" />
+    <access launch-external="yes" origin="tel:*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="mailto:*" />
+    <engine name="android" spec="^6.2.3" />
+    <plugin name="cordova-plugin-camera" spec="^2.4.1" />
+    <plugin name="cordova-plugin-console" spec="^1.0.7" />
+    <plugin name="cordova-plugin-device" spec="^1.1.6" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^1.7.1" />
+    <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
+    <plugin name="cordova-plugin-statusbar" spec="^2.2.3" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
+    <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
+    <plugin name="onesignal-cordova-plugin" spec="^2.1.1" />
+</widget>

@@ -1,0 +1,176 @@
+<style>
+    #modal-configtable {
+        z-index: 999999999999999 !important;
+        top: 0px !important;
+        width: 100% !important;
+        max-height: 100% !important;
+        height: 100%;
+        background: rgba(34, 34, 34, 0.62);
+    }
+    
+    #modal-configtable #popconfigtable {
+        position: absolute;
+        width: 60%;
+        max-height: 89%;
+        top: 9%;
+        left: 19%;
+    }
+    
+    #modal-configtable table {
+        width: 101%;
+        height: calc(100% - 80px);
+    }
+    
+    #modal-configtable #popconfigtable tbody {
+        position: absolute;
+        height: 76%;
+        overflow: auto;
+        /*width: 96.9%;*/
+    }
+    
+    #modal-configtable .card-content {
+        padding: 10px;
+    }
+    
+    #modal-configtable #popconfigtable tbody td:nth-child(1) {
+        max-width: 150px;
+        min-width: 150px;
+    }
+    
+    #modal-configtable #popconfigtable tbody td:nth-child(2) {
+        width: 64px;
+        text-align: center;
+    }
+    
+    #modal-configtable #popconfigtable tbody td:nth-child(3) {
+        width: 160px;
+        max-width: 160px;
+    }
+    
+    #modal-configtable #popconfigtable tbody td:nth-child(4) {
+        width: 170px;
+        max-width: 130px;
+    }
+    
+    #modal-configtable #popconfigtable tbody td:nth-child(5) {
+        width: 134px;
+        max-width: 134px;
+    }
+    
+    #modal-configtable #popconfigtable tbody td:nth-child(6) {
+        width: 134px;
+        max-width: 134px;
+    }
+    
+    #modal-configtable #popconfigtable tbody td:nth-child(7) {
+        width: 129px;
+        max-width: 129px;
+    }
+    
+    #modal-configtable #popconfigtable .row {
+        margin: 0px;
+        text-align: right;
+        padding-right: 10px;
+    }
+    
+    #modal-configtable #popconfigtable .btn {
+        margin-top: 10px;
+    }
+    
+    #modal-configtable #popconfigtable .btn i {
+        font-size: 14px;
+    }
+</style>
+
+<div id="popconfigtable" ng-controller="configtable" class='popup card col s12 no-margin-tb no-padding fill-height'>
+    <div class='card-header'>
+        <div class='card-title'> Configuração da Tabela </div>
+        <div class='card-icone'>
+            <i class='fa fa-close' onclick="g$.closeModal('modal-configtable')">  </i>
+        </div>
+    </div>
+    <div class='card-content'>
+        <div class="row" style="padding-right: 3px;">
+            <div class="col s12 l6 m12 text-left no-padding margin-top">
+                <label class="col s12 no-padding">
+                    Nome Coluna
+                    <input id="filtro_coluna" class="form-control" ng-model="coluna" style="width: 64%;margin-left: 10px;font-weight: normal;" ng-keypress="carregaData()">
+                </label>
+            </div>
+
+            <div class="col s12 l6 m12" style="padding-right: 0px;">
+                <a class="waves-effect waves-light btn red darken-3 margin-right" ng-click="limparFiltro()">
+                    <i class="fa fa-eraser"> </i>
+                    <span>Limpar Filtro</span>
+                </a>
+                <a class="waves-effect waves-light btn yellow darken-3" ng-click="consultarTabela()">
+                    <i class="fa fa-search"> </i>
+                    <span>Buscar</span>
+                </a>
+                <a class="waves-effect waves-light btn blue darken-3" ng-click="salvarPerfil()" style="margin-left: 10px;">
+                    <i class="fa fa-check"> </i>
+                    <span>Salvar</span>
+                </a>
+            </div>
+        </div>
+
+        <table id='tabela' class='responsive-table striped'>
+            <!--<colgroup>
+                    <col width="130">
+                    <col width="70">
+                    <col width="280">
+                    <col width="280">
+                    <col width="100">
+                    <col width="140">
+                    <col width="140">
+            </colgroup>-->
+            <thead>
+                <!--<tr>-->
+                    <div style="display: inline-block; min-width: 143px;background: #f9f9f9;padding: 8px 10px;border: 1px solid #eee;"> Colunas </div>
+                    <div style="display: inline-block; min-width: 63px;background: #f9f9f9;padding: 8px 10px;border: 1px solid #eee;"> Visível </div>
+                    <div style="display: inline-block; min-width: 127px;background: #f9f9f9;padding: 8px 10px;border: 1px solid #eee;"> Filtro </div>
+                    <div style="display: inline-block; min-width: 140px;background: #f9f9f9;padding: 8px 10px;border: 1px solid #eee;"> Até </div>
+                    <div style="display: inline-block; min-width: 111px;background: #f9f9f9;padding: 8px 10px;border: 1px solid #eee;"> Ordem </div>
+                    <div style="display: inline-block; min-width: 109px;background: #f9f9f9;padding: 8px 10px;border: 1px solid #eee;"> Sentido </div>
+                    <div style="display: inline-block; min-width: 101px;background: #f9f9f9;padding: 8px 10px;border: 1px solid #eee;"> Total </div>
+                <!--</tr>-->
+            </thead>
+            <tbody>
+                    <tr ng-repeat="configtable in configtables | filter: coluna track by $index" data-irow="{{$index}}">
+                        <td> {{configtable.nome_coluna}} </td>
+                        <td>
+                            <input id="visivel" type="checkbox" ng-model="configtable.visivel" ng-checked="configtable.visivel" />
+                        </td>
+                        <td>
+                            <input id="filtro" type="text" data-tipo="{{configtable.tipo_elemento}}" class="form-control input_config_table" ng-model="configtable.filtro" />
+                        </td>
+                        <td>
+                            <div ng-show="configtable.intervalo">
+                                <input id="ate" type="text" data-tipo="{{configtable.tipo_elemento}}" class="form-control input_config_table" ng-model="configtable.ate" />
+                            </div>
+                        </td>
+                        <td>
+                            <input id="ordem" class="form-control input_config_table" ng-model="configtable.ordem" />
+                        </td>
+                        <td>
+                            <select id="sentido" class="form-control" ng-model="configtable.sentido">
+                                <option value=""> Selecione </option>
+                                <option value="ASC"> Ascendente </option>
+                                <option value="DESC"> Descendente </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="total" class="form-control" ng-model="configtable.total">
+                                <option value=""> Selecione </option>
+                                <option value="quantidade"> Quantidade </option>
+                                <option value="soma"> Soma </option>
+                                <option value="minimo"> Mínimo </option>
+                                <option value="maximo"> Máximo </option>
+                                <option value="media"> Média </option>
+                            </select>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

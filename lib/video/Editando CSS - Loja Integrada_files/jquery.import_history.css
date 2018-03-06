@@ -1,0 +1,26 @@
+.import_history .progress{
+     white-space: nowrap;
+     height: 25px;
+     margin-bottom: 0;
+}
+
+.import_history .progress .progress-bar{
+    display: none;
+    float: none;
+    line-height: 25px;
+    min-width: 22px;
+}
+
+.import_history .progress-information{
+    margin-top: 20px;
+}
+.import_history .progress-information h5{
+    font-weight: bold;
+}
+.import_history .progress-information ul{
+    max-height: 200px;
+    overflow-y: scroll;
+}
+.import_history .progress-information ul li{
+    list-style: inside;
+}

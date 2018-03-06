@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <title></title>
+  <style>
+    .padding-10 {
+      padding: 10px;
+    }
+    
+    .block {
+      display: block;
+    }
+    
+    .inline-block {
+      display: inline-block;
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    label {
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      font-weight: normal;
+      max-width: initial;
+      color: #9e9e9e;
+    }
+    
+    .col {
+      padding: 5px 10px !important;
+    }
+    
+    .right {
+      float: right;
+    }
+
+    .no-margin {
+      margin: 0px !important;
+    }
+
+    td, th {
+      padding: 2px 5px !important;
+    }
+  </style>
+
+  <link rel="stylesheet" type="text/css" href="../../lib/materialize/css/materialize.css"></link>
+</head>
+
+<body ng-controller="inicial">
+
+  <div ng-controller="template" class="padding-10">
+
+    <div id="linha" tabindex="0" class="row null ng-scope" data-id="24583" data-pai="0" style="font-size: 13px; font-family: Roboto;margin: 0px !important;">
+
+      <div id="coluna" class="col l6 m6 s6 null null ng-scope" data-id="24584" data-pai="24583" style="font-size: 13px; font-family: Roboto;">
+        <img id="imagem" src="default.png" style="width: 100px; height: 100px; font-size: 13px; font-family: Roboto;" onclick="displayDadosProp()"
+          "24586 - imagem" data-id="24586" data-pai="24584" class="null ng-scope"></div>
+
+      <div id="coluna" class="col l6 m6 s6 null null ng-scope" data-id="24595" data-pai="24583" style="font-size: 13px; font-family: Roboto;">
+
+        <div id="coluna" class="col l12 m12 s12 null null ng-scope" data-id="24596" data-pai="24595" style="font-size: 13px; font-family: Roboto;margin: 0px !important;">
+          <label id="label" data-id="24605" data-pai="24596" class="null ng-scope" style="font-size: 13px; font-family: Roboto;">label</label>
+        </div>
+
+        <div id="coluna" class="col l12 m12 s12 null null ng-scope" data-id="24597" data-pai="24595" style="font-size: 13px; font-family: Roboto;margin: 0px !important;">
+
+          <label id="label" data-id="24606" data-pai="24597" class="null ng-scope" style="font-size: 13px; font-family: Roboto;">CEP:</label>
+          <label id="label" "24610 - label" data-id="24610" data-pai="24597" class="null ng-scope" style="font-size: 13px; font-family: Roboto;">label</label>
+        </div>
+
+        <div id="coluna" class="col l12 m12 s12 null null ng-scope" data-id="24598" data-pai="24595" style="font-size: 13px; font-family: Roboto;margin: 0px !important;">
+          <label id="label" "24607 - label" data-id="24607" data-pai="24598" class="null ng-scope" style="font-size: 13px; font-family: Roboto;">TEL:</label>
+          <label id="label" data-id="24611" data-pai="24598" class="null ng-scope" style="font-size: 13px; font-family: Roboto;">label</label>
+        </div>
+
+        <div id="coluna" class="col l12 m12 s12 null null ng-scope" data-id="24599" data-pai="24595" style="font-size: 13px; font-family: Roboto;margin: 0px !important;">
+          <label id="label" data-id="24608" data-pai="24599" class="null ng-scope" style="font-size: 13px; font-family: Roboto;">CNPJ:</label>
+          <label id="label" data-id="24612" data-pai="24599" class="null ng-scope" style="font-size: 13px; font-family: Roboto;">label</label>
+        </div>
+
+        <div id="coluna" class="col l12 m12 s12 null null ng-scope" "24600 - coluna" data-id="24600" data-pai="24595" style="font-size: 13px; font-family: Roboto;">
+          <label id="label" data-id="24609" data-pai="24600" class="null ng-scope" style="font-size: 13px; font-family: Roboto;">IE:</label>
+          <label id="label" data-id="24613" data-pai="24600" class="null ng-scope" style="font-size: 13px; font-family: Roboto;">label</label>
+        </div>
+      </div>
+    </div>
+
+    <div id="linha" tabindex="0" class="row no-margin" data-id="24614" data-pai="0" style="font-size: 13px; font-family: Roboto;padding: 0px 5px 0px 5px !important;">
+
+      <div id="coluna" class="col l4 m4 s4 null null ng-scope" data-id="24615" data-pai="24614" style="font-size: 13px; font-family: Roboto; border-top: 1px solid rgb(115, 115, 115) !important;">
+        <label id="label" data-id="24616" data-pai="24615" class="null ng-scope" style="font-size: 13px; font-family: Roboto;">Data</label>
+      </div>
+
+      <div id="coluna" class="col l4 m4 s4 null null ng-scope" "24617 - coluna" data-id="24617" data-pai="24614" style="font-size: 13px; font-family: Roboto; border-top: 1px solid rgb(115, 115, 115) !important;">
+        <label id="label" "24619 - label" data-id="24619" data-pai="24617" class="null ng-scope" style="font-size: 13px; font-family: Roboto;">Hora</label>
+      </div>
+
+      <div id="coluna" class="col l4 m4 s4 null null ng-scope" data-id="24618" data-pai="24614" style="font-size: 13px; font-family: Roboto; border-top: 1px solid rgb(115, 115, 115) !important;">
+        <label id="label" "24621 - label" data-id="24621" data-pai="24618" class="right ng-scope" style="font-size: 13px; font-family: Roboto;">label</label>
+        <label id="label" "24622 - label" data-id="24622" data-pai="24618" class="right ng-scope" style="font-size: 13px; font-family: Roboto;">COD:</label>
+      </div>
+
+    </div>
+
+    <div id="linha" tabindex="0" class="row no-margin" "24623 - linha" data-id="24623" data-pai="0" style="font-size: 13px; font-family: Roboto;">
+
+      <div id="coluna" class="col l12 m12 s12 text-center text-center ng-scope" "24624 - coluna" data-id="24624" data-pai="24623"
+        style="font-size: 13px; font-family: Roboto;">
+        <label id="label" "24625 - label" data-id="24625" data-pai="24624" class="text-bold ng-scope" style="font-size: 17px; font-family: Roboto; color: rgb(69, 69, 69);">Cupom Fiscal</label>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col l12 m12 s12">
+        <table>
+          <thead>
+            <tr>
+              <th>ITEM</th>
+              <th>CÓDIGO</th>
+              <th>DESCRIÇÂO</th>
+              <th>QTD.</th>
+              <th>VL(ITEM)(R$)</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Alvin</td>
+              <td>Eclair</td>
+              <td>$0.87</td>
+              <td>$0.87</td>
+              <td>$0.87</td>
+            </tr>
+            <tr>
+              <td>Alan</td>
+              <td>Jellybean</td>
+              <td>$3.76</td>
+              <td>$0.87</td>
+              <td>$0.87</td>
+            </tr>
+            <tr>
+              <td>Jonathan</td>
+              <td>Lollipop</td>
+              <td>$7.00</td>
+              <td>$0.87</td>
+              <td>$0.87</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+<script type="text/javascript" src="../../controller/app.js"></script> 
+<script type="text/javascript " src="../../lib/angular/angular.js "></script>
+<script type="text/javascript " src="../../temp/template.js "></script>
+<script type="text/javascript " src="template.js "></script>
+
+</html>

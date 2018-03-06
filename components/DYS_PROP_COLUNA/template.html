@@ -1,0 +1,146 @@
+<style>
+	#coluna div.row:first-child {
+		margin-top: 4px;
+	}
+	
+	#coluna div.row .btn {
+		padding: 0px 10px;
+		margin: 4px 0px;
+		margin-right: 4px;
+	}
+</style>
+
+<div id="coluna">
+	
+	<div class="row">
+		<div class="col s3">
+			<label for="id">ID</label>
+		</div>
+		<div class="col s9">
+			<input id="id" class="form-control" ng-model="coluna.id" data-template="coluna" type="text" disabled>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col s3">
+			<label for="id">Tela</label>
+		</div>
+		<div class="col s9">
+			<input id="tela" class="form-control" ng-model="coluna.tela" data-template="coluna" type="text" required>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col s3">
+			<label for="id">Pai</label>
+		</div>
+		<div class="col s9">
+			<input id="pai" class="form-control" ng-model="coluna.pai" data-template="coluna" type="text" required>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="ordem">Ordem</label>
+		</div>
+		<div class="col s9">
+			<input id="ordem" class="form-control" ng-model="coluna.ordem" data-template="coluna" type="text" required>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="tag">Tag</label>
+		</div>
+		<div class="col s9">
+			<input id="tag" class="form-control" ng-model="coluna.tag" data-template="coluna" type="text" required>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="nome">Nome</label>
+		</div>
+		<div class="col s9">
+			<input id="nome" class="form-control" ng-model="coluna.nome" data-template="coluna" type="text">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="display">Display</label>
+		</div>
+		<div class="col s9">
+			<input id="display" class="form-control" ng-model="coluna.display" data-template="coluna" type="text">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="padding">Padding</label>
+		</div>
+		<div class="col s9">
+			<input id="padding" class="form-control" ng-model="coluna.padding" data-template="coluna" type="text" title="TOP - RIGHT - BOTTOM - LEFT">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="margin">Margin</label>
+		</div>
+		<div class="col s9">
+			<input id="margin" class="form-control" ng-model="coluna.margin" data-template="coluna" type="text" title="TOP - RIGHT - BOTTOM - LEFT">
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col s3">
+			<label for="desktop">Desktop</label>
+		</div>
+		<div class="col s9">
+			<input id="desktop" class="form-control" ng-model="coluna.desktop" data-template="coluna" type="text" required>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col s3">
+			<label for="tablet">Tablet</label>
+		</div>
+		<div class="col s9">
+			<input id="tablet" class="form-control" ng-model="coluna.tablet" data-template="coluna" type="text">
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col s3">
+			<label for="celular">Celular</label>
+		</div>
+		<div class="col s9">
+			<input id="celular" class="form-control" ng-model="coluna.celular" data-template="coluna" type="text">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="consulta">Consulta</label>
+		</div>
+		<div class="col s9">
+			<select-box id="consulta" data-id="coluna_consulta_id" data-name-combo="consulta_id" data-template="coluna" data-combo-grava-campo="id" data-combo-tabela="consulta" data-combo-campo="consulta"> </select-box>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="classe">Classe</label>
+		</div>
+		<div class="col s9">
+			<input id="classe" class="form-control" ng-model="coluna.classe" data-template="coluna" type="text">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12">
+			<a ng-click="salvarColuna()" class="waves-effect waves-light blue-grey darken-4 btn right"><i class="material-icons">done</i></a>
+		</div>
+	</div>
+</div>

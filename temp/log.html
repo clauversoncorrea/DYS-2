@@ -1,0 +1,35 @@
+<style>
+    #modal-log .popup {
+        height: 100% !important;
+    }
+</style>
+
+<div id="popLog" class='popup card col s12 no-margin-tb no-padding fill-height'>
+    <div class='card-header'>
+        <div class='card-title'> DYS Console Log </div>
+        <div class='card-icone'>
+            <i id="modal-log" class='fa fa-close' onclick="g$.closeModal()">  </i>
+        </div>
+    </div>
+    <div class='card-content'>
+        <table id='tabela' class='responsive-table striped'>
+            <thead>
+                <tr>
+                    <th> Data </th>
+                    <th> Tipo </th>
+                    <th> Query </th>
+                </tr>
+            </thead>
+            <tbody>
+                <colgroup>
+                    <col width="100">
+                    <col width="140">
+                    <tr ng-repeat="log in logs | orderBy : data : true" data-irow="{{$index}}">
+                        <td> {{log.data}} </td>
+                        <td> {{log.tipo}} </td>
+                        <td> {{log.query}} </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

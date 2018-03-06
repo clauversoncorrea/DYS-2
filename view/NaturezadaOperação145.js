@@ -1,0 +1,1 @@
+app.controller('NaturezadaOperação145', function ($scope){ g$.configTela('Natureza da Operação');g$.atualizarTabela("atualizarTabela | 2218", true);$("[data-id=19067]")[0].addEventListener("click", g$.memo.bind(null, "memo ¦4320| memo1 |", false), false);});

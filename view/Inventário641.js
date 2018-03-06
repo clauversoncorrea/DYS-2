@@ -1,0 +1,1 @@
+app.controller('Inventário641', function ($scope){ g$.configTela('Inventário');$("[data-id=19723]")[0].addEventListener("click", g$.memo.bind(null, "memo ¦ 4703 | memo1 | »19720»", false), false);});

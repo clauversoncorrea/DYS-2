@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0060)https://app.lojaintegrada.com.br/painel/pedido/1725/imprimir -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt_BR" class="no-js">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=9">
+
+  <meta name="author" content="">
+  <meta name="language" content="pt-br">
+  <title>Impressão pedido #1725 - Sonho a Dois</title>
+
+  <link href="../../lib/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+  <style>
+    .borda-dotted {
+      border: 2px dotted #ccc;
+    }
+    
+    img {
+      max-width: 157px;
+      width: 157px;
+    }
+    
+    .tesoura {
+      width: 16px;
+      position: absolute;
+      left: -3px;
+    }
+  </style>
+
+</head>
+
+<body class="">
+  <div id="globalContainerPrint" style="margin-top: 80px;">
+    <div class="container">
+
+
+      <div class="page-break">
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="etiqueta borda-dotted" style="width: 90%;padding: 15px 10px;">
+
+              <img src="tesoura.png" class="tesoura">
+
+              <div class="imagem-logo">
+                <img id="logo" src="https://dys.net.br/SONHOADOIS/logoDys.png" class="pull-left logo">
+              </div>
+
+              <p style="margin-left: 180px;">
+                <strong class="tit" style="margin-bottom: 10px;">REMETENTE:</strong> <br>
+                <strong id="nomeEmpresa"></strong><br>
+                <span style="width: 100%;word-break: break-all;" id="endEmpresa"> </span>
+                <br>
+                <strong>CEP: <span id="cepEmpresa"> </span> </strong>&nbsp;&nbsp;BR
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xs-6 ">
+            <div class="etiqueta borda-dotted pull-right" style="width: 100%;padding: 20px 20px;">
+              <p>
+                <strong class="tit" style="margin-bottom: 10px;">DESTINATÁRIO:</strong> <br>
+                <strong id="nomeCliente2">CAROLINA POHLMANN FREITAS</strong><br>
+                <span id="endCliente2"> Rua Avaí, 320 - Apto. 205
+                <br> Vila Rosa - Novo Hamburgo / RS </span>
+                <br>
+                <strong>Referência: </strong><br>
+                <strong>CEP: <span id="cepCliente2">  </span> </strong>&nbsp;&nbsp;Brasil<br>
+
+                <strong>Envio via: SEDEX</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- .row -->
+        <div class="linha-recorte borda-dotted" style="margin: 35px 0px"></div>
+
+        <div class="recibo">
+          <div>
+            <div class="cabecalho">
+              <div class="row">
+                <div class="col-xs-6">
+
+                  <div class="imagem text-center">
+                    <img id="logo2" src="https://dys.net.br/SONHOADOIS/logoDys.png" class="logo">
+                  </div>
+
+                </div>
+                <div class="col-xs-6" style="margin-bottom: 30px;">
+                  <div class="info-empresa pull-right" style="text-align: right;">
+                    <h3>Pedido de venda <strong id="nPedido">#1725</strong></h3>
+                    <label><span id="integracao"></span></label><p>
+                    <span>Efetuado em: <strong id="data">28/11/2017 14:20</strong></span> <br>
+                    <span>Situação do pedido: <strong id="statusPedido">Pedido Enviado</strong></span> <br>
+                    <span>Forma de pagamento: <strong id="formaDePagamento">Paghiper</strong></span> <br>
+                    <span>via <strong id="formaDePagamento">Boleto</strong></span>
+
+
+                  </div>
+                </div>
+              </div>
+              <!-- .row -->
+            </div>
+            <div class="corpo">
+              <div class="row">
+
+                <div class="col-xs-6">
+                  <h4>Dados do cliente</h4>
+                  <span id="nomeCliente3"> CAROLINA POHLMANN FREITAS </span> <br>
+                  <span id="cpfCliente">  CPF: 985.648.110-49 </span> <br> Telefone Celular: <span id="cellCliente">  (51) 99332-0281 </span><br>                  Telefone Residencial: <span id="telCliente">  (51) 99332-0281 </span>
+
+
+                </div>
+                <div class="col-xs-6 text-right">
+                  <p>
+                  </p>
+                  <h4>Endereço de Entrega</h4>
+                  <span id="nomeCliente"> CAROLINA POHLMANN FREITAS </span> <br>
+                  <span id="endCliente"> Rua Avaí, 320 - Apto. 205
+                  <br> Vila Rosa - Novo Hamburgo / RS </span>
+                  <br>
+                  <span id="cepCliente"> 93315-090 - Brasil </span> <br>
+
+                  <p></p>
+                </div>
+
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <h4>Produtos</h4>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Código</th>
+                      <th>Nome</th>
+                      <th width="1%" style="white-space: nowrap;">Valor unitário</th>
+                      <th width="1%" style="white-space: nowrap;">Qtd.</th>
+                      <th width="1%" style="white-space: nowrap;">Valor total</th>
+                    </tr>
+                  </thead>
+
+                  <tbody id="Produtos">
+
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-xs-5 pull-right">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td style="text-align: right;">
+                        <strong>Subtotal:</strong>
+                      </td>
+                      <td style="text-align: right;">
+                        <strong id="subtotal">R$ 39,90</strong>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td style="text-align: right;">
+                        <strong>Envio via SEDEX:</strong>
+                      </td>
+                      <td style="text-align: right;" id="frete">
+                        R$ 22,30
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: right;">
+                        <strong>Total:</strong>
+                      </td>
+                      <td style="text-align: right;">
+                        <strong id="totalGeral">R$ 62,20</strong>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+</body>
+
+<script type="text/javascript" src="../../lib/angular/angular.js"></script>>
+<script type="text/javascript" src="../../controller/app.js"></script>
+<script type="text/javascript" src="../../lib/jQuery/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="pedido.js"></script>
+
+</html>

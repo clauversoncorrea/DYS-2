@@ -1,0 +1,141 @@
+<style>
+	#prop_menu_telas div.row:first-child {
+		margin-top: 4px;
+	}
+	
+	#prop_menu_telas div.row {
+		margin-bottom: 8px !important;
+	}
+	
+	#prop_menu_telas div.row:not(:first-child) > div:first-child {
+		line-height: 32px;
+	}
+	
+	#prop_menu_telas div.row .btn {
+		padding: 0px 10px;
+		margin: 4px 0px;
+		margin-right: 4px;
+		height: 36px;
+	}
+	
+	#prop_menu_telas .form-control {
+		color: #ffeeee !important;
+		font-size: 17px;
+		background: transparent !important;
+		padding: 0px 7px !important;
+		margin-bottom: 8px;
+		border: 1px solid #444 !important;
+	}
+	/*#prop_menu_telas .col.s3, #prop_menu_telas .col.s2 {
+		line-height: 34px !important;
+	}*/
+</style>
+
+<div id="prop_menu_telas">
+
+	<div class="row">
+		<div class="col s3">
+			<label for="id">ID</label>
+		</div>
+		<div class="col s4">
+			<input id="id" class="form-control" ng-model="dadosMenuTela.id" type="text" disabled>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="nome">Nome</label>
+		</div>
+		<div class="col s9">
+			<input id="nome" class="form-control" ng-model="dadosMenuTela.menu" type="text">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="pai">Pai</label>
+		</div>
+		<div class="col s9">
+			<input id="pai" class="form-control" ng-model="dadosMenuTela.pai" type="text">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="tipo">Tipo</label>
+		</div>
+		<div class="col s9">
+			<select id="tipo" class="form-control" ng-model="dadosMenuTela.tipo">
+				<option value=""> Selecione </option>
+				<option value="grupo"> Grupo </option>
+				<option value="tela"> Tela </option>
+			</select>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="ordem">Ordem</label>
+		</div>
+		<div class="col s9">
+			<input id="ordem" class="form-control" ng-model="dadosMenuTela.ordem" type="text">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="icone">Icone</label>
+		</div>
+		<div class="col s9">
+			<input id="icone" class="form-control" ng-model="dadosMenuTela.icone" type="text">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="popup">Popup</label>
+		</div>
+		<div class="col s7">
+			<input id="popup" class="form-control" ng-model="dadosMenuTela.popup" type="text">
+		</div>
+		<div class="col s2">
+			<a onclick="g$.openModalPopup()" class="waves-effect waves-light blue-grey darken-4 btn right"><i class="fa fa-window-maximize"></i></a>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12">
+			<label for="app_menu">APP Menu
+				<input id="app_menu" type="checkbox" ng-model="dadosMenuTela.app_menu" style="position: relative;top: 2px;left: 73%;" />
+			</label>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12">
+			<label for="web_menu">WEB Menu
+				<input id="web_menu" type="checkbox" ng-model="dadosMenuTela.web_menu" style="position: relative;top: 2px;left: 69%;" />
+			</label>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12">
+			<label for="menu_tela_inicial"> Tela Inicial
+				<input id="menu_tela_inicial" type="checkbox" ng-model="dadosMenuTela.menu_tela_inicial" style="position: relative;top: 2px;left: 66%;" />
+			</label>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12">
+			<a ng-click="salvarItemMenuTela()" class="waves-effect waves-light blue-grey darken-4 btn right"><i class="material-icons">done</i></a>
+			<a ng-click="deletarItemMenuTela()" ng-disabled="btDeleteMenuTelaDisabled" class="waves-effect waves-light blue-grey darken-4 btn right"><i class="material-icons">delete</i></a>
+			<a ng-click="novoItemMenuTela()" title="Novo item menu para o filho" class="waves-effect waves-light blue-grey darken-4 btn right"><i class="fa fa-plus"></i></a>
+			<a ng-click="novoItemMenuTelaRaiz()" title="Novo item menu na raiz (Pai 0)" class="waves-effect waves-light blue-grey darken-4 btn right"><i class="fa fa-plus"></i></a>
+			<a ng-click="gerarTela()" class="waves-effect waves-light blue-grey darken-4 btn right">Gerar Tela</a>
+			<a ng-click="gerarModal()" class="waves-effect waves-light blue-grey darken-4 btn right">Gerar Modal</a>
+			<a ng-click="leArquivo()" class="waves-effect waves-light blue-grey darken-4 btn right">Le Arquivo</a>
+		</div>
+	</div>
+</div>

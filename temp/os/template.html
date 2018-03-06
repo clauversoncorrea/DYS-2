@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+ <html ng-app="myApp">
+<head>
+  <title></title>
+</head>
+<body ng-controller="inicial">
+
+<div ng-controller="template">
+
+<table border=0px style="width:100%;margin:5px;border-collapse: collapse;">
+  <tr>
+    <th rowspan="5"><img src="http://dysweb.dys.com.br/artcool/logoDys.png" style="max-width:150;max-height:150;"/></th>
+    <th colspan="2"><h2>{{empresa.razao}}</h2></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>{{empresa.cnpj}}</td>
+    <td>Ordem de Serviço: {{os.id}}</td>
+  </tr>
+  <tr>
+    <td>{{empresa.endereco}} - {{empresa.bairro}} - {{empresa.cidade}} - {{empresa.uf}}</td>
+    <td>Nº &lt;num_ordem&gt;</td>
+  </tr>
+  <tr>
+    <td>CEP: {{empresa.cep}}</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>{{empresa.site}}</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="3"><h2 style="margin:5px;" ><center>ORDEM DE SERVIÇO</center></h2></td>
+  </tr>
+</table>
+<br><h3 style="margin:5px;">Cliente</h3>
+<table border=1px style="width:100%;border-collapse: collapse;">
+  <tr>
+    <td colspan="2"><b>NOME /  RAZÃO SOCIAL</b><br>v_nome</td>
+    <td><b>CPF</b><br>v_cpf</td>
+    <td><b>CNPJ</b><br>v_cnpj</td>
+  </tr>
+    <tr>
+    <td colspan="2"><b>ENDEREÇO</b><br>v_endereco</td>
+    <td><b>BAIRRO</b><br>v_bairro</td>
+    <td><b>CEP</b><br>v_cep</td>
+  </tr>
+  
+  <tr>
+    <td><b>MUNICÍPIO</b><br>v_municipio</td>
+    <td><b>UF</b><br>v_uf</td>
+    <td><b>Telefone</b><br>v_telefone</td>
+    <td><b>Email / Login</b><br>v_email</td>
+  </tr>
+  </table>
+<br><h3 style="margin:5px;">OUTRAS INFORMAÇÕES</h3>
+  <table border=1px style="width:100%;border-collapse: collapse;">
+  <tr>
+    <td><b>DATA DO SISTEMA </b><br> data_siteam</td>
+    <td><b>DATA FINALIZADO </b><br> data-finalizado</td>
+    <td><b>DATA ATENDIMENTO</b><br> data_atendimento</td>
+    <td colspan="2"><b>LOCAL DO ATENDIMENTO </b><br> local_atendimento</td>
+  </tr>
+  <tr>
+    <td><b>Status</b> <br> status</td>
+    <td colspan="2"><b>TECNICOS</b> <br> equipe</td>
+    <td colspan="2"><b>GRUPOS DE OS</b> <br> grupos_os</td>
+  </tr>
+</table>
+<br><h3 style="margin:5px;">PRODUTOS E SERVIÇOS</h3>
+  <table border=1px style="width:100%;height:80px;border-collapse: collapse; ">
+  <tr>
+    <td></td>
+  </tr>
+
+</table>
+<br><h3 style="margin:5px;">OBSERVAÇÕES</h3>
+  <table border=1px style="width:100%;height:30px;border-collapse: collapse; ">
+  <tr>
+    <td></td>
+  </tr>
+
+</table>
+<br>
+<br><h3 style="margin:5px;">Termos e Garantia</h3>
+<div>
+
+<table border=1px style="width:100%;border-collapse: collapse;">
+  <tr>
+    <td colspan="2"><b>DISTRIBUIDOR</b><br>distribuidor</td>
+    <td><b>GARANTIA</b><br>v_arantia</td>
+    <td><b>DATA DA GARANTIA</b><br>v_data_garantia</td>
+  </tr>
+    <tr>
+    <td colspan="4" ><b>RELATO TÉCNICO</b><br><div style="padding: 200px 0 1px 1px;">&nbsp;</div></td>
+    
+  </tr>
+  </table>
+  </div>
+&nbsp;<br>
+  <table border=1px style="width:100%;border-collapse: collapse;">
+  <tr>
+    <td><b>DATA </b><br> data</td>
+    <td><b>ASSINATURA DO CLIENTE </b><br>&nbsp; </td>
+    <td><b>ASSIANTURA EMPRESA/ TÉCNICO RESPONSAVEL</b><br<br>&nbsp;</td>
+
+  </tr>
+
+</div>
+</body>
+
+<script type="text/javascript" src="../../lib/angular/angular.js"></script>
+<script type="text/javascript" src="../../temp/template.js"></script>
+<script type="text/javascript" src="template.js"></script>
+
+</html>

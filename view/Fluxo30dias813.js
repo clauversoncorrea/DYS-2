@@ -1,0 +1,1 @@
+app.controller('Fluxo30dias813', function ($scope){ g$.configTela('Fluxo 30 dias');$("[data-id=24970]")[0].addEventListener("click", g$.atualizarTabela.bind(null, "atualizarTabela¦6854 | 24942| node.fluxo_30_dias¦ '»24967»', '»24969»','»user.banco»', '»24961»'", false), false);});

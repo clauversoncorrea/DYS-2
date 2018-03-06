@@ -1,0 +1,250 @@
+<style>
+    body.expand #settings #controle {
+        height: calc(100% - 144px);
+        left: 0px;
+        width: 100%;
+    }
+
+    #settings #controle {
+        overflow-x: hidden;
+        width: 100.5%;
+        height: calc(100% - 273px);
+        position: absolute;
+        padding: 7px 0px;
+        background: #222d32 !important;
+    }
+    
+    #settings #propriedades {
+        margin-top: 7px;
+    }
+    
+    #settings #controle .especializada .col label {
+        color: #74b676;
+    }
+    
+    #settings #controle label {
+        color: #FFF;
+    }
+    
+    #settings #controle .form-control:not(select) {
+        background: transparent;
+        border: none;
+        color: #b8c7ce;
+        box-shadow: none;
+    }
+
+    #settings #controle select {
+        color: #b8c7ce;
+        padding: 0px;
+    }
+
+    #settings #controle option {
+        color: #333;
+    }
+
+    #settings #controle #propriedades div.row {
+		margin-bottom: 0px !important;
+	}
+	
+	#settings #controle #propriedades div.row > div:first-child {
+		line-height: 36px;
+	}
+    
+    #settings #controle select.form-control {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+    
+    #settings .tabs {
+        position: relative;
+        height: 15%;
+        background-color: #fff;
+        margin: 0 auto;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        border: none;
+    }
+    
+    #settings .tab {
+        display: block;
+        float: left;
+        text-align: center;
+        letter-spacing: .8px;
+        background: #181f23;
+        width: 33.3%;
+        height: 65px;
+    }
+    
+    #settings .tab:hover {
+        background: #1c2529;
+    }
+    
+    #settings .tab i {
+        color: #b8c7ce !important;
+    }
+    
+    #settings .tab:hover i {
+        color: #444444;
+    }
+    
+    #settings .tabs .tab a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        line-height: 60px;
+        transition: color .28s ease;
+        border: 1px solid transparent;
+        border-left-color: #141a1d !important;
+        border-bottom-color: #141a1d !important;
+        z-index: 999;
+    }
+    
+    #settings .tabs .tab .fa {
+        bottom: 9px;
+        font-size: 20px;
+    }
+
+    #settings .tabs .tab label {
+        color: #a5b3bb;
+        position: relative;
+        bottom: 30px;
+        font-family: tahoma;
+        font-size: 13px;
+        font-weight: normal;
+    }
+    
+    #settings .tabs .tab a.active {
+        background: #222d32;
+        z-index: 0;
+    }
+    
+    #settings .tabs .tab a.active i {
+        color: #FFF;
+    }
+    
+    #settings .tabs .tab-not-tab {
+        background: #181f23;
+        border: 1px solid #141a1d !important;
+        padding-left: 11px;
+        width: 33.3%;
+        float: left;
+        height: 36px;
+        cursor: pointer;
+    }
+    
+    #settings .tabs .tab-not-tab i {
+        position: relative;
+        top: 10px;
+        color: #fff;
+    }
+    
+    #settings .tabs .fa-keyboard-o,
+    #settings .tabs .fa-bolt {
+        bottom: 6px !important;
+    }
+    
+    #settings .col table table td {
+        padding: 3px 5px !important;
+    }
+    
+    #settings .tabs .tab-not-tab .fa {
+        font-size: 17px !important;
+        top: 6px !important;
+    }
+    
+    #settings .tabs .tab-not-tab label {
+        position: relative;
+        left: 8px;
+        top: 5px;
+        cursor: pointer;    
+    }
+    
+    body.expand #settings .tabs #settings-expand {
+        top: 8px !important;
+    }
+</style>
+
+<div id="settings">
+    <div class="sidebar-menu">
+        <div class="header tabs">
+            <li class="tab-not-tab" onclick="showBorder(this)">
+                <i id="view-visibility" class="fa fa-toggle-off"></i>
+                <label> S/ Borda </label>
+            </li>
+            <li class="tab-not-tab">
+                <a href="#test7"><label>Gerar Sistema</label></a>
+            </li>
+            <li class="tab-not-tab" onclick="settingsExpand(this)">
+                <i id="settings-expand" class="fa fa-compress"></i>
+                <label> Expandir </label>
+            </li>
+            <li class="tab">
+                <a href="#test1"><i class="fa fa-pencil"></i></a>
+                <label> Propriedades </label>
+            </li>
+            <li class="tab">
+                <a href="#test2"><i class="fa fa-newspaper-o"></i></a>
+                <label> Components </label>
+            </li>
+            <li class="tab">
+                <a href="#test3"><i class="fa fa-search"></i></a>
+                <label> Consultas </label>
+            </li>
+            <li class="tab">
+                <a href="#test4"><i class="fa fa-arrows"></i></a>
+                <label> Eventos/Ações </label>
+            </li>
+            <li class="tab">
+                <a href="#test5"><i class="fa fa-flash"></i></a>
+                <label> Ações Comp. </label>
+            </li>
+            <li class="tab">
+                <a href="#test6"><i class="fa fa-flash"></i></a>
+                <label> Ações Tela </label>
+            </li>
+        </div>
+
+        <!-- Controle -->
+        <div id="controle">
+            <div class="row no-margin">
+                <div id="test1" class="col s12 no-padding">
+                    <div id="propriedades">
+                        <linhaprop id="propLinha" class="play-none"> </linhaprop>
+                        <menutelasprop id="propMenuTelas" class=""> </menutelasprop>
+                    </div>
+                </div>
+
+                <div id="test2" class="col s12 no-padding">
+                    <components> </components>
+                </div>
+
+                <div id="test3" class="col s12 no-padding">
+                    <filtros> </filtros>
+                </div>
+
+                <div id="test4" class="col s12 no-padding">
+                    <eventos-funcoes> </eventos-funcoes>
+                </div>
+
+                <div id="test5" class="col s12 no-padding">
+                    <elemento-acoes> </elemento-acoes>
+                </div>
+
+                <div id="test6" class="col s12 no-padding">
+                    <tela-acoes> </tela-acoes>
+                </div>
+
+                <div id="test7" class="col s12 no-padding">
+                    <gera-sistema> </gera-sistema>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

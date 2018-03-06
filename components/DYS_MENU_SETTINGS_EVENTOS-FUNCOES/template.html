@@ -1,0 +1,180 @@
+<style>
+    #eventos div.row {
+        margin-bottom: 12px;
+    }
+    
+    #eventos .col {
+        padding: 0px;
+    }
+    
+    #eventos .especializada .col label {
+        color: #b49d69 !important;
+    }
+    
+    #eventos .col table {
+        position: relative;
+        width: 100%;
+        display: block;
+        background: transparent !important;
+    }
+    
+    #eventos .col table tbody {
+        background: #222d32;
+    }
+    
+    #eventos .col table tbody tr {
+        background: #222d32;
+        color: #FFF;
+    }
+    
+    #eventos .col table tbody tr:hover {
+        background: transparent;
+    }
+    
+    #eventos .col table tbody > tr:nth-child(odd) {
+        /*background: #323e45;*/
+    }
+    
+    #eventos .col table th {
+        background: #323e45;
+        color: #FFF;
+    }
+    
+    #eventos .col table td,
+    #eventos .col table th {
+        padding: 0px 5px !important;
+        border: 1px solid #535759;
+    }
+    
+    #eventos table i {
+        cursor: pointer;
+        line-height: inherit;
+        font-size: 21px;
+    }
+    
+    #eventos #table-eventos tr td:first-child label {
+        position: relative;
+        top: 4px;
+        left: 4px;
+    }
+    
+    table .combobox .table td {
+        background: transparent !important;
+    }
+    
+    #eventos #table-eventos tr td:first-child,
+    #eventos #table-funcoes tr td:first-child {
+        width: 30px;
+        text-align: center;
+    }
+    
+    #eventos #table-eventos tr th:nth-child(2),
+    #eventos #table-funcoes tr th:nth-child(2),
+    #eventos #table-eventos tr td:nth-child(2),
+    #eventos #table-funcoes tr td:nth-child(2) {
+        width: 367px;
+        word-break: break-all;
+    }
+    
+    body.expand #eventos #table-eventos tr th:nth-child(2),
+    body.expand #eventos #table-funcoes tr th:nth-child(2),
+    body.expand #eventos #table-eventos tr td:nth-child(2),
+    body.expand #eventos #table-funcoes tr td:nth-child(2) {
+        width: 100%;
+    }
+    
+    #eventos #table-funcoes,
+    #eventos #table-eventos {
+        padding: 0px 10px;
+    }
+    
+    #eventos #table-eventos tr th:nth-child(3),
+    #eventos #table-funcoes tr th:nth-child(3),
+    #eventos #table-eventos tr td:nth-child(3),
+    #eventos #table-funcoes tr td:nth-child(3) {
+        width: 33px;
+    }
+</style>
+
+<div id="eventos">
+
+    <div class="row">
+        <div class="col l12 m12 s12 padding">
+            <a ng-click="atualizaEventosAcoes()" title="Atualizar todos os Eventos e Funções" class="btn waves-effect waves-light blue darken-3 fill-width">
+				<i class="fa fa-refresh"></i> Atualizar Eventos e Ações </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="evento" class="col s12">
+            <div class="row especializada">
+                <div class="col s12">
+                    <label> Todos os Eventos </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <table id="table-eventos" class="bordered responsive-table striped">
+                        <thead>
+                            <tr>
+                                <th> ID </th>
+                                <th> Eventos </th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="evento in eventos" data-id="{{evento.id}}" data-irow={{$index}}>
+                                <td>
+                                    {{evento.id}}
+                                </td>
+                                <td ng-click="colocaElmEvento()">
+                                    {{evento.evento}}
+                                </td>
+                                <td> <i ng-click="deleteEvento(evento)" class="material-icons"> delete </i> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="funcao" class="s12">
+
+            <div class="row especializada">
+                <div class="col s12">
+                    <label> Todas as Funções </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <table id="table-funcoes" class="bordered responsive-table striped">
+                        <thead>
+                            <tr>
+                                <th> ID </th>
+                                <th> Função e Parâmetros </th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="funcao in funcoes" data-id="{{funcao.id}}" data-irow={{$index}}>
+                                <td>
+                                    {{funcao.id}}
+                                </td>
+                                <td ng-click="colocaElmFuncao()">
+                                    {{funcao.funcao}}
+                                </td>
+                                <td> <i ng-click="deleteFuncao(funcao)" class="material-icons"> delete </i> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

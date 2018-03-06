@@ -1,0 +1,1 @@
+app.controller('Integração137', function ($scope){ g$.configTela('Integração');g$.atualizarTabela("atualizarTabela | 1904", true);});

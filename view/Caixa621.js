@@ -1,0 +1,1 @@
+app.controller('Caixa621', function ($scope){ g$.configTela('Caixa');g$.atualizarTabela("atualizarTabela | 18822", true);});

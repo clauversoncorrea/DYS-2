@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+ <html ng-app="myApp">
+<head>
+  <style type="text/css">
+  .divisor,hr{
+border-color:#000000;
+border-style:solid;
+border-width:1px;
+border-bottom:0px;
+border-top:0px;
+}
+.divcorte{
+border-color:#000000;
+border-style:solid;
+border-width:1px;
+width:100%;
+border-collapse: collapse; 
+}
+.a{
+  text-align: center;
+}
+
+</style>
+
+  <title></title>
+</head>
+<body ng-controller="inicial">
+<div ng-controller="template">
+<div class="divisor">
+<table class="a" border='1px' align="center" style="width:100%;height: 60px;border-collapse: collapse; ">
+  <tr >
+    <th rowspan="2" style="border:none;"><img src="http://labprodam.prefeitura.sp.gov.br/Organograma/imagens/BrasaoSaoPaulo.png" style="width:70px;height: 70px;"><br></th>
+    <th colspan="3" align="center" style="border:none;"><h3>PREFEITURA DO MUNICIPIO DE SÃO PAULO</h3></th>
+    <th border='1px'>Número de Nota<br><b> {{(ultimo_rps.ultimo_rps>nfs.nfs)?ultimo_rps.ultimo_rps+1:nfs.nfs+1}}
+     </b></th>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" style="border:none;"><b><h4>SECRETARIA MUNICIPAL DE FINANÇAS</h4></b></td>
+    <td>Data e Hora de Emissão<br><b>{{nota.data | date : 'dd/MM/yyyy'}}&nbsp;&nbsp;&nbsp;{{nota.hora}}</b></td>
+  </tr>
+  <tr>
+    <td align="center" style="border:none;"></td>
+    <td colspan="3" align="center" style="border:none;"><b><h3>NOTA FISCAL ELETRÔNICA DE SERVIÇOS. NFS-e</h3></b><br>{{nota.rps}} &nbsp;{{nota.ide_serie}} &nbsp;emitido em{{nota.nfs_data_emissao | date : 'dd/MM/yyyy'}}</td>
+    <td >Código de Verificação<br><b>-</b></td>
+  </tr>
+  
+</table>
+
+<table class="a" border='0x' align="center" style="width:100%;border-collapse: collapse; ">
+  <tr>
+    <th colspan="2">PRESTADOR DE SERVIÇOS</th>
+  </tr>
+  <tr>
+    <td align="left">CNPJ:<b>{{empresa.cnpj}}</b></td>
+    <td >Inscrição Municipal: &nbsp;<b>{{empresa.inscricao_municipal}}</b></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left">Razão Social: &nbsp;<b>{{empresa.razao}}</b></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left">Endereço: &nbsp;<b>{{empresa.endereco}} - {{empresa.bairro}} - {{empresa.numero}} - {{empresa.cep}}</b></td>
+  </tr>
+  <tr>
+    <td align="left">Municipio:<b>{{empresa.cidade}}</b></td>
+    <td align="left">UF:<b>{{empresa.uf}}</b></td>
+  </tr>
+</table>
+<div class="divcorte"></div>
+<table border='0px' align="center" style="width:100%;border-collapse: collapse; ">
+  <tr>
+    <th colspan="3">TOMADOR DE SERVIÇOS</th>
+  </tr>
+  <tr>
+    <td colspan="3">Nome/Razão Social:<b>{{cliente.dest_xNome}}</b></td>
+  </tr>
+  <tr>
+    <td colspan="2">CPF:<b>{{cliente.dest_cpf}} </b>/CNPJ:<b> {{cliente.dest_cnpj}}</b></td>
+    <td>Inscrição Municipal:<b></b></td>
+  </tr>
+  <tr>
+    <td colspan="3">Endereço:<b>{{cliente.dest_xLgr}} - {{cliente.dest_xBairro}} - {{cliente.dest_nro}} - {{cliente.dest_xCpl}} - {{cliente.dest_CEP}}</b></td>
+  </tr>
+  <tr>
+    <td>Municipio:<b>{{cliente.dest_xMun}}</b></td>
+    <td>UF:<b>{{cliente.dest_UF}}</b></td>
+    <td>Email:<b>{{cliente.dest_email}}</b></td>
+  </tr>
+</table>
+
+<div class="divcorte"></div>
+<table border='0px'  align="center" style="width:100%;border-collapse: collapse; ">
+  <tr>
+    <th colspan="2">INTERMEDIÁRIO DE SERVIÇOS</th>
+  </tr>
+  <tr>
+    <td>CPF/CNPJ:</td>
+    <td>Nome/Razão Social:</td>
+  </tr>
+</table>
+<div class="divcorte"></div>
+<table border='0px' align="center" style="width:100%;border-collapse: collapse; ">
+ 
+  <tr>
+    <th>DISCRIMINAÇÃO DOS SERVIÇOS</th>
+  </tr>
+  <tr>
+    <td style="vertical-align: text-top;height:80px;">{{(descricao.descservico)?descricao.descservico:'Sem Descrição'}}
+     - QTD:  {{(servico.qtd)?servico.qtd:'0'}}  - Valor unitario: R$ {{(servico.preco_unitario)?servico.preco_unitario:'0'}} </td>
+  </tr>
+</table>
+
+<table border='1x'  align="center" style="width:100%;height:20px;border-collapse: collapse; ">
+  <tr>
+    <th colspan="5"><h3>VALOR TOTAL DA NOTA = R$ {{descricao.ValorTotal}}</h3></th>
+  </tr>
+  <tr style="text-align: center;">
+    <td>INSS (R$)<br><b>{{(descricao.ValorInss)?descricao.ValorInss:'-'}}</b></td>
+    <td>IRRF(R$)<br><b>{{(nota.nfs_valor_ir)?nota.nfs_valor_ir:'-'}}</b></td>
+    <td>CSLL(R$)<br><b>{{(nota.nfs_valor_csll)?nota.nfs_valor_csll:'-'}}</b></td>
+    <td>COFINS(R$)<br><b>{{(nota.nfs_valor_cofins)?nota.nfs_valor_cofins:'-'}}</b></td>
+    <td>PIS/PASEP(R$)<br><b>{{(nota.nfs_valor_pis)?nota.nfs_valor_pis:'-'}}</b></td>
+  </tr>
+  <tr>
+    <td colspan="5" align="left">Código do Serviço<br>{{nota.nfs_itensLista}}<br><br></td>
+  </tr>
+ <tr style="text-align: center;">
+    <td>Valor Toral das Deduções(R$)<br><b>{{(nota.nfs_valor_deducoes)?nota.nfs_valor_deducoes:'-'}}</b></td>
+    <td>Base de Cálculo(R$)<br><b>{{(empresa.regime_tribuitario==3)?descricao.BaseCalculo:'-'}}</b></td>
+    <td>Alíquota(%)<br><b>{{(nota.nfs_aliquota)?nota.nfs_aliquota:'-'}}</b></td>
+    <td>Valor do ISS(R$)<br><b>{{(nota.nfs_valor_iss)?nota.nfs_valor_iss:'-'}}</b></td>
+    <td>Crédito(R$)<br><b>-</b></td>
+  </tr>
+  <tr>
+    <td colspan="2">Municipio da Prestação do Serviço<br><b><center>{{nota.ide_cMunFG}}</center></b></td>
+    <td>Número inscrição da Obra<br><center>-</center></td>
+    <td colspan="2" >Valor aproximado dos Tributos/Fonte<br><center>-</center></td>
+  </tr>
+
+</table>
+
+<table border='0x' class ="a" align="center" style="width:100%;height:70px;border-collapse: collapse; ">
+  <tr>
+    <th>OUTRAS INFORMAÇÕES</th>
+  </tr>
+  <tr>
+  <td align="left" style="vertical-align: text-top;"></td>
+  </tr>
+</table>
+<div class="divcorte"></div>
+</div>
+</div>
+<script src="../../lib/angular/angular.js" type="text/javascript"></script>
+<script src="../../temp/template.js" type="text/javascript"></script>
+<script src="template.js" type="text/javascript"></script>
+</body>
+</html>

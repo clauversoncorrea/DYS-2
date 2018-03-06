@@ -1,0 +1,354 @@
+<style>
+	#view {
+		background: #FFF;
+		height: 92.6%;
+		/*width: 50%;*/
+		/*width: 83.1%;*/
+		position: absolute;
+		min-height: 250px;
+		transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+	}
+	
+	#view .popup .card-content {
+		overflow: auto;
+	}
+	
+	#view .popup {
+		width: calc(100% - 16px);
+	}
+	
+	#view .popup .row {
+		border: 1px solid #d61212 !important;
+		padding: 5px;
+		margin-bottom: 5px;
+		/*display: initial;*/
+	}
+	
+	#view .popup .col,
+	#view canvas {
+		border: 1px solid #156ebb !important;
+		padding: 5px;
+		margin-bottom: 5px;
+	}
+	
+	#view .popup #tabela {
+		padding: 5px 0px;
+	}
+	
+	#view.no-borderelms .card-content .col {
+		margin-bottom: 0px;
+	}
+	
+	#view.no-borderelms .card-content .row,
+	#view.no-borderelms .card-content .tab,
+	#view.no-borderelms .card-content .tabs,
+	#view.no-borderelms .card-content canvas {
+		border: 0px !important;
+		padding: 0px!important;
+	}
+	
+	#view.no-borderelms .card-content .row .col:first-child {
+		padding-left: 0px !important;
+	}
+	
+	#view.no-borderelms .card-content .row .col#tab:not(:last-child) {
+		margin-right: 10px;
+	}
+	
+	#view.no-borderelms .card-content #tabs {
+		padding: 0px 5px !important;
+		margin-left: 7px;
+	}
+	
+	#view.no-borderelms .pop-1 .card-content .col:not(.tab):not(.tabs):not(.pad-important),
+	#view.no-borderelms .pop-2 .card-content .col:not(.tab):not(.tabs):not(.pad-important),
+	#view.no-borderelms .pop-3 .card-content .col:not(.tab):not(.tabs):not(.pad-important) {
+		padding: 5px 10px !important;
+	}
+	
+	#view.no-borderelms .card-content .col:not(.tab):not(.tabs):not(.borda-important) {
+		border: 0px !important;
+	}
+	
+	#view .tab-content {
+		padding: 20px 0px !important;
+	}
+	
+	#view.no-borderelms .card-content .tab-content {
+		padding: 2px !important;
+		padding-top: 8px !important;
+	}
+	
+	.pop-4 .tab-content {
+		padding: 0px !important;
+	}
+	
+	#view.no-borderelms .card-content #tabela {
+		padding: 0px !important;
+	}
+	
+	#view .tabs {
+		border: 1px solid #424242;
+		padding: 0px;
+	}
+	
+	#view.modo-del .card-content .row,
+	#view.modo-del .card-content .col,
+	#view.modo-del .card-content .col input,
+	#view.modo-del .card-content .col label,
+	#view.modo-del .card-content .col i,
+	#view.modo-del .card-content .col a {
+		border: 1px solid #F00 !important;
+		cursor: -webkit-grabbing;
+	}
+	
+	.card > .card-content {
+		height: calc(100% - 39px) !important;
+	}
+	
+	.preview {
+		position: absolute;
+		top: 0px;
+		left: -228px !important;
+		width: 100% !important;
+		z-index: 99999;
+	}
+	
+	.preview > .card-header {
+		display: table !important;
+	}
+	
+	#view .popup .col .fa {
+		margin-left: 5px;
+		font-size: 20px;
+		position: relative;
+		top: 3px;
+		color: #555;
+	}
+	
+	#view .popup .col label {
+		font-size: 12px;
+		text-transform: uppercase;
+		margin-bottom: 5px;
+		font-weight: normal;
+		max-width: initial;
+	}
+	
+	#view .popup .col .btn {
+		float: right;
+	}
+	
+	#view .popup .col .btn label {
+		color: #FFF !important;
+		cursor: pointer;
+	}
+	
+	#view .popup .col .btn .fa {
+		margin-left: 0px;
+		margin-right: 9px;
+		color: #FFF;
+		top: 1px;
+	}
+	
+	#view .popup .col #tabela {
+		position: relative;
+		border: 1px solid #e4e1e1 !important;
+		display: block;
+		overflow: auto;
+	}
+	
+	#view .popup .col #tabela td,
+	#view .popup .col #tabela th {
+		padding: 0px 5px;
+		height: 40px;
+		font-size: 12px !important;
+		border: 1px solid #f4f4f4;
+	}
+	
+	#view .popup .col #tabela i {
+		position: relative;
+		top: 3px;
+		cursor: pointer;
+		font-size: 16px !important;
+	}
+	
+	#view table .fa-trash {
+		color: #f44336 !important;
+	}
+	
+	#view .tabela-header {
+		width: 100%;
+		height: 30px;
+		padding: 1px 9px;
+		border-top: 1px solid #e4e1e1;
+		border-left: 1px solid #e4e1e1;
+		border-right: 1px solid #e4e1e1;
+	}
+	
+	#view .tabela-header .fa {
+		color: #a2a0a0 !important;
+		font-size: 14px !important;
+		cursor: pointer;
+	}
+	
+	#view .tabela-header .fa.fa-filter {
+		position: relative;
+		top: 2px;
+		margin-right: 5px;
+	}
+	
+	#view .col .container-filtro-tabela {
+		border: 1px solid #ccc !important;
+		margin-bottom: 5px !important;
+	}
+	
+	#view .col .container-filtro-tabela .btn {
+		padding: 0px 6px;
+		margin: 6px 8px !important;
+		background: #3c8dbc !important;
+	}
+	
+	#view .col .container-filtro-tabela .btn .fa {
+		font-size: 14px;
+		left: 5px;
+		top: 0px !important;
+	}
+	
+	.barraferramentas {
+		width: 100%;
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		height: 43px;
+		background: #3d4d54;
+		z-index: 999;
+	}
+	/* Barra de Ferramentas - Popup */
+	
+	.chart-legend li span {
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		margin-right: 5px;
+	}
+	
+	.chart-legend li {
+		list-style: none;
+		float: left;
+		margin-right: 20px;
+	}
+	
+	.barraferramentas .popup {
+		position: relative;
+		width: 26% !important;
+		height: 0px !important;
+		margin-left: 5px !important;
+		margin-top: 8px !important;
+		border: none !important;
+		background: transparent;
+	}
+	
+	.barraferramentas .popup .card-header {
+		padding: 4px 6px !important;
+	}
+	
+	.barraferramentas .popup .card-content {
+		padding: 0px !important;
+		height: 0px !important;
+	}
+	
+	.barraferramentas .popup .card-header .card-title {
+		width: 78%;
+	}
+	
+	.barraferramentas .popup .card-header .card-icone {
+		width: 20%;
+	}
+	
+	.barraferramentas .popup .card-header .card-icone .fa {
+		padding: 0px 6px;
+	}
+	
+	.container_combo {
+		height: 210px;
+		position: absolute;
+		width: calc(100% - 19px);
+		overflow: auto;
+		left: 10px;
+		border-top: 0px !important;
+		border: 1px solid #ccc;
+	}
+	
+	.container_combo table.highlight > tbody > tr:hover {
+		background: #3c8dbc !important;
+		color: #FFF;
+	}
+	
+	.popup {
+		/*height: 97% !important;*/
+		height: 97%;
+	}
+	
+	.pop-1 {
+		margin: 8px !important;
+	}
+	
+	.pop-2 {
+		border-radius: 0px;
+		border: 0px;
+		margin: 8px !important;
+	}
+	
+	.pop-3 {
+		border: 0px;
+		border-radius: 0px;
+		margin: 8px !important;
+	}
+
+	.pop-3 .card-header {
+		display: none !important;
+	}
+
+	.pop-3 .card-content {
+		height: 100% !important; 
+	}
+	
+	.pop-4 {
+		margin: 0px !important;
+		width: 100% !important;
+		border: 0px;
+		border-radius: 0px !important;
+		background: transparent;
+	}
+	
+	.pop-4 .card-title {
+		font-size: 19px !important;
+	}
+	
+	.pop-4 .card-header {
+		border-radius: 0px;
+		padding: 10px;
+	}
+	
+	.pop-4 .card-icone .fa {
+		font-size: 21px !important;
+	}
+</style>
+
+<div ng-controller="integracaoMagento">
+	<div ng-controller="integracaoFacebook">
+		<div id="view" ng-controller='tabela' ng-class="user.customiza == 1 ? 'col no-margin-tb no-padding no-borderelms view-customize' : 'col no-margin-tb no-padding no-borderelms view-notcustomize'">
+
+			<div id="container-menu" class="row">
+
+			</div>
+
+			<!-- Mensagem -->
+			<div id="myCustomDialog" style="display: none">
+				<div class="dialogWrapper">
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,1 @@
+app.controller('Unidade60', function ($scope){ g$.configTela('Unidade');g$.atualizarTabela("atualizarTabela | 441", true);});

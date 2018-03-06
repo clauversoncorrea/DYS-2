@@ -1,0 +1,1 @@
+app.controller('CentrosdeCusto606', function ($scope){ g$.configTela('Centros de Custo');g$.atualizarTabela("atualizarTabela | 18148", true);});

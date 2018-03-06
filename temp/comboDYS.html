@@ -1,0 +1,90 @@
+<style>
+    #modal-comboDYS {
+        top: 0% !important;
+        height: 100%;
+        background: rgba(34, 34, 34, 0.6);
+        /*background: rgba(34, 34, 34, 0);*/
+        top: 4%;
+        width: 100% !important;
+        max-height: 100% !important;
+        z-index: 9999999999 !important;
+    }
+    
+    #modal-comboDYS .popup {
+        width: 60%;
+        margin: 0px auto !important;
+        height: 88% !important;
+        position: relative;
+        top: 65px;
+        overflow-y: hidden;
+        border-radius: 4px;
+    }
+    
+    #modal-comboDYS #popupcombo .card-content #container-combo {
+        width: 98%;
+        margin-left: 1%;
+        position: absolute;
+        height: 82%;
+        overflow: auto;
+        border: 1px solid #ccc;
+        padding: 0px;
+        padding-right: 1px !important;
+    }
+    
+    #modal-comboDYS #popupcombo .card-content #container-combo .col {
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    #modal-comboDYS #popupcombo .card-content #container-combo .col:hover {
+        cursor: pointer;
+        background: #dedede !important;
+    }
+    
+    #modal-comboDYS #popupcombo .card-content #container-combo .col:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+    
+    #modal-comboDYS #popupcombo .card-content #container-combo .col label {
+        color: #222d32;
+        cursor: pointer;
+        font-weight: normal;
+    }
+</style>
+
+<div id="popupcombo" class='popup card col s12 no-margin-tb no-padding fill-height pop-2 z-depth-3' ng-controller="comboDYS">
+    <div class='card-header'>
+        <div class='card-title'> {{comboTitulo}} </div>
+        <div class='card-icone'>
+            <i class='fa fa-close' onclick="g$.closeModalCust('modal-comboDYS')">  </i>
+        </div>
+    </div>
+
+    <div class='card-content'>
+
+        <div class="row no-padding no-margin">
+            <div class="col m11 l11 s11 no-padding" style="padding: 0px 1.6% 0px 1% !important;margin: 6px 0px;" ng-show="!showSearch">
+                <input id="search-combo" placeholder="O que você está procurando.." ng-model="idCombo" class="form-control">
+            </div>
+            <div class="col m1 l1 s1 no-padding" style="padding: 0px 1.6% 0px 1% !important;margin: 6px 0px;text-align:center;" ng-show="!showSearch">
+                <i class="fa fa-close" onclick="g$.limparCombo()" style="font-size: 25px;margin-top: 7px;color: red;cursor:pointer;"></i>
+            </div>
+            <div class="col m12 l12 s12" ng-show="showSearch" style="padding: 10px 8px !important">
+                <a id="botao" onclick="g$.limparCombo()" class="waves-effect waves-light btn null ng-scope" style="background: rgb(183, 28, 28); float: left; width: 100%;">
+                    <i class="fa fa-close" style="padding-right: 10px;"> </i>
+                    <span id="botao"> LIMPAR </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="row no-padding">
+            <div id="container-combo" class="col s12 l12 m12 margin-bottom">
+                <div class="col l12 m12 s12" ng-repeat="linha in linhas | filter: idCombo | limitTo: 50" data-irow="{{$index}}" onclick="g$.selecionarLinhaCombo()"
+                    data-id="{{linha.id}}">
+                    <label data-value="{{linha[value]}}" data-inner="{{linha[coluna]}}">{{linha[coluna]}}</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

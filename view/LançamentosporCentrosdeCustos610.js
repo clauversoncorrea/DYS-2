@@ -1,0 +1,1 @@
+app.controller('LançamentosporCentrosdeCustos610', function ($scope){ g$.configTela('Lançamentos por Centros de Custos');g$.atualizarTabela("atualizarTabela | 18343", true);});

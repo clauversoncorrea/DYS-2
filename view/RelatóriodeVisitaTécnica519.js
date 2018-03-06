@@ -1,0 +1,1 @@
+app.controller('RelatóriodeVisitaTécnica519', function ($scope){ g$.configTela('Relatório de Visita Técnica');g$.memo("memo¦817 | memo1 | 1=1", true);g$.memo("memo ¦818| memo2 | 1=1", true);});

@@ -1,0 +1,75 @@
+<style>
+	#icone div.row:first-child {
+		margin-top: 4px;
+	}
+	
+	#icone div.row .btn {
+		padding: 0px 10px;
+		margin: 4px 0px;
+		margin-right: 4px;
+	}
+</style>
+
+<div id="icone">
+
+	<div class="row">
+		<div class="col s4">
+			<label for="id">ID</label>
+		</div>
+		<div class="col s8">
+			<input id="id" class="form-control" ng-model="icone.id" data-template="icone" type="text" disabled>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s4">
+			<label for="id">Tela</label>
+		</div>
+		<div class="col s8">
+			<input id="tela" class="form-control" ng-model="icone.tela" data-template="icone" type="text" required>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s4">
+			<label for="id">Pai</label>
+		</div>
+		<div class="col s8">
+			<input id="pai" class="form-control" ng-model="icone.pai" data-template="icone" type="text" required>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s3">
+			<label for="ordem">Ordem</label>
+		</div>
+		<div class="col s9">
+			<input id="ordem" class="form-control" ng-model="icone.ordem" data-template="icone" type="text" required>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s4">
+			<label for="texto">Texto</label>
+		</div>
+		<div class="col s8">
+			<input id="texto" class="form-control" ng-model="icone.texto" data-template="icone" type="text" required>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s4">
+			<label for="tamanho">Tamanho</label>
+		</div>
+		<div class="col s8">
+			<input id="tamanho" class="form-control" ng-model="icone.tamanho" data-template="icone" type="text" required>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12">
+			<a ng-click="salvarIcone()" class="waves-effect waves-light blue-grey darken-4 btn right">
+				<i class="material-icons">done</i></a>
+		</div>
+	</div>
+</div>
