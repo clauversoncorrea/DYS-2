@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8"> </meta>
+    <title> DYS </title>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+    <!-- Import MaterializeCss -->
+    <link rel="stylesheet" type="text/css" href="../lib/materialize/css/materialize.css"></link>
+    <!-- Import Fonts MaterializeCss -->
+    <link rel="stylesheet" type="text/css" href="../materialize/fonts/icon.css"></link>
+    <!-- Import otimização para mobile -->
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            background: #f6f0e4 !important;
+            overflow: auto !important;
+        }
+
+        #view {
+            border-radius: 5px;
+            color: #FFFFFF;
+        }
+
+        label {
+            color: #FFFFFF !important;
+        }
+
+        input {
+            color: #FFFFFF !important;
+            border-color: #FFFFFF !important;
+        }
+
+        .input-field .prefix.active {
+            color: #FFFFFF;
+        }
+
+        .logo {
+            width: 240px;
+        }
+
+        .banner {
+            width: 100%;
+            height: 240px;
+        }
+
+        .user {
+            padding-top: 0px;
+            margin-top: 0px;
+        }
+
+        .btn {
+            text-transform: none;
+            padding: 0px 15px;
+            height: 38px;
+            line-height: 38px;
+            width: 100%;
+            font-size: 16px;
+            margin: 5px 0px;
+            color: #FFF;
+            height: 45px;
+            line-height: 45px;
+            text-transform: uppercase;
+            font-family: inherit;
+        }
+
+        #entrar {
+            background: #009994;
+        }
+
+        #facebook {
+            margin-right: 5px;
+            background: #32504e;
+        }
+
+        #cadastrar {
+            margin-right: 5px;
+            background: #FFF;
+            color: #32504e;
+            text-transform: none !important;
+        }
+
+        .form-control {
+            color: #555 !important;
+            border-radius: 0px !important;
+            font-size: 18px;
+            height: 42px;
+            padding: 0px 10px;
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: 800px) {
+            .logo {
+                width: 269px !important;
+                margin-top: 50px;
+                margin-bottom: 17px;
+            }
+            .banner {
+                height: 112px;
+            }
+        }
+
+        .play-none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body ng-controller="autenticacao">
+
+    <section id="container" class="row no-margin-b">
+        <!-- View -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <!-- <img class="logo" src="logoinicial.png"> -->
+                <img class="logo" src="logo_spdm_ame.png">
+            </div>
+
+            <div class="col s12" style="padding: 0px !important; margin-top: 5px;">
+                <img class="banner" src="logo_sao_jose.jpg">
+            </div>
+        </div>
+
+        <div id="view" class="offset-l4 col l4 s10" style="position: relative;">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row" style="margin-bottom: 0px;">
+                        <div class="col s12">
+                            <input id="email" class="form-control" placeholder="CPF ou Cartão SUS" autofocus="on">
+                        </div>
+                        <div class="col s12">
+                            <input id="senha" type="password" class="form-control" placeholder="Senha">
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <a id="entrar" ng-click="autenticacaoSAUDE()" class="waves-effect waves-light btn"> Iniciar Sessão </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="cadastrarSenha" class="offset-l4 col l4 s10 play-none" style="position: relative;">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row" style="margin-bottom: 0px;">
+                        <div class="col s12">
+                            <input id="senhaSaude" type="password" class="form-control" placeholder="Senha" autofocus="on">
+                        </div>
+                        <div class="col s12">
+                            <input id="confirmarSenha" type="password" class="form-control" placeholder="Confirmar Senha">
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <a id="entrar" ng-click="cadastrarSenhaSAUDE()" class="waves-effect waves-light btn"> Cadastrar Senha </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="cadastrarPaciente" class="offset-l4 col l4 s10 play-none" style="position: relative;">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row" style="margin-bottom: 0px;">
+                        <div class="col l4 m4 s12">
+                            <div> Carteira SUS </div>
+                            <input id="cns" type="" class="form-control" autofocus="on" required>
+                        </div>
+                        <div class="col l8 m8 s12">
+                            <div> Nome </div>
+                            <input id="nome" class="form-control" required>
+                        </div>
+                        <!-- <div class="col l4 m4 s12">
+                            <div> Sexo </div>
+                            <input id="nome" class="form-control">
+                        </div>
+                        <div class="col l4 m4 s12">
+                            <div> Data Nascimento </div>
+                            <input id="datanasc" class="form-control">
+                        </div>
+                        <div class="col l6 m6 s12">
+                            <div> CPF </div>
+                            <input id="cpf" class="form-control">
+                        </div>
+                        <div class="col l6 m6 s12">
+                            <div> RG </div>
+                            <input id="rg" class="form-control">
+                        </div>
+                        <div class="col l6 m6 s12">
+                            <div> Escolaridade </div>
+                            <input id="escolariade" class="form-control">
+                        </div>
+                        <div class="col l6 m6 s12">
+                            <div> Profissão </div>
+                            <input id="profissao" class="form-control">
+                        </div>
+                        <div class="col l6 m6 s12">
+                            <div> CPF do Responsavel </div>
+                            <input id="cpfres" class="form-control">
+                        </div>
+                        <div class="col l6 m6 s12">
+                            <div> Nome do Responsavel </div>
+                            <input id="nomeres" class="form-control">
+                        </div>
+                        <div class="col l6 m6 s12">
+                            <div> Nome do Pai </div>
+                            <input id="nomepai" class="form-control">
+                        </div>
+                        <div class="col l6 m6 s12">
+                            <div> Nome Mãe </div>
+                            <input id="nomemae" class="form-control">
+                        </div> 
+                        <div class="col l4 m4 s12">
+                            <div> Telefone </div>
+                            <input id="tel" class="form-control">
+                        </div>
+                        <div class="col l4 m4 s12">
+                            <div> Cel </div>
+                            <input id="cel" class="form-control">
+                        </div>
+                        <div class="col l4 m4 s12">
+                            <div> Whatsapp </div>
+                            <input id="whatsapp" class="form-control">
+                        </div> -->
+                        <div class="col l8 m8 s12">
+                            <div> Login </div>
+                            <input id="login" class="form-control" required> 
+                        </div>
+                        <div class="col l4 m4 s12">
+                                <div> Senha </div>
+                                <input id="senha" class="form-control" type="password"required>
+                            </div>
+                        <div class="col l4 m4 s12">
+                            <div> CEP </div>
+                            <input id="cep" class="form-control" required>
+                        </div>
+                        <div class="col l8 m8 s12">
+                            <div> Endereçp</div>
+                            <input id="endereco" class="form-control">
+                        </div>
+                        <!-- <div class="col l4 m4 s12">
+                            <div> Numero </div>
+                            <input id="numero" class="form-control">
+                        </div> -->
+                        <div class="col l4 m4 s12">
+                            <div> Bairro </div>
+                            <input id="bairro" class="form-control">
+                        </div>
+                        <div class="col l4 m4 s12">
+                            <div> Cidade </div>
+                            <input id="cidade" class="form-control">
+                        </div>
+                        <div class="col l4 m4 s12">
+                            <div> Estado </div>
+                            <input id="estado" class="form-control">
+                        </div>
+                        <!-- <div class="col l4 m4 s12">
+                            <div> Complemento </div>
+                            <input id="complemento" class="form-control">
+                        </div> -->
+                        <!-- <div class="col l4 m4 s12">
+                            <div> Referência </div>
+                            <input id="referencia" class="form-control">
+                        </div> -->
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <a id="entrar" ng-click="cadastrarPaciente()" class="waves-effect waves-light btn"> Cadastrar Paciente </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<!-- Scripts -->
+<script type="text/javascript" src="../lib/angular/angular.js"></script>
+<script src="../lib/angular/angular-animate.js"></script>
+<script src="../lib/ionic/js/ionic.js"></script>
+<script src="../lib/ionic/js/ionic-angular.js"></script>
+<script src="../lib/ionic/js/ionic.bundle.js"></script>
+
+<!--<script type="text/javascript" src="cordova.js"></script>-->
+<script type="text/javascript" src="../controller/notification.js"></script>
+<script type="text/javascript" src="../lib/jQuery/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="../lib/materialize/js/materialize.js"></script>
+
+<!-- COMPONENTS -->
+<script type="text/javascript" src="../controller/autenticacao.js"></script>
+
+</html>

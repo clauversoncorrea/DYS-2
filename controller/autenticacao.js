@@ -84,13 +84,12 @@ app2.controller("autenticacao", function ($scope, $http, $rootScope) {
                             dir = ($scope.user.customiza == 1) ? "../customizador/" : "../";
                             $scope.user = data.data[0];
                             $http.post(URL + "/leArquivo/", { arquivo: $scope.user.projeto.toUpperCase() + "/inicial.html" }).success(function (data) {
-                                // if (data != "" && $scope.user.customiza == 0) {
-                                //     // Sistema do cliente
-                                //     $scope.user.sysCli = true;
-                                //     window.location = $scope.user.projeto.toUpperCase()  + "/inicial.html?";
-                                // }
-                                // else 
-                                window.location = dir + "inicial.html?";
+                                if (data != "" && $scope.user.customiza == 0) {
+                                    // Sistema do cliente
+                                    $scope.user.sysCli = true;
+                                    window.location = $scope.user.projeto.toUpperCase()  + "/inicial.html?";
+                                }
+                                else window.location = dir + "inicial.html?";
                                 $scope.user.logado = { id: $scope.user.id, projeto: $scope.user.projeto, projeto_id: $scope.user.projeto_id, banco: $scope.user.banco, nao_saas: $scope.user.nao_saas };
                                 localStorage.user = JSON.stringify($scope.user);
                             });
@@ -190,13 +189,12 @@ app2.controller("autenticacao", function ($scope, $http, $rootScope) {
                         dir = ($scope.user.customiza == 1) ? "../customizador/" : "../";
                         $scope.user = data.data[0];
                         $http.post(URL + "/leArquivo/", { arquivo: $scope.user.projeto.toUpperCase() + "/inicial.html" }).success(function (data) {
-                            // if (data != "" && $scope.user.customiza == 0) {
-                            //     // Sistema do cliente
-                            //     $scope.user.sysCli = true;
-                            //     window.location = $scope.user.projeto.toUpperCase()  + "/inicial.html?";
-                            // }
-                            // else 
-                            window.location = dir + "inicial.html?";
+                            if (data != "" && $scope.user.customiza == 0) {
+                                // Sistema do cliente
+                                $scope.user.sysCli = true;
+                                window.location = $scope.user.projeto.toUpperCase()  + "/inicial.html?";
+                            }
+                            else window.location = dir + "inicial.html?";
                             $scope.user.logado = { id: $scope.user.id, projeto: $scope.user.projeto, projeto_id: $scope.user.projeto_id, banco: $scope.user.banco, nao_saas: $scope.user.nao_saas };
                             localStorage.user = JSON.stringify($scope.user);
                         });

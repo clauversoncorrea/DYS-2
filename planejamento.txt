@@ -1,2 +1,0 @@
-1) o APP do Asagol olhando para a base nova do dys.net
-2) Integração do Amyrsom com a Hakuten, para acertar a alteração de produto e estoque.

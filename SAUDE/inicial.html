@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DYS</title>
+
+  <link rel="shortcut icon" href="../img/icone.png" type="imageb/x-icon" />
+
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <!-- Bootstrap 3.3.4 -->
+  <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <!-- Theme style -->
+  <link href="../lib/dist/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+  <!-- Animate -->
+  <link href="../lib/animate/animate.css" rel="stylesheet" type="text/css" />
+  <!-- AdminLTE Skins. Choose a skin from the css/skins 
+         folder instead of downloading all of them to reduce the load. -->
+  <link href="../lib/dist/css/skins/_all-skins.css" rel="stylesheet" type="text/css" />
+
+  <!-- Import MaterializeCss -->
+  <link rel="stylesheet" type="text/css" href="../lib/materialize/css/materialize.css"></link>
+  <!-- Import Fonts MaterializeCss -->
+  <link rel="stylesheet" type="text/css" href="../lib/materialize/fonts/icon.css"></link>
+  <!-- Import alert -->
+  <link rel="stylesheet" type="text/css" href="../lib/alert/alert.core.css"></link>
+  <link rel="stylesheet" type="text/css" href="../lib/alert/alert.lite.css"></link>
+  <!-- Import datepicker Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="../lib/datepicker/datepicker.css"></link>
+  <!-- Fonts Icons Google -->
+  <link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.css"></link>
+  <!-- Estilo Data table -->
+  <!--<link rel="stylesheet" type="text/css" href="../lib/datatable/css/jquery.dataTables.css"></link>-->
+  <!--<script src="../lib/datepicker/dist/ionic-datepicker.bundle.min.js"></script>*/-->
+
+  <!-- Arquivos para o Project -->
+  <link rel=stylesheet href="../project/platform.css" type="text/css">
+  <link rel=stylesheet href="../project/gantt.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD935zLMV4JPtt6WrnugX08lDX6kYqzc4c"></script>
+  <script type="text/javascript" src="../plugins/jquery.min.js"></script>
+
+  <script type="text/javascript" src="../lib/jQuery/jquery-2.1.1.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+  <script src="../lib/dist/js/app.js" type="text/javascript"></script>
+
+  <style>
+    #container {
+      height: calc(100% - 57px) !important;
+    }
+    
+    .main-sidebar,
+    .left-side {
+      height: 100%;
+    }
+    
+    #settings {
+      padding: 0px;
+    }
+    
+    body.expand .nav-settings {
+      top: 30%;
+      width: 100%;
+      height: 67.3%;
+    }
+    
+    body.expand .main-sidebar {
+      height: 55.1%;
+      border-bottom: 1px solid #222;
+    }
+    
+    body.expand #view {
+      height: 100% !important;
+      width: 58.2%;
+    }
+    
+    body.expand .sidebar-menu > .tabs {
+      width: 25% !important;
+      margin: 0px !important;
+      left: 75.1%;
+    }
+    
+    body.expand .sidebar-menu > .header {
+      height: 35px;
+    }
+    
+    .showbarraferramentas .main-sidebar {
+      height: 93.5% !important;
+    }
+    
+    .showbarraferramentas #settings #controle {
+      height: calc(100% - 316px) !important;
+    }
+    
+    .showbarraferramentas .popup {
+      height: 92.5% !important;
+    }
+  </style>
+
+  <style>
+    #container {
+      height: calc(100% - 57px) !important;
+    }
+    
+    #settings {
+      padding: 0px;
+    }
+    
+    body.expand .nav-settings {
+      top: 30%;
+      width: 100%;
+      height: 67.3%;
+    }
+    
+    body.expand .main-sidebar {
+      height: 55.1%;
+      border-bottom: 1px solid #222;
+    }
+    
+    body.expand #view {
+      height: 100% !important;
+      width: 58.2%;
+    }
+    
+    body.expand .sidebar-menu > .tabs {
+      width: 25% !important;
+      margin: 0px !important;
+      left: 75.1%;
+    }
+    
+    body.expand .sidebar-menu > .header {
+      height: 35px;
+    }
+    
+    .showbarraferramentas .main-sidebar {
+      height: 93.5% !important;
+    }
+    
+    .showbarraferramentas #settings #controle {
+      height: calc(100% - 316px) !important;
+    }
+    
+    .showbarraferramentas .popup {
+      height: 92.5% !important;
+    }
+  </style>
+
+  <style> span#menu-telas {font-size: 17px;} i#icone-telas {font-size: 18px;margin-right: 7px;}#menu-bloco{background: #009994 !important; color: #ffffff !important;} </style>
+  
+  <style> .skin-blue .main-header .navbar, .skin-blue .main-header li.user-header{background-color: #009994!important;}.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {background-color: #FFFFFF !important;}.skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a{border-left-color: #32504e !important;}.skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a{background-color: #32504e !important;}.skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a{color: #ffffff !important;}.skin-blue .sidebar-menu > li:hover > a > .fa, .skin-blue .sidebar-menu > li.active > a > .fa{color: #ffffff !important;}.skin-blue .sidebar a, .sidebar-menu > li > a > .fa, .sidebar-menu .treeview-menu > li > a > .fa {color: #009994 !important;}.skin-blue .main-header .logo:hover{background-color: #32504e!important;}.main-header .fa, .user-menu span, .skin-blue .main-header li.user-header p{color: #ffffff !important;}.skin-blue .main-header .navbar .sidebar-toggle{color: #ffffff!important;}.skin-blue .sidebar-menu > li > .treeview-menu{background-color: #ebebeb !important;}.skin-blue .treeview-menu > li > a, .skin-blue .treeview-menu > li > a > .fa{color: #32504e !important;}.skin-blue .treeview-menu > li > a:hover{font-weight: 600;}::-webkit-scrollbar-thumb {background: #32504e !important;}#closeIframe {background: #009994 !important;}#closeIframe .fa {color: #ffffff !important;}.pop-4 .card-header{background: #32504e !important;}.pop-4 .card-title {color: #ffffff !important;}.pop-4 .card-icone .fa{color: #ffffff !important;}.skin-blue .main-header .navbar .sidebar-toggle:hover{background-color: #009994!important;}.skin-blue .main-header .logo{background-color: #32504e!important;} </style>
+  
+  <style>
+    #view {
+      background: #FFF;
+      height: 100%;
+      /*width: 50%;*/
+      /*width: 83.1%;*/
+      position: absolute;
+      min-height: 250px;
+      transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    }
+    
+    #view .popup .card-content {
+      overflow: auto;
+    }
+    
+    #view .popup {
+      width: calc(100% - 16px);
+    }
+    
+    #view .popup .row {
+      border: 1px solid #d61212 !important;
+      padding: 5px;
+      margin-bottom: 5px;
+      /*display: initial;*/
+    }
+    
+    #view .popup .col,
+    #view canvas {
+      border: 1px solid #156ebb !important;
+      padding: 5px;
+      margin-bottom: 5px;
+    }
+    
+    #view .popup #tabela {
+      padding: 5px 0px;
+    }
+    
+    #view.no-borderelms .card-content .col {
+      margin-bottom: 0px;
+    }
+    
+    #view.no-borderelms .card-content .row,
+    #view.no-borderelms .card-content .tab,
+    #view.no-borderelms .card-content .tabs,
+    #view.no-borderelms .card-content canvas {
+      border: 0px !important;
+      padding: 0px!important;
+    }
+    
+    #view.no-borderelms .card-content .row .col:first-child {
+      padding-left: 0px !important;
+    }
+    
+    #view.no-borderelms .card-content .row .col#tab:not(:last-child) {
+      margin-right: 10px;
+    }
+    
+    #view.no-borderelms .card-content #tabs {
+      padding: 0px 5px !important;
+      margin-left: 7px;
+    }
+    
+    #view.no-borderelms .pop-1 .card-content .col:not(.tab):not(.tabs):not(.pad-important),
+    #view.no-borderelms .pop-2 .card-content .col:not(.tab):not(.tabs):not(.pad-important),
+    #view.no-borderelms .pop-3 .card-content .col:not(.tab):not(.tabs):not(.pad-important) {
+      padding: 5px 10px !important;
+    }
+    
+    #view.no-borderelms .card-content .col:not(.tab):not(.tabs):not(.borda-important) {
+      border: 0px !important;
+    }
+    
+    #view .tab-content {
+      padding: 20px 0px !important;
+    }
+    
+    #view.no-borderelms .card-content .tab-content {
+      padding: 2px !important;
+      padding-top: 8px !important;
+    }
+    
+    .pop-4 .tab-content {
+      padding: 0px !important;
+    }
+    
+    #view.no-borderelms .card-content #tabela {
+      padding: 0px !important;
+    }
+    
+    #view .tabs {
+      border: 1px solid #424242;
+      padding: 0px;
+    }
+    
+    #view.modo-del .card-content .row,
+    #view.modo-del .card-content .col,
+    #view.modo-del .card-content .col input,
+    #view.modo-del .card-content .col label,
+    #view.modo-del .card-content .col i,
+    #view.modo-del .card-content .col a {
+      border: 1px solid #F00 !important;
+      cursor: -webkit-grabbing;
+    }
+    
+    .card > .card-content {
+      height: calc(100% - 39px) !important;
+    }
+    
+    .preview {
+      position: absolute;
+      top: 0px;
+      left: -228px !important;
+      width: 100% !important;
+      z-index: 99999;
+    }
+    
+    .preview > .card-header {
+      display: table !important;
+    }
+    
+    #view .popup .col .fa {
+      margin-left: 5px;
+      font-size: 20px;
+      position: relative;
+      top: 3px;
+      color: #555;
+    }
+    
+    #view .popup .col label {
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      font-weight: normal;
+      max-width: initial;
+    }
+    
+    #view .popup .col .btn {
+      float: right;
+    }
+    
+    #view .popup .col .btn label {
+      color: #FFF !important;
+      cursor: pointer;
+    }
+    
+    #view .popup .col .btn .fa {
+      margin-left: 0px;
+      margin-right: 9px;
+      color: #FFF;
+      top: 1px;
+    }
+    
+    #view .popup .col #tabela {
+      position: relative;
+      border: 1px solid #e4e1e1 !important;
+      display: block;
+      overflow: auto;
+    }
+    
+    #view .popup .col #tabela td,
+    #view .popup .col #tabela th {
+      padding: 0px 5px;
+      height: 40px;
+      font-size: 12px !important;
+      border: 1px solid #f4f4f4;
+    }
+    
+    #view .popup .col #tabela i {
+      position: relative;
+      top: 3px;
+      cursor: pointer;
+      font-size: 16px !important;
+    }
+    
+    #view table .fa-trash {
+      color: #f44336 !important;
+    }
+    
+    #view .tabela-header {
+      width: 100%;
+      height: 30px;
+      padding: 1px 9px;
+      border-top: 1px solid #e4e1e1;
+      border-left: 1px solid #e4e1e1;
+      border-right: 1px solid #e4e1e1;
+    }
+    
+    #view .tabela-header .fa {
+      color: #a2a0a0 !important;
+      font-size: 14px !important;
+      cursor: pointer;
+    }
+    
+    #view .tabela-header .fa.fa-filter {
+      position: relative;
+      top: 2px;
+      margin-right: 5px;
+    }
+    
+    #view .col .container-filtro-tabela {
+      border: 1px solid #ccc !important;
+      margin-bottom: 5px !important;
+    }
+    
+    #view .col .container-filtro-tabela .btn {
+      padding: 0px 6px;
+      margin: 6px 8px !important;
+      background: #3c8dbc !important;
+    }
+    
+    #view .col .container-filtro-tabela .btn .fa {
+      font-size: 14px;
+      left: 5px;
+      top: 0px !important;
+    }
+    
+    .barraferramentas {
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      height: 43px;
+      background: #3d4d54;
+      z-index: 999;
+    }
+    /* Barra de Ferramentas - Popup */
+    
+    .chart-legend li span {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-right: 5px;
+    }
+    
+    .chart-legend li {
+      list-style: none;
+      float: left;
+      margin-right: 20px;
+    }
+    
+    .barraferramentas .popup {
+      position: relative;
+      width: 26% !important;
+      height: 0px !important;
+      margin-left: 5px !important;
+      margin-top: 8px !important;
+      border: none !important;
+      background: transparent;
+    }
+    
+    .barraferramentas .popup .card-header {
+      padding: 4px 6px !important;
+    }
+    
+    .barraferramentas .popup .card-content {
+      padding: 0px !important;
+      height: 0px !important;
+    }
+    
+    .barraferramentas .popup .card-header .card-title {
+      width: 78%;
+    }
+    
+    .barraferramentas .popup .card-header .card-icone {
+      width: 20%;
+    }
+    
+    .barraferramentas .popup .card-header .card-icone .fa {
+      padding: 0px 6px;
+    }
+    
+    .container_combo {
+      height: 210px;
+      position: absolute;
+      width: calc(100% - 19px);
+      overflow: auto;
+      left: 10px;
+      border-top: 0px !important;
+      border: 1px solid #ccc;
+    }
+    
+    .container_combo table.highlight > tbody > tr:hover {
+      background: #3c8dbc !important;
+      color: #FFF;
+    }
+    
+    .popup {
+      /*height: 97% !important;*/
+      height: 97%;
+    }
+    
+    .pop-1 {
+      margin: 8px !important;
+    }
+    
+    .pop-2 {
+      border-radius: 0px;
+      border: 0px;
+      margin: 8px !important;
+    }
+    
+    .pop-3 {
+      border: 0px;
+      border-radius: 0px;
+      margin: 8px !important;
+    }
+    
+    .pop-3 .card-header {
+      display: none !important;
+    }
+    
+    .pop-3 .card-content {
+      height: 100% !important;
+    }
+    
+    .pop-4 {
+      margin: 0px !important;
+      width: 100% !important;
+      border: 0px;
+      border-radius: 0px !important;
+      background: transparent;
+    }
+    
+    .pop-4 .card-title {
+      font-size: 19px !important;
+    }
+    
+    .pop-4 .card-header {
+      border-radius: 0px;
+      padding: 10px;
+    }
+    
+    .pop-4 .card-icone .fa {
+      font-size: 21px !important;
+    }
+  </style>
+
+</head>
+
+<body class="skin-blue sidebar-mini trata-menu-app-web" ng-controller="inicial">
+  <div class="wrapper" ng-controller="bloco">
+
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="#" class="logo" onclick="g$.popCloseLogo()">
+        <!-- mini logo -->
+        <span class="logo-mini"><img class="logo-pequeno" src="https://dys.net.br/{{user.projeto}}/logopeq.png" /> </span>
+        <!-- logo normal -->
+        <span class="logo-lg"> <img class="logo-grande" src="https://dys.net.br/{{user.projeto}}/logogrande.png" /> </span>
+      </a>
+
+      <!-- Menu Topo -->
+      <nav class="navbar navbar-static-top" role="navigation">
+
+        <!-- Sidebar toggle button-->
+        <a id="menutelas" href="#" class="sidebar-toggle menu-ativo" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+
+
+
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+
+            <li>
+              <a href="#">
+                <i class="fa fa-microphone" style='font-size:20px;'></i>
+              </a>
+            </li>
+
+            <li class="dropdown notifications-menu" style='display:none;'>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-file-text-o"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- <li class="header">Você tem {{numAlert}} Alertas</li> -->
+                <!-- <li ng-repeat="alert in nodeAlerta">
+                  <ul class="menu">
+                    <li>
+                      <a href="#" data-alert='{{alert.id}}'>
+                        <i class="fa fa-bell-o text-aqua"></i> {{alert.alerta}}
+                      </a>
+                    </li>
+                  </ul>
+                </li> -->
+                <li>
+                  <ul class="menu">
+                    <li>
+                      <p style='margin-bottom:0px;'>Para Abrir um Menu do Sistema:</p>
+                      <i style='margin-left:20px;margin-right:5px;' class="fa fa-volume-up text-aqua"></i>Abrir Menu + (Nome
+                      do Menu)
+                    </li>
+                    <li>
+                      <p style='margin-bottom:0px;'>Para Abrir um Menu do Sistema:</p>
+                      <i style='margin-left:20px;margin-right:5px;' class="fa fa-volume-up text-aqua"></i>Abrir Menu + (Nome
+                      do Menu)
+                    </li>
+                    <li>
+                      <p style='margin-bottom:0px;'>Para Abrir um Menu do Sistema:</p>
+                      <i style='margin-left:20px;margin-right:5px;' class="fa fa-volume-up text-aqua"></i>Abrir Menu + (Nome
+                      do Menu)
+                    </li>
+                    <li>
+                      <p style='margin-bottom:0px;'>Para Abrir um Menu do Sistema:</p>
+                      <i style='margin-left:20px;margin-right:5px;' class="fa fa-volume-up text-aqua"></i>Abrir Menu + (Nome
+                      do Menu)
+                    </li>
+                    <li>
+                      <p style='margin-bottom:0px;'>Para Abrir um Menu do Sistema:</p>
+                      <i style='margin-left:20px;margin-right:5px;' class="fa fa-volume-up text-aqua"></i>Abrir Menu + (Nome
+                      do Menu)
+                    </li>
+                    <li>
+                      <p style='margin-bottom:0px;'>Para Abrir um Menu do Sistema:</p>
+                      <i style='margin-left:20px;margin-right:5px;' class="fa fa-volume-up text-aqua"></i>Abrir Menu + (Nome
+                      do Menu)
+                    </li>
+                    <li>
+                      <p style='margin-bottom:0px;'>Para Abrir um Menu do Sistema:</p>
+                      <i style='margin-left:20px;margin-right:5px;' class="fa fa-volume-up text-aqua"></i>Abrir Menu + (Nome
+                      do Menu)
+                    </li>
+                    <li>
+                      <p style='margin-bottom:0px;'>Para Abrir um Menu do Sistema:</p>
+                      <i style='margin-left:20px;margin-right:5px;' class="fa fa-volume-up text-aqua"></i>Abrir Menu + (Nome
+                      do Menu)
+                    </li>
+                  </ul>
+                </li>
+                <!-- <li class="footer"><a href="#">Ver Todas</a></li> -->
+              </ul>
+            </li>
+
+            <!-- Messages -->
+            <li class="dropdown messages-menu">
+
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-paper-plane-o"></i>
+                <span class="label label-success">{{(numMensagem == 0)?'':numMensagem}}</span>
+              </a>
+
+              <ul class="dropdown-menu">
+                <!-- <li class="header">You have 4 messages</li> -->
+                <li>
+                  <!-- inner menu: contains the actual data -->
+                  <ul class="menu">
+                    <li ng-repeat="msg in nodeMensagem">
+                      <!-- start message -->
+                      <a href="#" ng-click='showMessage()' data-id='{{msg.id}}'>
+                        <div class="pull-left">
+                          <img src="../{{msg.foto}}" class="img-circle" alt="User Image" />
+                        </div>
+                        <h4>
+                          {{msg.nome}}
+                          <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                        </h4>
+                        <p>{{msg.titulo}}</p>
+                      </a>
+                    </li>
+                    <!-- end message -->
+                  </ul>
+                </li>
+                <li class="footer"><a href="#">Mostrar todas as Mensagens</a></li>
+              </ul>
+            </li>
+
+            <!-- Notifications: style can be found in dropdown.less -->
+            <li class="dropdown notifications-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-bell-o"></i>
+                <span class="label label-warning">{{(numAlert == 0)?'':numAlert}}</span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- <li class="header">Você tem {{numAlert}} Alertas</li> -->
+                <li ng-repeat="alert in nodeAlerta">
+                  <!-- inner menu: contains the actual data -->
+                  <ul class="menu">
+                    <li>
+                      <a href="#" data-alert='{{alert.id}}'>
+                        <i class="fa fa-bell-o text-aqua"></i> {{alert.alerta}}
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- <li class="footer"><a href="#">Ver Todas</a></li> -->
+              </ul>
+            </li>
+
+            <!-- Tasks: style can be found in dropdown.less -->
+            <li class="dropdown tasks-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-flag-o"></i>
+                <span class="label label-danger">{{(numTarefa == 0)?'':numTarefa}}</span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- <li class="header">You have 9 tasks</li> -->
+                <li>
+                  <!-- inner menu: contains the actual data -->
+                  <ul class="menu">
+                    <li ng-repeat="tarefa in nodeTarefa" data-irow="{{$index}}">
+                      <!-- Task item -->
+                      <a href="#" ng-click='showTarefa()'>
+                        <h3>
+                          {{tarefa.tarefa}}
+                          <small class="pull-right">{{tarefa.progresso ? tarefa.progresso : 0}}%</small>
+                        </h3>
+                        <div class="progress xs">
+                          <div class="progress-bar progress-bar-aqua" style="width:{{tarefa.progresso}}%" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                            aria-valuemax="100">
+                            <span class="sr-only">{{tarefa.progresso}}% Completo</span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <!-- end task item -->
+                  </ul>
+                </li>
+                <!-- <li class="footer">
+                  <a href="#">View all tasks</a>
+                </li> -->
+              </ul>
+            </li>
+
+            <!-- User Account -->
+            <li class="dropdown user user-menu">
+
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img class="user-image" alt="User Image" />
+                <span class="hidden-xs">{{user.nome}}</span>
+              </a>
+
+              <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                  <img class="logo-user img-circle" alt="User Image" />
+                  <p>
+                    {{user.nome}} {{user.email}}
+                  </p>
+                </li>
+
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a onClick="g$.createTelaMinhaConta()" class="waves-effect waves-light btn btn-padding grey lighten-3 text-black"> Minha Conta</a>
+                  </div>
+                  <div class="pull-right">
+                    <a ng-click="logout()" class="waves-effect waves-light btn btn-padding grey lighten-3 text-black">Sair 
+                      <i class="fa fa-sign-in text-black" style="top: 2px;left: 5px;color:#222 !important"></i></a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div>
+      <menu-telas> </menu-telas>
+    </div>
+
+    <div id="modal-perfil" class="modal">
+      <ng-include src="'../temp/perfil.html'"> </ng-include>
+    </div>
+
+    <div id="modal-configtable" class="modal" ng-controller="configtable">
+      <ng-include src="'../controller/CONFIG_TABLE/template.html'"> </ng-include>
+    </div>
+
+    <div id="modal-comboDYS" class="modal">
+      <ng-include src="'../temp/comboDYS.html'"> </ng-include>
+    </div>
+
+    <div id="container" class="content-wrapper">
+
+      <section class="content row no-margin-b">
+        <div ng-controller="checkbox">
+
+          <div id="view" ng-controller='tabela' class="col no-margin-tb no-padding no-borderelms view-notcustomize">
+
+            <div ng-view></div>
+
+            <div id="container-menu" class="row" style="display: block;">
+            </div>
+
+            <!-- Mensagem -->
+            <div id="myCustomDialog" style="display: none">
+              <div class="dialogWrapper">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+    <a id="closeIframe" class="btn-floating btn-large waves-effect waves-light red play-none" onclick="g$.closeIframe();">
+    <span class="fa fa-arrow-circle-left"> </span>
+  </a>
+
+  <!--<div id="workSpace" style="padding:0px; overflow-y:auto; overflow-x:hidden;border:1px solid #e5e5e5;position:relative;margin:0 5px"></div>-->
+
+  <!-- Template Project -->
+  <div id="gantEditorTemplates" style="display:none;">
+    <div class="__template__" type="GANTBUTTONS"> </div>
+
+    <div class="__template__" type="TASKSEDITHEAD">
+      <!--
+        <table class="gdfTable" cellspacing="0" cellpadding="0">
+          <thead>
+          <tr style="height:40px">
+            <th class="gdfColHeader" style="width:41px; "><i id="addLinhaNovaProject" onclick="g$.novaLinhaProject()" class="fa fa-plus" style="display: none; cursor: pointer;position: relative;top: 1px;"> </i></th>
+            <th id="tarefa_id" class="gdfColHeader " style="width:20px;display:none;"> ID </th>
+            <th id="projeto_id" class="gdfColHeader " style="width:80px;"> Projeto_ID </th>
+            <th id="recurso" class="gdfColHeader " style="width:120px;"> Recurso </th>
+            <th id="tarefa" class="gdfColHeader " style="width:150px;"> Tarefa </th>
+            <th id="descricao" class="gdfColHeader " style="width:190px;"> Descricao </th>
+            <th id="recurso_id" class="gdfColHeader " style="width:80px;display:none;"> Recurso_ID </th>
+            <th id="progresso" class="gdfColHeader " style="width:80px;"> Progresso </th>
+            <th id="data_ini" class="gdfColHeader " style="width:120px;"> Data Inicio </th>
+            <th id="data_fim" class="gdfColHeader " style="width:120px;"> Data Fim </th>
+            <th id="dias" class="gdfColHeader " style="width:50px;"> Dias </th>
+            <th id="horas" class="gdfColHeader " style="width:50px;"> Horas </th>
+            <th id="horas_dia" class="gdfColHeader " style="width:80px;"> Horas p/ dia </th>
+            <th id="antecessor" class="gdfColHeader " style="width:80px;"> Antecessor </th>
+            <th id="pai" class="gdfColHeader " style="width:50px;"> Pai </th>
+            <th id="criticidade" class="gdfColHeader " style="width:80px;"> Criticidade </th>
+            <th id="tem_filhos" class="gdfColHeader " style="width:80px;"> Tem Filhos </th>
+            <th id="acoes" class="gdfColHeader " style="width:80px;"> Ações </th>
+          </tr>
+          </thead>
+        </table>
+      -->
+    </div>
+
+    <div class="__template__" type="TASKROW">
+      <!--
+        <tr taskId="(#=obj.id#)" class="taskEditRow">
+          <th class="gdfCell" style="text-align: center" style="cursor:pointer;"><span class="taskRowIndex">(#=obj.getRow()+1#)</span></th>
+          <td id="tarefa_id" class="gdfCell" style="display:none;"><input type="text" value="(#=obj.id?obj.id:''#)"></td>
+          <td id="projeto_id" class="gdfCell"><input type="text" name="projeto_id" style="text-align: center;" autocomplete="off" value="(#=obj.projeto_id#)"></td>
+          <td id="recurso" class="gdfCell"><input type="text" value="(#=obj.recurso#)" style="text-align: center;"></td>
+          <td id="tarefa" class="gdfCell" style="padding-left: 5px;"><input type="text" value="(#=obj.name?obj.name:''#)"></td>
+          <td id="descricao" class="gdfCell indentCell" style="padding-left:(#=obj.level*10+18#)px;">
+            <div class="exp-controller" style="text-align: center"></div>
+            <input type="text" value="(#=obj.descricao#)">
+          </td>
+          <td id="recurso_id" class="gdfCell" style="display:none;"><input type="text" value="(#=obj.recurso_id#)" style="text-align: center;"></td>
+          <td id="progresso" class="gdfCell"><input type="text" name="progress" style="text-align: center;" class="validated" entrytype="PERCENTILE" autocomplete="off" value="(#=obj.progress?obj.progress:''#)" (#=obj.progressByWorklog?"readOnly":""#)></td>
+          <td id="data_ini" class="gdfCell"><input type="text" name="start" value="" class="date"></td>
+          <td id="data_fim" class="gdfCell"><input type="text" name="end" value="" class="date"></td>
+          <td id="dias" class="gdfCell"><input type="text" name="duration" style="text-align: center;" autocomplete="off" value="(#=obj.duration#)"></td>
+          <td id="horas" class="gdfCell"><input type="text" name="duracao_em_horas_p" style="text-align: center;" autocomplete="off" value="(#=obj.duracao_em_horas_p#)"></td>
+          <td id="horas_dia" class="gdfCell"><input type="text" name="horas_por_dia" style="text-align: center;" autocomplete="off" value="(#=obj.horas_por_dia#)"></td>
+          <td id="antecessor" class="gdfCell"><input type="text" name="depends" style="text-align: center;" autocomplete="off" value="(#=obj.depends#)"></td>
+          <td id="pai" class="gdfCell"><input type="text" name="pai" style="text-align: center;" autocomplete="off" value="(#=obj.pai#)"></td>
+          <td id="criticidade" class="gdfCell"><input type="text" name="criticidade" style="text-align: center;" autocomplete="off" value="(#=obj.criticidade#)"></td>
+          <td id="tem_filhos" class="gdfCell"><input type="text" name="hasChild" style="text-align: center;" autocomplete="off" value="(#=obj.hasChild#)"></td>
+          <td id="acoes" class="gdfCell" style="text-align: center"><i onclick="g$.showNotificationTarefaProject()" class="fa fa-bell-o" style="cursor: pointer;color: #FF9800;position: relative;top: 1px;left:-4px;"> </i><i onclick="g$.showEditarTarefaProject()" class="fa fa-edit" style="margin-left:10px;cursor: pointer;color: #3F51B5;position: relative;top: 1px;left:-4px;"> </i> <i onclick="g$.deleteTarefaProject()" class="fa fa-trash" style="cursor: pointer; color: #F44336;"> </i> </td>
+        </tr>
+      -->
+
+      <div class="__template__" type="TASKBAR">
+        <!--
+          <div class="taskBox taskBoxDiv" taskId="(#=obj.id#)" >
+            <div class="layout (#=obj.hasExternalDep?'extDep':''#)">
+              <div class="taskStatus" status="(#=obj.status#)"></div>
+              <div class="taskProgress" style="width:(#=obj.progress>100?100:obj.progress#)%; background-color:(#=obj.progress>100?'red':'rgb(153,255,51);'#);"></div>
+              <div class="milestone (#=obj.startIsMilestone?'active':''#)" ></div>
+
+              <div class="taskLabel"></div>
+              <div class="milestone end (#=obj.endIsMilestone?'active':''#)" ></div>
+            </div>
+          </div>
+        -->
+      </div>
+
+      <div class="__template__" type="ASSIGNMENT_ROW">
+        <!--
+          <tr taskId="(#=obj.task.id#)" assId="(#=obj.assig.id#)" class="assigEditRow" >
+            <td ><select name="resourceId"  class="formElements" (#=obj.assig.id.indexOf("tmp_")==0?"":"disabled"#) ></select></td>
+            <td ><select type="select" name="roleId"  class="formElements"></select></td>
+            <td ><input type="text" name="effort" value="(#=getMillisInHoursMinutes(obj.assig.effort)#)" size="5" class="formElements"></td>
+            <td style="text-align: center"><span class="teamworkIcon delAssig del" style="cursor: pointer">d</span></td>
+          </tr>
+        -->
+      </div>
+
+      <div class="__template__" type="RESOURCE_ROW">
+        <!--
+          <tr resId="(#=obj.id#)" class="resRow" >
+            <td ><input type="text" name="name" value="(#=obj.name#)" style="width:100%;" class="formElements"></td>
+            <td style="text-align: center"><span class="teamworkIcon delRes del" style="cursor: pointer">d</span></td>
+          </tr>
+        -->
+      </div>
+
+    </div>
+
+</body>
+
+<!-- Scripts -->
+<script type="text/javascript" src="../lib/angular/angular.js"></script>
+
+<!--<script type="text/javascript" src="../cordova.js"></script>-->
+<script type="text/javascript" src="../controller/app.js"></script>
+<script type="text/javascript" src="../lib/materialize/js/materialize.js"></script>
+<script type="text/javascript" src="../lib/datatable/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="../lib/chart/Chart.bundle.min.js"></script>
+<script type="text/javascript" src="../lib/chart/Chart.min.js"></script>
+
+<script type="text/javascript" src="../plugins/datatable/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="../plugins/datatable/buttons.flash.min.js"></script>
+<script type="text/javascript" src="../plugins/datatable/jszip.min.js"></script>
+<script type="text/javascript" src="../plugins/datatable/pdfmake.min.js"></script>
+<script type="text/javascript" src="../plugins/datatable/vfs_fonts.js"></script>
+<script type="text/javascript" src="../plugins/datatable/buttons.html5.js"></script>
+<script type="text/javascript" src="../plugins/datatable/buttons.print.js"></script>
+
+<script type="text/javascript" src="../lib/datepicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="../lib/datepicker/bootstrap-datepicker.pt-BR.min.js"></script>
+
+<script type="text/javascript" src="../lib/mask/jquery.mask.js"></script>
+<script type="text/javascript" src="../lib/mask/jquery.maskMoney.js"></script>
+
+<!-- COMPONENTS -->
+<script type="text/javascript" src="../controller/inicial.js"></script>
+<script type="text/javascript" src="../components/DYS_MENU_TELAS/controller.js"></script>
+<script type="text/javascript" src="../components/DYS_VIEW/view.js"></script>
+<script type="text/javascript" src="../components/DYS_TABELA/controller.js"></script>
+<script type="text/javascript" src="../components/DYS_BLOCO/controller.js"></script>
+<script type="text/javascript" src="../components/DYS_CHECKBOX/controller.js"></script>
+<script type="text/javascript" src="../components/DYS_MENU_SETTINGS/controller.js"></script>
+<script type="text/javascript" src="../components/DYS_MENU_SETTINGS_FILTROS/controller.js"></script>
+<script type="text/javascript" src="../components/DYS_MENU_SETTINGS_COMPONENTS/controller.js"></script>
+<script type="text/javascript" src="../components/DYS_MENU_SETTINGS_EVENTOS-FUNCOES/controller.js"></script>
+<script type="text/javascript" src="../components/DYS_MENU_SETTINGS_ELEMENTO-ACOES/controller.js"></script>
+<script type="text/javascript" src="../components/DYS_MENU_SETTINGS_TELA-ACOES/controller.js"></script>
+<script type="text/javascript" src="../components/DYS_PROP_MENU_TELAS/controller.js"></script>
+<script type="text/javascript" src="../components/DYS_PROP_LINHA/controller.js"></script>
+
+<script type="text/javascript" src="../controller/COMBOBOX/combobox.js"></script>
+<script type="text/javascript" src="../controller/SELECTBOX/selectbox.js"></script>
+<script type="text/javascript" src="../controller/CONFIG_TABLE/configtable.js"></script>
+<script type="text/javascript" src="../controller/funcoes.js"></script>
+<script type="text/javascript" src="../controller/integracaoFacebook.js"></script>
+<script type="text/javascript" src="../controller/integracaoMagento.js"></script>
+<script type="text/javascript" src="../controller/perfil.js"></script>
+<script type="text/javascript" src="../controller/DYS_COMBO_DYS/comboTela.js"></script>
+<script type="text/javascript" src="../controller/DYS_COMBO_DYS/comboTabela.js"></script>
+<script type="text/javascript" src="../controller/DYS_COMBO_DYS/controller.js"></script>
+
+<script type="text/javascript" src="../components/DYS_VIEW_CUSTOMIZADOR/controllercustomizador.js"></script>
+<script type="text/javascript" src="../components/DYS_VIEW_CUSTOMIZADOR/template.js"></script>
+<script type="text/javascript" src="../components/Index/controllerCustomizador.js"></script>
+<script type="text/javascript" src="../lib/barcode/barcode.js"></script>
+<script type="text/javascript" src="../lib/alert/alert.js"></script>
+<script type="text/javascript" src="../lib/jQuery/jquery.PrintArea.js"></script>
+<script type="text/javascript" src="../lib/import_excel/xlsx.js "></script>
+
+
+<script src="../project/libs/jquery/jquery.livequery.1.1.1.min.js"></script>
+<script src="../project/libs/jquery/jquery.timers.js"></script>
+
+<script src="../project/libs/utilities.js"></script>
+<script src="../project/libs/forms.js"></script>
+<script src="../project/libs/date.js"></script>
+<script src="../project/libs/i18nJs.js"></script>
+<script src="../project/libs/jquery/JST/jquery.JST.js"></script>
+
+<script type="text/javascript" src="../project/libs/jquery/svg/jquery.svg.min.js"></script>
+<script type="text/javascript" src="../project/libs/jquery/svg/jquery.svgdom.1.8.js"></script>
+
+<script src="../project/ganttUtilities.js"></script>
+<script src="../project/ganttTask.js"></script>
+<script src="../project/ganttDrawerSVG.js"></script>
+<script src="../project/ganttGridEditor.js"></script>
+<script src="../project/ganttMaster.js"></script>
+
+
+<!-- Views -->
+
+<script type="text/javascript" src="../view/EntradaNF1000.js"></script>
+<script type="text/javascript" src="../view/SolicitarMedicamento1002.js"></script>
+<script type="text/javascript" src="../view/SolicitaçõesdeMedicamento1003.js"></script>
+<script type="text/javascript" src="../view/Totens1005.js"></script>
+<script type="text/javascript" src="../view/Entregador1038.js"></script>
+<script type="text/javascript" src="../view/TELÃO1054.js"></script>
+<script type="text/javascript" src="../view/PósAtendimento1059.js"></script>
+<script type="text/javascript" src="../view/EdiçãodePerguntas1061.js"></script>
+<script type="text/javascript" src="../view/EdiçãodeNoticias1062.js"></script>
+<script type="text/javascript" src="../view/Áreas/MicroÁreas1066.js"></script>
+<script type="text/javascript" src="../view/VideosdaTela1067.js"></script>
+<script type="text/javascript" src="../view/RelatóriodePesquisa1070.js"></script>
+<script type="text/javascript" src="../view/Controledesenhas1071.js"></script>
+<script type="text/javascript" src="../view/Pesquisas1072.js"></script>
+<script type="text/javascript" src="../view/MédicoExterno1081.js"></script>
+<script type="text/javascript" src="../view/Farmacêutico1082.js"></script>
+<script type="text/javascript" src="../view/Projeto156.js"></script>
+<script type="text/javascript" src="../view/APPVinculados223.js"></script>
+<script type="text/javascript" src="../view/APPAgendarOld224.js"></script>
+<script type="text/javascript" src="../view/APPAgendamentos225.js"></script>
+<script type="text/javascript" src="../view/APPMedicamentos226.js"></script>
+<script type="text/javascript" src="../view/APPMensagens227.js"></script>
+<script type="text/javascript" src="../view/Pacientes228.js"></script>
+<script type="text/javascript" src="../view/ChamadaPréAtendimento229.js"></script>
+<script type="text/javascript" src="../view/ProntuárioMédico230.js"></script>
+<script type="text/javascript" src="../view/Cadastros231.js"></script>
+<script type="text/javascript" src="../view/Unidade232.js"></script>
+<script type="text/javascript" src="../view/Médico233.js"></script>
+<script type="text/javascript" src="../view/Guichê234.js"></script>
+<script type="text/javascript" src="../view/Medicamentos235.js"></script>
+<script type="text/javascript" src="../view/RetiradadeMedicamento236.js"></script>
+<script type="text/javascript" src="../view/Configurações237.js"></script>
+<script type="text/javascript" src="../view/Especialidades238.js"></script>
+<script type="text/javascript" src="../view/Relatórios300.js"></script>
+<script type="text/javascript" src="../view/DisponibilidadeAgenda301.js"></script>
+<script type="text/javascript" src="../view/Senha302.js"></script>
+<script type="text/javascript" src="../view/ResultadodeExames303.js"></script>
+<script type="text/javascript" src="../view/UnidadesdeSaúde304.js"></script>
+<script type="text/javascript" src="../view/modal311.js"></script>
+<script type="text/javascript" src="../view/Exames313.js"></script>
+<script type="text/javascript" src="../view/Gerenciamentodenotificações314.js"></script>
+<script type="text/javascript" src="../view/Atendimentos319.js"></script>
+<script type="text/javascript" src="../view/Medicamentos320.js"></script>
+<script type="text/javascript" src="../view/Gráficos321.js"></script>
+<script type="text/javascript" src="../view/Administração47.js"></script>
+<script type="text/javascript" src="../view/Perfil48.js"></script>
+<script type="text/javascript" src="../view/Notificações493.js"></script>
+<script type="text/javascript" src="../view/NotificaçõesAvulsas494.js"></script>
+<script type="text/javascript" src="../view/Graficos502.js"></script>
+<script type="text/javascript" src="../view/EstoqueMedicamento550.js"></script>
+<script type="text/javascript" src="../view/HistoricodeProntuários551.js"></script>
+<script type="text/javascript" src="../view/Atendimento620.js"></script>
+<script type="text/javascript" src="../view/AtendimentoGuichê670.js"></script>
+<script type="text/javascript" src="../view/TotemSenha705.js"></script>
+<script type="text/javascript" src="../view/Enfermeiro706.js"></script>
+<script type="text/javascript" src="../view/Fornecedores792.js"></script>
+<script type="text/javascript" src="../view/MinhaConta833.js"></script>
+<script type="text/javascript" src="../view/TotemAgendamento836.js"></script>
+<script type="text/javascript" src="../view/APPAgendar940.js"></script>
+<script type="text/javascript" src="../view/AgendaMédico947.js"></script>
+<script type="text/javascript" src="../view/TempodeEspera953.js"></script>
+<script type="text/javascript" src="../view/SolicitarHorário954.js"></script>
+<script type="text/javascript" src="../view/Configurações959.js"></script>
+<script type="text/javascript" src="../view/EnviodeLembretes/ChamadaSenha967.js"></script>
+<script type="text/javascript" src="../view/Senha968.js"></script>
+<script type="text/javascript" src="../view/ListadeEspera983.js"></script>
+<script type="text/javascript" src="../view/Suporte994.js"></script>
+
+<!-- Modals -->
+<script type="text/javascript" src="../modals/modalAmarranfcomcompra1001.js"></script>
+<script type="text/javascript" src="../modals/modalNovopedidodecompra1004.js"></script>
+<script type="text/javascript" src="../modals/modalPreparaTransferencias1029.js"></script>
+<script type="text/javascript" src="../modals/modalAgendarRetorno1051.js"></script>
+<script type="text/javascript" src="../modals/modalSenhaspendentes1055.js"></script>
+<script type="text/javascript" src="../modals/modalOpcaoMédico1056.js"></script>
+<script type="text/javascript" src="../modals/modalTRIAGEMPARAATENDIMENTO1057.js"></script>
+<script type="text/javascript" src="../modals/modalPesquisadeSatisfação1058.js"></script>
+<script type="text/javascript" src="../modals/modalOPCAOMEDICO-ESPECIALIDADE1060.js"></script>
+<script type="text/javascript" src="../modals/modalEdiçãodeNoticia1063.js"></script>
+<script type="text/javascript" src="../modals/modalEncaminhamentos1065.js"></script>
+<script type="text/javascript" src="../modals/modalEdiçãodeVideo1068.js"></script>
+<script type="text/javascript" src="../modals/modalVisualizaçãodeVideo1069.js"></script>
+<script type="text/javascript" src="../modals/modalSenhassemAgendamento1077.js"></script>
+<script type="text/javascript" src="../modals/modalCarterinhas1079.js"></script>
+<script type="text/javascript" src="../modals/modalreceitaexterna1080.js"></script>
+<script type="text/javascript" src="../modals/modalValidarFechar1083.js"></script>
+<script type="text/javascript" src="../modals/modalListaEspecialidades315.js"></script>
+<script type="text/javascript" src="../modals/modalTriagemPaciente318.js"></script>
+<script type="text/javascript" src="../modals/modalCadastroPaciente323.js"></script>
+<script type="text/javascript" src="../modals/modalNovoTextoPadrão325.js"></script>
+<script type="text/javascript" src="../modals/modalAgendarPaciente487.js"></script>
+<script type="text/javascript" src="../modals/modalAgendarServiço488.js"></script>
+<script type="text/javascript" src="../modals/modalAgendarEspecialidade489.js"></script>
+<script type="text/javascript" src="../modals/modalAgendarUnidade490.js"></script>
+<script type="text/javascript" src="../modals/modalAgendarHorario491.js"></script>
+<script type="text/javascript" src="../modals/modalMapa501.js"></script>
+<script type="text/javascript" src="../modals/modalEntregaMedicamento556.js"></script>
+<script type="text/javascript" src="../modals/modaltranferir576.js"></script>
+<script type="text/javascript" src="../modals/modalDadosdeAtendimento600.js"></script>
+<script type="text/javascript" src="../modals/modalSenha681.js"></script>
+<script type="text/javascript" src="../modals/modalJustificarnãoComparecimento766.js"></script>
+<script type="text/javascript" src="../modals/modalPreparaRetirada814.js"></script>
+<script type="text/javascript" src="../modals/modalNovoAtestado819.js"></script>
+<script type="text/javascript" src="../modals/modalGerarDisponibilidade943.js"></script>
+<script type="text/javascript" src="../modals/modalRemarcar944.js"></script>
+<script type="text/javascript" src="../modals/modalVerhorários945.js"></script>
+<script type="text/javascript" src="../modals/modalSoliciatarHorario955.js"></script>
+<script type="text/javascript" src="../modals/modalRejeitarHorário956.js"></script>
+<script type="text/javascript" src="../modals/modalEstoque957.js"></script>
+<script type="text/javascript" src="../modals/modalCONFIRMAR960.js"></script>
+<script type="text/javascript" src="../modals/modalPagamento973.js"></script>
+<script type="text/javascript" src="../modals/modalRecebimentosdodia981.js"></script>
+<script type="text/javascript" src="../modals/modalListadeespera982.js"></script>
+<script type="text/javascript" src="../modals/modalImagemSuporte996.js"></script>
+
+<!-- Templates -->
+<!--<script type="text/javascript" src="../DYS_TEMPLATE/router.js"></script>-->
+<script type="text/javascript" src="../DYS_TEMPLATE/funcaomodal.js"></script>
+<script type="text/javascript" src="../DYS_TEMPLATE/templateModal.js"></script>
+
+</html>
