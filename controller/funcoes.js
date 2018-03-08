@@ -1297,10 +1297,16 @@ app.controller("funcoes", function ($scope, $http, $rootScope, $compile) {
                 for (var i = 0; i < cols.length; i++) {
                     cols[i].textContent = "";
                 }
-            } 
+            }
             else if (propriedade == "obrigatorio") {
-                if (valor == "true" || valor == "1") elemento.setAttribute("required", true);
-                else if (valor == "false" || valor == "0") elemento.removeAttribute("required");
+                if (valor == "true" || valor == "1") {
+                    if (elemento.id == "selectbox") elemento.querySelector("#selectbox").setAttribute("required", true);
+                    else elemento.setAttribute("required", true);
+                }
+                else if (valor == "false" || valor == "0") {
+                    if (elemento.id == "selectbox") elemento.querySelector("#selectbox").removeAttribute("required");
+                    else elemento.removeAttribute("required");
+                }
             }
             else if (propriedade == "size") {
                 elemento.style.fontSize = valor;
@@ -6238,6 +6244,25 @@ app.controller("funcoes", function ($scope, $http, $rootScope, $compile) {
             }
 
         });
+    }
+
+    g$.imprimeSenhaSaude = function (params, isTela) {
+        var params = g$.alterSargentos(params), 
+            senha_id = params[1].trim(),
+            cond = params[2],
+            idFuncao = params[0].split("¦")[1];
+
+        valida = (!cond) ? true : g$.validaCondicao(cond);
+        if (valida == false) {
+            console.log("Não executou porque" + cond + " é falso");
+            return g$.vfyFuncaoDepois(idFuncao, isTela);
+        }; 
+
+        $http.post("http://localhost:8001/imprimeSenha/" + senha_id).success(function (data) {
+            console.log(data);
+            return g$.vfyFuncaoDepois(idFuncao, isTela);
+        });
+
     }
 
 });
