@@ -1,0 +1,1 @@
+app.directive('modalselecionarprodutos437', function () {return {restrict: 'E',templateUrl: '../modals/modalSelecionarProdutos437.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Selecionar Produtos');}}});

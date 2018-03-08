@@ -1,0 +1,1 @@
+app.directive('modalcadastrodencm617', function () {return {restrict: 'E',templateUrl: '../modals/modalCadastrodeNCM617.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Cadastro de NCM');}}});

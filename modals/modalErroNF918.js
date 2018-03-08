@@ -1,0 +1,1 @@
+app.directive('modalerronf918', function () {return {restrict: 'E',templateUrl: '../modals/modalErroNF918.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Erro NF');}}});

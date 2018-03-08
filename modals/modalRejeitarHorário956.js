@@ -1,0 +1,1 @@
+app.directive('modalrejeitarhorário956', function () {return {restrict: 'E',templateUrl: '../modals/modalRejeitarHorário956.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Rejeitar Horário');}}});

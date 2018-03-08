@@ -1,0 +1,1 @@
+app.controller('ListadeEspera983', function ($scope){ g$.configTela('Lista de Espera');g$.atualizarTabela("atualizarTabela | 48866", true);});

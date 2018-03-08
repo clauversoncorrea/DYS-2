@@ -1,0 +1,1 @@
+app.directive('modalverplp549', function () {return {restrict: 'E',templateUrl: '../modals/modalVerPLP549.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Ver PLP');}}});

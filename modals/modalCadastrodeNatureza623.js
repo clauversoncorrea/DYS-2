@@ -1,0 +1,1 @@
+app.directive('modalcadastrodenatureza623', function () {return {restrict: 'E',templateUrl: '../modals/modalCadastrodeNatureza623.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Cadastro de Natureza');}}});

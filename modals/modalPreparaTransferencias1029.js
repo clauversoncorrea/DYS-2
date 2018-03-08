@@ -1,0 +1,1 @@
+app.directive('modalpreparatransferencias1029', function () {return {restrict: 'E',templateUrl: '../modals/modalPreparaTransferencias1029.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Prepara Transferencias');}}});

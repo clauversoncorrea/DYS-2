@@ -1,0 +1,1 @@
+app.directive('modalendereçoadicional837', function () {return {restrict: 'E',templateUrl: '../modals/modalEndereçoAdicional837.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Endereço Adicional');}}});

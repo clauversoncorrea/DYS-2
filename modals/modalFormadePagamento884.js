@@ -1,0 +1,1 @@
+app.directive('modalformadepagamento884', function () {return {restrict: 'E',templateUrl: '../modals/modalFormadePagamento884.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Forma de Pagamento');}}});

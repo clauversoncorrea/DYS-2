@@ -1,0 +1,1 @@
+app.directive('modalalterarstatuspedido785', function () {return {restrict: 'E',templateUrl: '../modals/modalAlterarStatusPedido785.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('AlterarStatusPedido');}}});

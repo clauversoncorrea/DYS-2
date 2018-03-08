@@ -1,0 +1,1 @@
+app.controller('VideosdaTela1067', function ($scope){ g$.configTela('Videos da Tela');g$.atualizarTabela("atualizarTabela | 54023", true);$("[data-id=54029]")[0].addEventListener("click", g$.memo.bind(null, "memo | memo1 |", false), false);$("[data-id=54029]")[0].addEventListener("click", g$.openModal.bind(null, "openModal | Editar Video|Video|1068", false), false);});

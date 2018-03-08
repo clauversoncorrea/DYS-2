@@ -1,0 +1,1 @@
+app.controller('RelatóriodePesquisa1070', function ($scope){ g$.configTela('Relatório de Pesquisa');});

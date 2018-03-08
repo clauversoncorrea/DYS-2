@@ -1,0 +1,1 @@
+app.directive('modaldescontopdv916', function () {return {restrict: 'E',templateUrl: '../modals/modalDescontoPDV916.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Desconto PDV');}}});

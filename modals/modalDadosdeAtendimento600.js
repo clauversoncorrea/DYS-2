@@ -1,0 +1,1 @@
+app.directive('modaldadosdeatendimento600', function () {return {restrict: 'E',templateUrl: '../modals/modalDadosdeAtendimento600.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Dados de Atendimento');}}});

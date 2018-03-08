@@ -1,0 +1,1 @@
+app.directive('modalcomentárioxpedido541', function () {return {restrict: 'E',templateUrl: '../modals/modalComentárioxPedido541.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Comentário x Pedido');}}});

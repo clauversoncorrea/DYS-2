@@ -1,0 +1,1 @@
+app.directive('modalprepararetirada814', function () {return {restrict: 'E',templateUrl: '../modals/modalPreparaRetirada814.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Prepara Retirada');}}});

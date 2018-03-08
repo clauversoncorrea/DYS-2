@@ -1,0 +1,1 @@
+app.directive('modallistadeespera982', function () {return {restrict: 'E',templateUrl: '../modals/modalListadeespera982.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Lista de espera');}}});

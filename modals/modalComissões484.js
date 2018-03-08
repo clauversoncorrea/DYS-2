@@ -1,0 +1,1 @@
+app.directive('modalcomissões484', function () {return {restrict: 'E',templateUrl: '../modals/modalComissões484.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Comissões');}}});

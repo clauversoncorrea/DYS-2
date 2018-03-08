@@ -1,0 +1,1 @@
+app.directive('modalselecionarintegração826', function () {return {restrict: 'E',templateUrl: '../modals/modalSelecionarIntegração826.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Selecionar Integração');}}});

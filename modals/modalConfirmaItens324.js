@@ -1,0 +1,1 @@
+app.directive('modalconfirmaitens324', function () {return {restrict: 'E',templateUrl: '../modals/modalConfirmaItens324.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Confirma Itens');}}});

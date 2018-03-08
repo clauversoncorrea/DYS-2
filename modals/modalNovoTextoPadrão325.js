@@ -1,0 +1,1 @@
+app.directive('modalnovotextopadrão325', function () {return {restrict: 'E',templateUrl: '../modals/modalNovoTextoPadrão325.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Novo Texto Padrão');}}});

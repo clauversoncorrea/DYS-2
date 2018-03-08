@@ -1,0 +1,1 @@
+app.directive('modalnovousuario538', function () {return {restrict: 'E',templateUrl: '../modals/modalNovoUsuario538.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Novo Usuario');}}});

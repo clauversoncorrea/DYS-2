@@ -1,0 +1,1 @@
+app.directive('modaldocumentosdeos914', function () {return {restrict: 'E',templateUrl: '../modals/modalDocumentosdeOS914.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Documentos de OS');}}});

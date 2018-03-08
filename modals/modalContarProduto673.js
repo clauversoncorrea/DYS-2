@@ -1,0 +1,1 @@
+app.directive('modalcontarproduto673', function () {return {restrict: 'E',templateUrl: '../modals/modalContarProduto673.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Contar Produto');}}});

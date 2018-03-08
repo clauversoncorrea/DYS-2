@@ -1,0 +1,1 @@
+app.directive('modalappcontasok711', function () {return {restrict: 'E',templateUrl: '../modals/modalAPPcontasOK711.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('APP contas OK');}}});

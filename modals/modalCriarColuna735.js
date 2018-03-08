@@ -1,0 +1,1 @@
+app.directive('modalcriarcoluna735', function () {return {restrict: 'E',templateUrl: '../modals/modalCriarColuna735.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Criar Coluna');}}});

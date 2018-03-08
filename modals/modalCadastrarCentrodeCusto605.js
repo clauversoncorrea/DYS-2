@@ -1,0 +1,1 @@
+app.directive('modalcadastrarcentrodecusto605', function () {return {restrict: 'E',templateUrl: '../modals/modalCadastrarCentrodeCusto605.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Cadastrar Centro de Custo');}}});

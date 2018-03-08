@@ -1,0 +1,1 @@
+app.directive('modalcadastrodestatusdecrm929', function () {return {restrict: 'E',templateUrl: '../modals/modalCadastrodeStatusdeCRM929.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Cadastro de Status de CRM');}}});

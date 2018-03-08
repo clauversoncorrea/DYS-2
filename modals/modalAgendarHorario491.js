@@ -1,0 +1,1 @@
+app.directive('modalagendarhorario491', function () {return {restrict: 'E',templateUrl: '../modals/modalAgendarHorario491.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('AgendarHorario');}}});

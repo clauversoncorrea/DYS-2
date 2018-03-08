@@ -1,0 +1,1 @@
+app.directive('modalgerarplp520', function () {return {restrict: 'E',templateUrl: '../modals/modalGerarPLP520.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Gerar PLP');}}});

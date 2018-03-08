@@ -1,0 +1,1 @@
+app.directive('modalcaixapedido622', function () {return {restrict: 'E',templateUrl: '../modals/modalCaixaPedido622.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('CaixaPedido');}}});

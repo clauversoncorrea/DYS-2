@@ -1,0 +1,1 @@
+app.directive('modalappcontasanexos713', function () {return {restrict: 'E',templateUrl: '../modals/modalAPPcontasanexos713.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('APP contas  anexos');}}});

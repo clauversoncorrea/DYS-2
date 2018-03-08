@@ -1,0 +1,1 @@
+app.directive('modalcadastrodechecklist934', function () {return {restrict: 'E',templateUrl: '../modals/modalCadastrodeCheckList934.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Cadastro de CheckList');}}});

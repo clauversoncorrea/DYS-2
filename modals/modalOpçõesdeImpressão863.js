@@ -1,0 +1,1 @@
+app.directive('modalopçõesdeimpressão863', function () {return {restrict: 'E',templateUrl: '../modals/modalOpçõesdeImpressão863.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Opções de Impressão');}}});

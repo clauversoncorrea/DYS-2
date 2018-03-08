@@ -1,0 +1,1 @@
+app.directive('modalcriaralbumfb512', function () {return {restrict: 'E',templateUrl: '../modals/modalCriarAlbumFB512.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Criar Album FB');}}});

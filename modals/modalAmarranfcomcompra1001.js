@@ -1,0 +1,1 @@
+app.directive('modalamarranfcomcompra1001', function () {return {restrict: 'E',templateUrl: '../modals/modalAmarranfcomcompra1001.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Amarra nf com compra');}}});

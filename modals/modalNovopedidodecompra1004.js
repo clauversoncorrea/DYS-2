@@ -1,0 +1,1 @@
+app.directive('modalnovopedidodecompra1004', function () {return {restrict: 'E',templateUrl: '../modals/modalNovopedidodecompra1004.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Novo pedido de compra');}}});

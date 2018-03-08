@@ -1,0 +1,1 @@
+app.directive('modalcadastrodeorigem764', function () {return {restrict: 'E',templateUrl: '../modals/modalCadastrodeOrigem764.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Cadastro de Origem');}}});

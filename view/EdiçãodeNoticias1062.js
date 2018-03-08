@@ -1,0 +1,1 @@
+app.controller('EdiçãodeNoticias1062', function ($scope){ g$.configTela('Edição de Noticias');g$.atualizarTabela("atualizarTabela | 53762", true);$("[data-id=53767]")[0].addEventListener("click", g$.memo.bind(null, "memo | memo1 | ", false), false);$("[data-id=53767]")[0].addEventListener("click", g$.openModal.bind(null, "openModal | Noticias |Edicao| 1063", false), false);});

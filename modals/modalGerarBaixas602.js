@@ -1,0 +1,1 @@
+app.directive('modalgerarbaixas602', function () {return {restrict: 'E',templateUrl: '../modals/modalGerarBaixas602.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Gerar Baixas');}}});

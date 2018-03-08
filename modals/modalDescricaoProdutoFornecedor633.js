@@ -1,0 +1,1 @@
+app.directive('modaldescricaoprodutofornecedor633', function () {return {restrict: 'E',templateUrl: '../modals/modalDescricaoProdutoFornecedor633.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Descricao Produto Fornecedor');}}});

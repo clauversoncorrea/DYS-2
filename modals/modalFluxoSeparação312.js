@@ -1,0 +1,1 @@
+app.directive('modalfluxoseparação312', function () {return {restrict: 'E',templateUrl: '../modals/modalFluxoSeparação312.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Fluxo Separação');}}});

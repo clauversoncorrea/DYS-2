@@ -1,0 +1,1 @@
+app.directive('modalsoliciatarhorario955', function () {return {restrict: 'E',templateUrl: '../modals/modalSoliciatarHorario955.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('SoliciatarHorario');}}});

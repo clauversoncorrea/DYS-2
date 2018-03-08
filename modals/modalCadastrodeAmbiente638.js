@@ -1,0 +1,1 @@
+app.directive('modalcadastrodeambiente638', function () {return {restrict: 'E',templateUrl: '../modals/modalCadastrodeAmbiente638.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Cadastro de Ambiente');}}});

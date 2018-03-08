@@ -1,0 +1,1 @@
+app.directive('modalcaixapdv922', function () {return {restrict: 'E',templateUrl: '../modals/modalCaixaPDV922.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('CaixaPDV');}}});

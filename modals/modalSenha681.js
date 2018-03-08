@@ -1,0 +1,1 @@
+app.directive('modalsenha681', function () {return {restrict: 'E',templateUrl: '../modals/modalSenha681.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Senha');}}});

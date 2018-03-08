@@ -1,0 +1,1 @@
+app.directive('modaleditarcategoria822', function () {return {restrict: 'E',templateUrl: '../modals/modalEditarCategoria822.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Editar Categoria');}}});

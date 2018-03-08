@@ -1,0 +1,1 @@
+app.directive('modalmensagem933', function () {return {restrict: 'E',templateUrl: '../modals/modalMensagem933.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Mensagem');}}});

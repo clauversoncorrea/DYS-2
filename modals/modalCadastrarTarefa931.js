@@ -1,0 +1,1 @@
+app.directive('modalcadastrartarefa931', function () {return {restrict: 'E',templateUrl: '../modals/modalCadastrarTarefa931.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Cadastrar Tarefa');}}});

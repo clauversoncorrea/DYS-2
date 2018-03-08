@@ -1,0 +1,1 @@
+app.directive('modalcadastrodeequipe530', function () {return {restrict: 'E',templateUrl: '../modals/modalCadastrodeEquipe530.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Cadastro de Equipe');}}});
