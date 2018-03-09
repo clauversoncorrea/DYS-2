@@ -3380,10 +3380,24 @@ app.controller("funcoes", function ($scope, $http, $rootScope, $compile) {
 
     }
 
+
     g$.popClose = function (params) {
+
         if ($rootScope.user.customiza == "1") {
             g$.limpaTelaAcoes();
             g$.limpaConsultas();
+        }
+
+        if (params) {
+            var params = g$.alterSargentos(params),
+                idFuncao = params[0].split("¦")[1],
+                cond = params[1];
+
+            valida = (!cond) ? true : g$.validaCondicao(cond);
+            if (valida == false) {
+                console.log("Não executou porque" + cond + " é falso");
+                return g$.vfyFuncaoDepois(idFuncao);
+            };
         }
 
         var tabelas = $("#view #tabela"),
@@ -3404,6 +3418,10 @@ app.controller("funcoes", function ($scope, $http, $rootScope, $compile) {
         if (!$("#menutelas")[0].classList.contains("menu-ativo")) {
             document.body.classList.remove("sidebar-collapse");
             controlWidthView(this, $('#menutelas')[0]);
+        }
+
+        if (idFuncao) {
+            return g$.vfyFuncaoDepois(idFuncao);
         }
 
     }
@@ -6247,7 +6265,7 @@ app.controller("funcoes", function ($scope, $http, $rootScope, $compile) {
     }
 
     g$.imprimeSenhaSaude = function (params, isTela) {
-        var params = g$.alterSargentos(params), 
+        var params = g$.alterSargentos(params),
             senha_id = params[1].trim(),
             cond = params[2],
             idFuncao = params[0].split("¦")[1];
@@ -6256,7 +6274,7 @@ app.controller("funcoes", function ($scope, $http, $rootScope, $compile) {
         if (valida == false) {
             console.log("Não executou porque" + cond + " é falso");
             return g$.vfyFuncaoDepois(idFuncao, isTela);
-        }; 
+        };
 
         $http.post("http://localhost:8001/imprimeSenha/" + senha_id).success(function (data) {
             console.log(data);
