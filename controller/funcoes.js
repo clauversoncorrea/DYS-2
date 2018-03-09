@@ -3380,7 +3380,7 @@ app.controller("funcoes", function ($scope, $http, $rootScope, $compile) {
 
     }
 
-    g$.popClose = function () {
+    g$.popClose = function (params) {
         if ($rootScope.user.customiza == "1") {
             g$.limpaTelaAcoes();
             g$.limpaConsultas();
