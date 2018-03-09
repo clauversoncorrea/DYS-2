@@ -312,6 +312,7 @@ app.controller("tabela", function ($scope, $http, $compile, $rootScope) {
                 "language": {
                     "url": "../lib/datatable/js/Portuguese-Brasil.json"
                 },
+                "pageLength": (elm.dataset.tbl_pageLength && elm.dataset.tbl_pageLength != "") ? elm.dataset.tbl_pageLength : 10,
                 "paging": (elm.dataset.tabela_paginate == "1") ? true : false,
                 "searching": (elm.dataset.tabela_pesquisar == "1") ? true : false,
                 "info": (elm.dataset.tabela_info == "1") ? true : false,

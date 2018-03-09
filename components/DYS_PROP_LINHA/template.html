@@ -2,30 +2,30 @@
 	#settings #linha div.row:first-child {
 		margin-top: 4px;
 	}
-	
+
 	#settings #linha div.row .btn {
 		padding: 0px 10px;
 		margin: 4px 0px;
 		margin-right: 4px;
 	}
-	
+
 	#settings #linha .btn-propriedades {
 		min-height: 30px;
 		line-height: 30px;
 		float: right;
 	}
-	
+
 	#settings #linha .icon-propriedades {
 		font-size: 1rem;
 	}
-	
+
 	#settings #linha .filtro-propriedades {
 		width: 40% !important;
 		background: #FFF !important;
 		color: #444 !important;
 		margin-left: 5px;
 	}
-	
+
 	#lblCheckedCliente {
 		margin-left: 10px;
 		position: relative;
@@ -41,16 +41,19 @@
 			<input class="form-control filtro-propriedades margin-bottom" ng-model="search.id" placeholder="Pesquisar Elemento" />
 
 			<a ng-click="requeryElementos()" title="Carregar todos Elementos da Tela" class="waves-effect waves-light blue darken-3 btn right btn-propriedades">
-				<i class="fa fa-refresh icon-propriedades"></i></a>
+				<i class="fa fa-refresh icon-propriedades"></i>
+			</a>
 
 			<a ng-click="duplicarTela()" title="Duplicar a Tela" class="waves-effect waves-light orange darken-3 btn right btn-propriedades">
-				<i class="fa fa-copy icon-propriedades"></i></a>
+				<i class="fa fa-copy icon-propriedades"></i>
+			</a>
 
 			<a ng-click="deletarElemento()" title="Deletar Elemento Selecionado" class="waves-effect waves-light red darken-3 btn right btn-propriedades">
-				<i class="fa fa-trash icon-propriedades"></i></a>
+				<i class="fa fa-trash icon-propriedades"></i>
+			</a>
 
 			<input type="checkbox" ng-click="requeryElementosCliente()" ng-model="customizador.isCliente" class="filled-in new_check"
-				id="checkedCliente" title="Deseja trabalhar no Cliente??" />
+			 id="checkedCliente" title="Deseja trabalhar no Cliente??" />
 			<label id="lblCheckedCliente" for="checkedCliente" title="Deseja trabalhar no Cliente??"> Cliente? </label>
 		</div>
 	</div>
@@ -73,8 +76,8 @@
 						<th> Menu ID </th>
 						<th> Pai </th>
 						<th> Ordem </th>
-						<th onclick="g$.criaTabela()"  style="color:#ffef00;cursor:pointer;"> Le_da_Tabela </th>
-						<th onclick="g$.criaColuna()"  style="color:#ffef00;cursor:pointer;"> Le_do_Campo </th>
+						<th onclick="g$.criaTabela()" style="color:#ffef00;cursor:pointer;"> Le_da_Tabela </th>
+						<th onclick="g$.criaColuna()" style="color:#ffef00;cursor:pointer;"> Le_do_Campo </th>
 						<th> Grava_da_Tabela </th>
 						<th> Grava_no_Campo </th>
 						<th> Link_da_Tabela </th>
@@ -129,6 +132,7 @@
 						<th> Evento Bloco </th>
 						<th> Evento Check </th>
 						<th> Evento Tabela </th>
+						<th> tbl_PageLength </th>
 						<th> Tbl_Paginacao </th>
 						<th> Tbl_Pesquisar </th>
 						<th> Tbl_MultiSelect </th>
@@ -178,31 +182,31 @@
 							{{propriedade.ordem}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='le_da_tabela' data-combo_ativo="true"
-							data-query="SELECT id, tabela FROM tabela" data-coluna="tabela"> {{propriedade.le_da_tabela}} </td>
+						 data-query="SELECT id, tabela FROM tabela" data-coluna="tabela"> {{propriedade.le_da_tabela}} </td>
 
 						<td id="le_do_campo" ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='le_do_campo' data-combo_ativo_atualiazar="true"
-							data-query="select c.id, c.campo from node.campo c LEFT JOIN node.tabela t ON c.tabela_id = t.id where t.tabela = »le_da_tabela»;"
-							data-coluna="campo"> {{propriedade.le_do_campo}} </td>
+						 data-query="select c.id, c.campo from node.campo c LEFT JOIN node.tabela t ON c.tabela_id = t.id where t.tabela = »le_da_tabela»;"
+						 data-coluna="campo"> {{propriedade.le_do_campo}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='grava_na_tabela' data-combo_ativo="true"
-							data-query="SELECT id, tabela FROM tabela" data-coluna="tabela"> {{propriedade.grava_na_tabela}} </td>
+						 data-query="SELECT id, tabela FROM tabela" data-coluna="tabela"> {{propriedade.grava_na_tabela}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='grava_no_campo' data-combo_ativo_atualiazar="true"
-							data-query="select c.id, c.campo from node.campo c LEFT JOIN node.tabela t ON c.tabela_id = t.id where t.tabela = »grava_na_tabela»;"
-							data-coluna="campo"> {{propriedade.grava_no_campo}} </td>
+						 data-query="select c.id, c.campo from node.campo c LEFT JOIN node.tabela t ON c.tabela_id = t.id where t.tabela = »grava_na_tabela»;"
+						 data-coluna="campo"> {{propriedade.grava_no_campo}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='link_tabela' data-combo_ativo="true"
-							data-query="SELECT id, tabela FROM tabela" data-coluna="tabela"> {{propriedade.link_tabela}} </td>
+						 data-query="SELECT id, tabela FROM tabela" data-coluna="tabela"> {{propriedade.link_tabela}} </td>
 
 						<td id="le_do_campo" ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='link_campo' data-combo_ativo_atualiazar="true"
-							data-query="select c.id, c.campo from node.campo c LEFT JOIN node.tabela t ON c.tabela_id = t.id where t.tabela = »link_tabela»;"
-							data-coluna="campo"> {{propriedade.link_campo}} </td>
+						 data-query="select c.id, c.campo from node.campo c LEFT JOIN node.tabela t ON c.tabela_id = t.id where t.tabela = »link_tabela»;"
+						 data-coluna="campo"> {{propriedade.link_campo}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='link_campo' data-input_ativo="true">
 							{{propriedade.link_campo}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='consulta_id' data-combo_ativo="true"
-							data-query="SELECT id, consulta FROM consulta" data-coluna="consulta"> {{propriedade.consulta_id}} </td>
+						 data-query="SELECT id, consulta FROM consulta" data-coluna="consulta"> {{propriedade.consulta_id}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='desktop' data-input_ativo="true">
 							{{propriedade.desktop}} </td>
@@ -226,11 +230,11 @@
 							{{propriedade.mask}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='combo_tabela' data-combo_ativo="true"
-							data-query="SELECT id, tabela FROM node.tabela" data-coluna="tabela"> {{propriedade.combo_tabela}} </td>
+						 data-query="SELECT id, tabela FROM node.tabela" data-coluna="tabela"> {{propriedade.combo_tabela}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='combo_campo' data-combo_ativo_atualiazar="true"
-							data-query="select c.id, c.campo from node.campo c LEFT JOIN node.tabela t ON c.tabela_id = t.id where t.tabela = »combo_tabela»;"
-							data-coluna="campo"> {{propriedade.combo_campo}} </td>
+						 data-query="select c.id, c.campo from node.campo c LEFT JOIN node.tabela t ON c.tabela_id = t.id where t.tabela = »combo_tabela»;"
+						 data-coluna="campo"> {{propriedade.combo_campo}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='combo_query' data-input_ativo="true">
 							{{propriedade.combo_query}} </td>
@@ -248,21 +252,21 @@
 							<input type="checkbox" ng-checked="propriedade.combo_atualizar" onclick="alterarCheckProp()" /> </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='formato' data-combo_dys="true"
-							data-combo_nome="formato">
+						 data-combo_nome="formato">
 							{{propriedade.formato}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='placeholder' data-input_ativo="true">
 							{{propriedade.placeholder}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='display' data-combo_dys="true"
-							data-combo_nome="display">
+						 data-combo_nome="display">
 							{{propriedade.display}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='size' data-input_ativo="true">
 							{{propriedade.size}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='familia' data-combo_dys="true"
-							data-combo_nome="familia">
+						 data-combo_nome="familia">
 							{{propriedade.familia}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='padding' data-input_ativo="true">
@@ -276,15 +280,16 @@
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='cor' data-tipo="color" data-input_ativo="true">
 							{{propriedade.cor}} </td>
-							
-						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='max_length' data-tipo="max_length" data-input_ativo="true">
+
+						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='max_length' data-tipo="max_length"
+						 data-input_ativo="true">
 							{{propriedade.max_length}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='borda_size' data-input_ativo="true">
 							{{propriedade.borda_size}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='borda_tipo' data-combo_dys="true"
-							data-combo_nome="borda_tipo">
+						 data-combo_nome="borda_tipo">
 							{{propriedade.borda_tipo}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='borda_cor' data-tipo="color" data-input_ativo="true">
@@ -312,7 +317,7 @@
 							<input type="checkbox" ng-checked="propriedade.coluna_check" onclick="alterarCheckProp()"> </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='cell_tipo' data-combo_dys="true"
-							data-combo_nome="tipo">
+						 data-combo_nome="tipo">
 							{{propriedade.cell_tipo}} </td>
 
 						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='alinhamento' data-input_ativo="true">
@@ -343,7 +348,7 @@
 							{{propriedade.flutuar}} </td>
 
 						<td ng-click="selecionarCelulaProp()" title="Nome Modal | ID Modal(Sem Espaço) | ID Tela" onkeydown="moveTableProp()" tabindex='0'
-							data-nome='modal' data-input_ativo="true">
+						 data-nome='modal' data-input_ativo="true">
 							{{propriedade.modal}} </td>
 
 						<td ng-click="selecionarCelulaProp()" class="center-align" onkeydown="moveTableProp()" tabindex='0' data-nome='evento_bloco'>
@@ -354,6 +359,10 @@
 
 						<td ng-click="selecionarCelulaProp()" class="center-align" onkeydown="moveTableProp()" tabindex='0' data-nome='evento_tabela'>
 							<input type="checkbox" ng-checked="propriedade.evento_tabela" onclick="alterarCheckProp()"> </td>
+
+						<td ng-click="selecionarCelulaProp()" onkeydown="moveTableProp()" tabindex='0' data-nome='tbl_pageLength' data-combo_dys="true"
+						 data-combo_nome="tbl_pageLength">
+							{{propriedade.tbl_pageLength}} </td>
 
 						<td ng-click="selecionarCelulaProp()" class="center-align" onkeydown="moveTableProp()" tabindex='0' data-nome='tabela_paginate'>
 							<input type="checkbox" ng-checked="propriedade.tabela_paginate" onclick="alterarCheckProp()"> </td>

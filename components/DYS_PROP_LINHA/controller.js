@@ -422,6 +422,7 @@ setDadosView = function (elm, obj, th, alterCombo) {
     if (obj.download && obj.download != "" && obj.download != "null") elm.dataset.download = obj.download;
     if (obj.menu_id && obj.menu_id != "" && obj.menu_id != "null") elm.dataset.menu_id = obj.menu_id;
     if (obj.tbl_modal && obj.tbl_modal != "" && obj.tbl_modal != "null") elm.dataset.tbl_modal = obj.tbl_modal;
+    if (obj.tbl_pageLength && obj.tbl_pageLength != "" && obj.tbl_pageLength != "null") elm.dataset.tbl_pageLength = obj.tbl_pageLength;
     if (obj.alias && obj.alias != "" && obj.alias != "null") elm.dataset.alias = obj.alias;
 
     // Atributos Combo 

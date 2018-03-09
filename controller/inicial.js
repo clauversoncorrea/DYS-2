@@ -303,6 +303,7 @@ app.controller("inicial", function ($scope, $http, $rootScope, $timeout, $compil
                 "IF(ISNULL(cli.id),e.ordem, cli.ordem) AS ordem, IF(ISNULL(cli.id),e.download,cli.download) AS download," +
                 "IF(ISNULL(cli.id),e.abrir_no_sistema,cli.abrir_no_sistema) AS abrir_no_sistema, tl.tabela le_da_tabela, tl.alias le_da_tabela_alias,cl.campo le_do_campo, e.le_do_campo le_do_campo_id, " +
                 "IF(ISNULL(cli.id),e.tbl_selecionarlinha, cli.tbl_selecionarlinha) AS tbl_selecionarlinha, IF(ISNULL(cli.id),e.tbl_linhanova, cli.tbl_linhanova) AS tbl_linhanova, " +
+                "IF(ISNULL(cli.id),e.tbl_pageLength, cli.tbl_pageLength) AS tbl_pageLength, " +
                 "lt.tabela link_tabela,coalesce(lc.campo,e.link_campo) link_campo,tg.tabela grava_na_tabela," +
                 "e.consulta_id,cg.campo grava_no_campo," + "IF(ISNULL(cli.id),e.limite, cli.limite) AS limite, " +
                 "IF(ISNULL(cli.id),e.celular, cli.celular) AS celular,IF(ISNULL(cli.id),e.tablet, cli.tablet) AS tablet," +
@@ -370,6 +371,7 @@ app.controller("inicial", function ($scope, $http, $rootScope, $timeout, $compil
                 "IF(ISNULL(cli.id),e.desktop, cli.desktop) AS desktop,IF(ISNULL(cli.id),e.largura, cli.largura) AS largura," +
                 "IF(ISNULL(cli.id),e.tamanho, cli.tamanho) AS tamanho," +
                 "IF(ISNULL(cli.id),e.modal, cli.modal) AS modal," +
+                "IF(ISNULL(cli.id),e.tbl_pageLength, cli.tbl_pageLength) AS tbl_pageLength," +
                 "IF(ISNULL(cli.id),e.descricao, cli.descricao) AS descricao," +
                 "IF(ISNULL(cli.id),e.evento_tabela, cli.evento_tabela) AS evento_tabela, IF(ISNULL(cli.evento_check),e.evento_check, cli.evento_check) AS evento_check," +
                 "IF(ISNULL(cli.id),e.evento_bloco, cli.evento_bloco) AS evento_bloco," +
@@ -421,7 +423,7 @@ app.controller("inicial", function ($scope, $http, $rootScope, $timeout, $compil
         g$.selectElementosNode = function (id) {
             return "SELECT e.id,e.nome,e.evento_tabela,e.evento_bloco,e.evento_check,e.tag,e.tipo,e.texto,e.placeholder,e.tela,e.menu_id,e.pai,e.ordem, e.download, e.abrir_no_sistema, " +
                 "tl.tabela le_da_tabela, tl.alias le_da_tabela_alias,cl.campo le_do_campo, e.le_do_campo le_do_campo_id,lt.tabela link_tabela,coalesce(lc.campo,e.link_campo) link_campo,tg.tabela grava_na_tabela, " +
-                "e.tbl_selecionarlinha, e.tbl_linhanova, e.max_length, " +
+                "e.tbl_selecionarlinha, e.tbl_linhanova, e.max_length, e.tbl_pageLength, " +
                 "e.consulta_id,cg.campo grava_no_campo,e.celular,e.tablet,e.desktop,e.largura,e.tamanho,coalesce(cc.campo,e.combo_campo) combo_campo, " +
                 "tc.tabela combo_tabela,e.combo_grava_value,e.limite,e.formato,e.display,e.size,e.familia,e.padding,e.margin,e.fundo,e.cor,e.combo_grava_campo, " +
                 "e.combo_atualizar,e.combo_id_elemento,e.combo_campo_filho,e.borda_size,e.borda_tipo,e.borda_cor,e.borda_arredondada,e.obrigatorio,e.combo_ativo, " +
@@ -438,7 +440,7 @@ app.controller("inicial", function ($scope, $http, $rootScope, $timeout, $compil
         g$.selectElementoNode = function (id) {
             return "SELECT e.id,e.nome,e.evento_tabela,e.evento_bloco,e.evento_check,e.tag,e.tipo,e.texto,e.placeholder,e.tela,e.menu_id,e.pai,e.ordem, e.download, e.abrir_no_sistema, " +
                 "tl.tabela le_da_tabela, tl.alias le_da_tabela_alias,cl.campo le_do_campo, e.le_do_campo le_do_campo_id,lt.tabela link_tabela,coalesce(lc.campo,e.link_campo) link_campo,tg.tabela grava_na_tabela, " +
-                "e.tbl_selecionarlinha, e.tbl_linhanova, e.max_length, " +
+                "e.tbl_selecionarlinha, e.tbl_linhanova, e.max_length, e.tbl_pageLength" +
                 "e.consulta_id,cg.campo grava_no_campo,e.celular,e.tablet,e.desktop,e.largura,e.tamanho,coalesce(cc.campo,e.combo_campo) combo_campo, " +
                 "tc.tabela combo_tabela,e.combo_grava_value,e.limite,e.formato,e.display,e.size,e.familia,e.padding,e.margin,e.fundo,e.cor,e.combo_grava_campo, " +
                 "e.combo_atualizar,e.combo_id_elemento,e.combo_campo_filho,e.borda_size,e.borda_tipo,e.borda_cor,e.borda_arredondada,e.obrigatorio,e.combo_ativo, " +
@@ -466,6 +468,7 @@ app.controller("inicial", function ($scope, $http, $rootScope, $timeout, $compil
                 "IF(ISNULL(cli.id),e.desktop, cli.desktop) AS desktop,IF(ISNULL(cli.id),e.largura, cli.largura) AS largura," +
                 "IF(ISNULL(cli.id),e.tamanho, cli.tamanho) AS tamanho," +
                 "IF(ISNULL(cli.id),e.modal, cli.modal) AS modal," +
+                "IF(ISNULL(cli.id),e.tbl_pageLength, cli.tbl_pageLength) AS tbl_pageLength," +
                 "IF(ISNULL(cli.id),e.descricao, cli.descricao) AS descricao," +
                 "IF(ISNULL(cli.id),e.evento_tabela, cli.evento_tabela) AS evento_tabela, IF(ISNULL(cli.evento_check),e.evento_check, cli.evento_check) AS evento_check," +
                 "IF(ISNULL(cli.id),e.evento_bloco, cli.evento_bloco) AS evento_bloco," +

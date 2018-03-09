@@ -1,0 +1,8 @@
+arefas Douglas Egis - Fabiano vai avaliar dis 08-03
+- Deixar automático a opção Mostrar "100" (Resultados por Página)
+- Incluir gráficos com os valores de manutenção em geral por contrato
+- Ao clicar em PDF ou Imprimir o resultado, apare um campo "cordaLinha" que estaria oculto
+- Mostrar valores exatos nas colunas dos gráficos. Do jeito que está, só aparece quando passa o mouse sobre as linhas dos gráficos. Se ficar assim não mostra na impressão
+- Verificar as informações das planilhas (PDF, EXCEL e impressão),Fazr cabeçario com: título da tela, Nome da empresa etc. 
+- Configurar a máscara de números para App(Celular bloqueia digitação de dinheiro): ao clicar no campo para digitar um valor. O cursor fica no final e não deixa entra a digitação
+- BUG no sistema, clicando "ESC" em um select trava elementos da tela como botão, input e icones

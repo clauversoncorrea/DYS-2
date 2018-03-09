@@ -1,16 +1,16 @@
 $.templateCustomizador = [
 	{
 		popup: "<div ng-controller='funcoes' class='popup card no-margin-tb no-padding'>" +
-		"<div class='card-header' onclick='g$.requeryAcoesTela()'>" +
-		" <div class='card-title'>  </div>" +
-		" <div class='card-icone'> " +
-								// " <i class='fa fa-question-circle' onclick='g$.popHelp()'>  </i>" +
-								" <i class='fa fa-close' onclick='g$.popClose()'>  </i>" +
-		" </div>" +
-		" </div>" +
-		" <div class='card-content no-borderelms' tabindex='0' ng-controller='customizador' ondrop='dragDrop(this)' ondragover='dragOver(this)'>" +
-		" </div>" +
-		" </div> ",
+			"<div class='card-header' onclick='g$.requeryAcoesTela()'>" +
+			" <div class='card-title'>  </div>" +
+			" <div class='card-icone'> " +
+			// " <i class='fa fa-question-circle' onclick='g$.popHelp()'>  </i>" +
+			" <i class='fa fa-close' onclick='g$.popClose()'>  </i>" +
+			" </div>" +
+			" </div>" +
+			" <div class='card-content no-borderelms' tabindex='0' ng-controller='customizador' ondrop='dragDrop(this)' ondragover='dragOver(this)'>" +
+			" </div>" +
+			" </div> ",
 		linha: "<div id='linha' tabindex='0' class='row' onclick='displayDadosProp()'  ondrop='dragDrop(this)' ondragover='dragOver(this)'> </div>",
 		coluna: "<div id='coluna' class='col s4 l4 m4' onclick='displayDadosProp()' > </div>",
 		input: "<input id='input' class='form-control' onclick='displayDadosProp()' >",
@@ -20,16 +20,16 @@ $.templateCustomizador = [
 		video: "<video id='video' width='400' controls onclick='displayDadosProp()'> <source src='' type='video/youtube'> </video>",
 		icone: "<i id='icone' class='fa fa-share-square-o' > </i>",
 		botao: "<a id='botao' onclick='displayDadosProp()' class='waves-effect waves-light btn' >" +
-		"<span id='botao' onclick='displayDadosProp()' > button </span>" +
-		"</a>",
+			"<span id='botao' onclick='displayDadosProp()' > button </span>" +
+			"</a>",
 		selectbox: "<teste id='selectbox' data-tela='true' onclick='displayDadosProp()'> </teste>",
 		tabela: "<table id='tabela' onclick='displayDadosProp()' class='table-move striped'> <thead> " +
-		"<tr> <th id='thSelecionar' style='max-width: 25px; width: 25px'> </th> </tr> </thead> <tbody> <tr> <td id='tdSelecionar' style='width: 25px; max-width: 25px;'> <input id='selecionarLinha' type='checkbox'> </td> </tr> </tbody> </table>",
+			"<tr> <th id='thSelecionar' style='max-width: 25px; width: 25px'> </th> </tr> </thead> <tbody> <tr> <td id='tdSelecionar' style='width: 25px; max-width: 25px;'> <input id='selecionarLinha' type='checkbox'> </td> </tr> </tbody> </table>",
 		th: "<th id='th'> Texto </th>",
 		td: "<td id='td' onclick='displayDadosProp()' tabindex='0'> <span class='tblTdFalse'> Texto </span> </td>",
 		tdDel: "<td style='width: 35px; max-width: 35px;' id='deleteRow' onclick='deletarLinha()'> <i class='fa fa-trash'></i> </td>",
 		ltb: "<div id='coluna'  data-id='ltb' class='col s4 l4 m4' >" + "<label id='label' > Label </label>" +
-		"<input id='input' class='form-control' > </div>",
+			"<input id='input' class='form-control' > </div>",
 		tabs: "<ul id='tabs' onclick='displayDadosProp()' class='tabs' > </ul>",
 		tab: "<li id='tab' onclick='displayDadosProp()' class='tab'><a id='tab'>Texto</a></li>",
 		link: "<a id='link' onclick='displayDadosProp()' class='cursor-pointer'> Link </a>",
@@ -37,17 +37,17 @@ $.templateCustomizador = [
 		grafico: "<canvas id='grafico' width='200' height='200' style='width: 100%; height: 100%;' onclick='displayDadosProp()'></canvas>",
 		graficoTorre: "<canvas id='graficoTorre' height='235' width='509' style='width: 509px; height: 235px;' onclick='displayDadosProp()'></canvas>",
 		checkMaterialize: "<span><input type='checkbox' class='new_check' id='filled-in-box' onclick='displayDadosProp()'/>" +
-		"<label for='filled-in-box' class='new_check' onclick='displayDadosProp()'>Filled in</label></span>"
+			"<label for='filled-in-box' class='new_check' onclick='displayDadosProp()'>Filled in</label></span>"
 	}
 ];
 
 $.template = [
 	{
 		popup: "<div ng-controller='funcoes' class='popup card col s12 no-margin-tb no-padding fill-height'><div class='card-header'>" +
-		"<div class='card-title'> </div> <div class='card-icone'> " + 
-		// "<i class='fa fa-question-circle' onclick='g$.popHelp()'>  </i>" +
-		" <i class='fa fa-close' onclick='g$.popClose()'>  </i>" +
-		" </div> </div> <div class='card-content no-borderelms' tabindex='0'> </div> </div> ",
+			"<div class='card-title'> </div> <div class='card-icone'> " +
+			// "<i class='fa fa-question-circle' onclick='g$.popHelp()'>  </i>" +
+			" <i class='fa fa-close' onclick='g$.popClose()'>  </i>" +
+			" </div> </div> <div class='card-content no-borderelms' tabindex='0'> </div> </div> ",
 		linha: "<div id='linha' tabindex='0' class='row'> </div>",
 		coluna: "<div id='coluna' class='col s4 l4 m4'> </div>",
 		input: "<input id='input' class='form-control'>",
@@ -59,7 +59,7 @@ $.template = [
 		botao: "<a id='botao' class='waves-effect waves-light btn' > <span id='botao' > button </span> </a>",
 		selectbox: "<teste id='selectbox' data-tela='true'> </teste>",
 		tabela: "<table id='tabela' class='table-move striped'> <thead> " +
-		"<tr> <th id='thSelecionar' style='max-width: 25px; width: 25px'></th> </tr> </thead> <tbody> <tr> <td id='tdSelecionar' style='width: 25px; max-width: 25px;'> <input id='selecionarLinha' type='checkbox'> </td> </tr> </tbody> </table>",
+			"<tr> <th id='thSelecionar' style='max-width: 25px; width: 25px'></th> </tr> </thead> <tbody> <tr> <td id='tdSelecionar' style='width: 25px; max-width: 25px;'> <input id='selecionarLinha' type='checkbox'> </td> </tr> </tbody> </table>",
 		th: "<th id='th'> Texto </th>",
 		td: "<td id='td' tabindex='0'> <span class='tblTdFalse'> Texto </span> </td>",
 		tdDel: "<td style='width: 35px; max-width: 35px;' id='deleteRow' onclick='deletarLinha()'> <i class='fa fa-trash'></i> </td>",
@@ -68,17 +68,17 @@ $.template = [
 		tab: "<li id='tab' class='tab'><a id='tab'>Texto</a></li>",
 		corpoTab: "<div class='tab-content col s12' tabindex='0'> </div>",
 		loadzin: "<div class='preloader-wrapper small active'> <div class='spinner-layer spinner-blue-only'> <div class='circle-clipper left'> <div class='circle'></div>" +
-		"</div><div class='gap-patch'> <div class='circle'></div></div><div class='circle-clipper right'><div class='circle'></div></div></div></div>",
+			"</div><div class='gap-patch'> <div class='circle'></div></div><div class='circle-clipper right'><div class='circle'></div></div></div></div>",
 		link: "<a id='link' class='cursor-pointer'> Link </a>",
 		imagem: "<img id='imagem' src='default.png' style='width: 100px; height: 100px;'/> ",
 		grafico: "<canvas id='grafico' width='200' height='200' style='width: 100%; height: 100%;'></canvas>",
 		graficoTorre: "<canvas id='graficoTorre' height='235' width='509' style='width: 509px; height: 235px;'></canvas>",
 		menu_bloco: "<div class='col l3 m4 s6'> <div id='menu-bloco' class='animated bounceInUp'> <div> <i id='icone_menu'> </i> " +
-		"<div id='texto_menu'></div> </div> </div>",
+			"<div id='texto_menu'></div> </div> </div>",
 		checkMaterialize: "<span><input type='checkbox' class='new_check' id='filled-in-box' />" +
-		"<label for='filled-in-box' class='new_check'>Filled in</label></span>",
+			"<label for='filled-in-box' class='new_check'>Filled in</label></span>",
 		loadzinTela: "<div id='loadzinTela' class='load-gradient'><div class='load-carregando'><p>Carregando</p><div class='preloader-wrapper small active loadzin-query'> <div class='spinner-layer spinner-blue-only'> <div class='circle-clipper left'> <div class='circle'></div>" +
-		"</div><div class='gap-patch'> <div class='circle'></div></div><div class='circle-clipper right'><div class='circle'></div></div></div></div></div></div>"
+			"</div><div class='gap-patch'> <div class='circle'></div></div><div class='circle-clipper right'><div class='circle'></div></div></div></div></div></div>"
 	}
 ];
 
@@ -86,90 +86,97 @@ $.template = [
 $.combo = [
 	{
 		tag: "<select class='form-control'>" +
-		"<option value=''> </option>" +
-		"<option value='linha'> linha </option>" +
-		"<option value='coluna'> coluna </option>" +
-		"<option value='input'> textbox </option>" +
-		"<option value='label'> label </option>" +
-		"<option value='textarea'> textarea </option>" +
-		"<option value='icone'> icone </option>" +
-		"<option value='botao'> botao </option>" +
-		"<option value='link'> Link </option>" +				
-		"<option value='selectbox'> selectbox </option>" +
-		"<option value='tabela'> tabela </option>" +
-		"<option value='td'> td </option>" +
-		"<option value='tabs'> tabs </option>" +
-		"<option value='tab'> tab </option>" +
-		"<option value='marquee'> marquee </option>" +
-		"<option value='video'> video </option>" +
-		"</select>",
+			"<option value=''> </option>" +
+			"<option value='linha'> linha </option>" +
+			"<option value='coluna'> coluna </option>" +
+			"<option value='input'> textbox </option>" +
+			"<option value='label'> label </option>" +
+			"<option value='textarea'> textarea </option>" +
+			"<option value='icone'> icone </option>" +
+			"<option value='botao'> botao </option>" +
+			"<option value='link'> Link </option>" +
+			"<option value='selectbox'> selectbox </option>" +
+			"<option value='tabela'> tabela </option>" +
+			"<option value='td'> td </option>" +
+			"<option value='tabs'> tabs </option>" +
+			"<option value='tab'> tab </option>" +
+			"<option value='marquee'> marquee </option>" +
+			"<option value='video'> video </option>" +
+			"</select>",
 		tipo: "<select class='form-control'>" +
-		"<option value=''> </option>" +
-		"<option value='text'> Caixa de Texto </option>" +
-		"<option value='tel'> Tel </option>" +
-		"<option value='number'> Number </option>" +
-		"<option value='email'> Email </option>" +
-		"<option value='date'> Data </option>" +
-		"<option value='file'> File </option>" +
-		"<option value='color'> Color </option>" +
-		"<option value='checkbox'> Checkbox </option>" +
-		"<option value='password'> Senha </option>" +
-		"<option value='date-time'> Data e Hora </option>" +
-		"</select>",
+			"<option value=''> </option>" +
+			"<option value='text'> Caixa de Texto </option>" +
+			"<option value='tel'> Tel </option>" +
+			"<option value='number'> Number </option>" +
+			"<option value='email'> Email </option>" +
+			"<option value='date'> Data </option>" +
+			"<option value='file'> File </option>" +
+			"<option value='color'> Color </option>" +
+			"<option value='checkbox'> Checkbox </option>" +
+			"<option value='password'> Senha </option>" +
+			"<option value='date-time'> Data e Hora </option>" +
+			"</select>",
 		formato: "<select class='form-control'>" +
-		"<option value=''> </option>" +
-		"<optgroup label='Formatos para Tabela'>" +
-		"<option value='DD_MM_YYYY'> DD/MM/YYYY </option>" +
-		"<option value='DD-MM-YYYY'> DD-MM-YYYY </option>" +
-		"<option value='YYYY_MM_DD'> YYYY/MM/DD </option>" +
-		"<option value='DD_MM_YYYY h:mm:ss'> DD/MM/YYYY h:mm:ss </option>" +
-		"<option value='h:mm'> h:mm </option>" +
-		"</optgroup>" +
-		"<optgroup label='Formatos para os Campos'>" +
-		"<option value='Time'> Time </option>" +
-		"<option value='Date Time'> Date Time </option>" +
-		"<option value='Date'> Date </option>" +
-		"<option value='Cep'> Cep </option>" +
-		"<option value='Telefone'> Telefone </option>" +
-		"<option value='Telefone DDD'> Telefone DDD </option>" +
-		"<option value='Celular'> Celular </option>" +
-		"<option value='Celular DDD'> Celular DDD </option>" +
-		"<option value='CPF'> CPF </option>" +
-		"<option value='CNS'> CNS </option>" +
-		"<option value='CNPJ'> CNPJ </option>" +
-		"<option value='RG'> RG </option>" +
-		"<option value='Money'> Money </option>" +
-		"<option value='R$ Money'> R$ Money </option>" +
-		"<option value='Inscricao Estadual'> Inscricao Estadual </option>" +
-		"<option value='Peso'> Peso </option>" +
-		"<option value='Altura'> Altura </option>" +
-		"<option value='Temperatura'> Temperatura </option>" +
-		"<option value='PA'> PA </option>" +
-		"<option value='FC'> FC-Frequência Cardíaca </option>" +
-		"<option value='Glicemia'> Glicemia Capilar </option>" +
-		"</optgroup>" +
-		"</select>",
+			"<option value=''> </option>" +
+			"<optgroup label='Formatos para Tabela'>" +
+			"<option value='DD_MM_YYYY'> DD/MM/YYYY </option>" +
+			"<option value='DD-MM-YYYY'> DD-MM-YYYY </option>" +
+			"<option value='YYYY_MM_DD'> YYYY/MM/DD </option>" +
+			"<option value='DD_MM_YYYY h:mm:ss'> DD/MM/YYYY h:mm:ss </option>" +
+			"<option value='h:mm'> h:mm </option>" +
+			"</optgroup>" +
+			"<optgroup label='Formatos para os Campos'>" +
+			"<option value='Time'> Time </option>" +
+			"<option value='Date Time'> Date Time </option>" +
+			"<option value='Date'> Date </option>" +
+			"<option value='Cep'> Cep </option>" +
+			"<option value='Telefone'> Telefone </option>" +
+			"<option value='Telefone DDD'> Telefone DDD </option>" +
+			"<option value='Celular'> Celular </option>" +
+			"<option value='Celular DDD'> Celular DDD </option>" +
+			"<option value='CPF'> CPF </option>" +
+			"<option value='CNS'> CNS </option>" +
+			"<option value='CNPJ'> CNPJ </option>" +
+			"<option value='RG'> RG </option>" +
+			"<option value='Money'> Money </option>" +
+			"<option value='R$ Money'> R$ Money </option>" +
+			"<option value='Inscricao Estadual'> Inscricao Estadual </option>" +
+			"<option value='Peso'> Peso </option>" +
+			"<option value='Altura'> Altura </option>" +
+			"<option value='Temperatura'> Temperatura </option>" +
+			"<option value='PA'> PA </option>" +
+			"<option value='FC'> FC-Frequência Cardíaca </option>" +
+			"<option value='Glicemia'> Glicemia Capilar </option>" +
+			"</optgroup>" +
+			"</select>",
 		display: "<select class='form-control'>" +
-		"<option value=''> </option>" +
-		"<option value='none'> None </option>" +
-		"<option value='block'> Block </option>" +
-		"<option value='inline-block'> Inline-Block </option>" +
-		"</select>",
+			"<option value=''> </option>" +
+			"<option value='none'> None </option>" +
+			"<option value='block'> Block </option>" +
+			"<option value='inline-block'> Inline-Block </option>" +
+			"</select>",
 		familia: "<select class='form-control'>" +
-		"<option value=''> </option>" +
-		"<option value='roboto'> Roboto </option>" +
-		"<option value='helvetica'> Helvetica </option>" +
-		"<option value='monospace'> Monospace </option>" +
-		"<option value='sans-serif'> Sans-Serif </option>" +
-		"<option value='arial'> Arial </option>" +
-		"</select>",
+			"<option value=''> </option>" +
+			"<option value='roboto'> Roboto </option>" +
+			"<option value='helvetica'> Helvetica </option>" +
+			"<option value='monospace'> Monospace </option>" +
+			"<option value='sans-serif'> Sans-Serif </option>" +
+			"<option value='arial'> Arial </option>" +
+			"</select>",
 		borda_tipo: "<select class='form-control'>" +
-		"<option value=''> </option>" +
-		"<option value='dotted'> Dotted </option>" +
-		"<option value='groove'> Groove </option>" +
-		"<option value='solid'> Solid </option>" +
-		"<option value='ridge'> Ridge </option>" +
-		"</select>"
+			"<option value=''> </option>" +
+			"<option value='dotted'> Dotted </option>" +
+			"<option value='groove'> Groove </option>" +
+			"<option value='solid'> Solid </option>" +
+			"<option value='ridge'> Ridge </option>" +
+			"</select>",
+		tbl_pageLength: "<select class='form-control'>" +
+			"<option value=''> </option>" +
+			"<option value='10'> 10 </option>" +
+			"<option value='25'> 25 </option>" +
+			"<option value='50'> 50 </option>" +
+			"<option value='100'> 100 </option>" +
+			"</select>"
 	}
 ];
 
