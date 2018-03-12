@@ -1,0 +1,1 @@
+app.directive('modalagendarexameexterno1086', function () {return {restrict: 'E',templateUrl: '../modals/modalAgendarExameExterno1086.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Agendar Exame Externo');}}});

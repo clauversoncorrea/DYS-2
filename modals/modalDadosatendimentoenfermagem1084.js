@@ -1,0 +1,1 @@
+app.directive('modaldadosatendimentoenfermagem1084', function () {return {restrict: 'E',templateUrl: '../modals/modalDadosatendimentoenfermagem1084.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Dados atendimento enfermagem');}}});

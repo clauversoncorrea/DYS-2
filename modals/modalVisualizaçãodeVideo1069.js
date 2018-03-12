@@ -1,0 +1,1 @@
+app.directive('modalvisualizaçãodevideo1069', function () {return {restrict: 'E',templateUrl: '../modals/modalVisualizaçãodeVideo1069.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Visualização de Video');}}});

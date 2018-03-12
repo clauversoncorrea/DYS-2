@@ -68,6 +68,15 @@
 
 .cursor-pointer {cursor: pointer;}
 
+.label-legend-grafico {
+  background: #00a65a;
+  padding: 4px 6px;
+  color: #FFF;
+  border-radius: 3px;
+  width: 24.4%;
+  text-align: center;
+}
+
 .relativo{position: relative;}
 
 .clear-left{clear: left;}

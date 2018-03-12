@@ -1,0 +1,1 @@
+app.directive('modalestoque957', function () {return {restrict: 'E',templateUrl: '../modals/modalEstoque957.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Estoque');}}});

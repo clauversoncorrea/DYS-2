@@ -1,0 +1,1 @@
+app.directive('modalreceitaexterna1080', function () {return {restrict: 'E',templateUrl: '../modals/modalreceitaexterna1080.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('receita externa');}}});

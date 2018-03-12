@@ -1,0 +1,1 @@
+app.directive('modalcarterinhas1079', function () {return {restrict: 'E',templateUrl: '../modals/modalCarterinhas1079.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Carterinhas');}}});

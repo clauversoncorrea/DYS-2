@@ -1,0 +1,1 @@
+app.directive('modaloutrosdados1089', function () {return {restrict: 'E',templateUrl: '../modals/modalOutrosdados1089.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Outros dados');}}});

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .row .col.s8 {
+            width: 66.6666666667%;
+            margin-left: auto;
+            left: auto;
+            right: auto;
+        }
+
+        .row .col.s4 {
+            width: 33.3333333333%;
+            margin-left: auto;
+            left: auto;
+            right: auto;
+        }
+
+        .row .col.s12 {
+            width: 100%;
+            margin-left: auto;
+            left: auto;
+            right: auto;
+        }
+
+        .row {
+            transition: height 0.8s;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            float: left;
+            width: 100%;
+        }
+
+        .row .col {
+            float: left;
+            box-sizing: border-box;
+            padding: 0 0.75rem;
+            min-height: 1px;
+            position: relative;
+        }
+
+        .super-centro {
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .container {
+            width: 85%;
+            border: 1px solid #444;
+            padding: 45px;
+            height: 91%;
+            margin: 0px auto;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+
+    <title></title>
+</head>
+
+<body ng-controller="inicial">
+    <div class="container">
+        <div class='row super-centro' style='margin-bottom: -12px !important;'>
+            <div class="col">
+                <img src="logo_atestado.JPG" style="width:80px;height: 110px;">
+            </div>
+            <div class="col center">
+                <label> Prefeitura Municipal da Estância Balneária de Caraguatatuba
+                    <br>
+                </label>
+                <label> Estado de São Paulo
+                    <br>
+                </label>
+                <label> Secretaria Municipal de Saúde
+                    <br>
+                </label>
+            </div>
+        </div>
+        <div class="row" style='margin-bottom: 37px !important;'>
+            <div class="col s12 center">
+                <label style='font-size: 22px'>
+                    <b>Atestado</b>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label>Atesto para os devidos fins que o/a sr.(a) ou menor:
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label> ______________________________________________________________________
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label> Compareceu nesta Unidade de Saúde dia ____/____/20____ às ____:____ horas para:
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label> ( ) Consulta Médica - CID - Z00.0
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label> ( ) Colher exames complementares - CID - Z01.7
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label> ( ) Acompanhar familiares - CID - Z76.3
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label> ( ) Apto para frequentar a Creche
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label> ( ) Apto para frequentar piscinas coletivas
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label> ( ) Apto (somente para avaliação clínica e histórica) a prática de atividades físicas, sendo recomendado
+                    exames complementares adequados
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label> ( ) outros: _________________________________________________________________
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label> Deverá permanecer afastado de sua atividades trabalhistas / escolares por período de _____ dias a contar
+                    do dia ____/____ 20____ a ____/____ 20____ - CID __________.
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label> Deverá permanecer afastado de suas atividades trabalhistas / escolares no dia de hoje CID _____________
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label> Caraguatatuba, _________ de _____________________ de 20 ____________
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center">
+                <label> ___________________________________
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center">
+                <label> assinatura / carimbo
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="../../lib/angular/angular.js" type="text/javascript"></script>
+<script src="../../temp/template.js" type="text/javascript"></script>
+<script src="template.js" type="text/javascript"></script>
+
+</html>

@@ -1,0 +1,1 @@
+app.directive('modaltriagemparaatendimento1057', function () {return {restrict: 'E',templateUrl: '../modals/modalTRIAGEMPARAATENDIMENTO1057.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('TRIAGEM PARA ATENDIMENTO');}}});

@@ -2264,6 +2264,8 @@ app.controller("funcoes", function ($scope, $http, $rootScope, $compile) {
         elm.dataset.grafico_ativo = true;
 
         var porcentagem = [], cor = [], labels = [], count, data = [];
+        var legenda = "";
+        var pai = $("[data-id='" + elm.dataset.pai + "']")[0];
 
         count = params[2].split("¦").length;
 
@@ -2271,6 +2273,7 @@ app.controller("funcoes", function ($scope, $http, $rootScope, $compile) {
             // cor[i] = $.graficoColors[params[3].split("¦")[i].trim()];
             labels[i] = params[4].split("¦")[i].trim();
             porcentagem[i] = parseInt(params[2].split("¦")[i]);
+            legenda += "<label class='label-legend-grafico'> " + labels[i] + " - " + porcentagem[i] + "</label> ";
         }
 
         var areaChartData = {
@@ -2302,6 +2305,10 @@ app.controller("funcoes", function ($scope, $http, $rootScope, $compile) {
 
         elm.style.width = (elm.dataset.largura && elm.dataset.largura != "") ? elm.dataset.largura + "px" : "200px";
         elm.style.height = (elm.dataset.tamanho && elm.dataset.tamanho != "") ? elm.dataset.tamanho + "px" : "200px";
+
+        if(pai.querySelector("#legendGrafico")) pai.removeChild(pai.querySelector("#legendGrafico"));
+
+        pai.appendChild(angular.element("<label id='legendGrafico'> " + legenda + "</label>")[0]);
 
         g$.vfyFuncaoDepois(idFuncao, isTela);
     }

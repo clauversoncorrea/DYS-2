@@ -1,0 +1,1 @@
+app.directive('modalagendarretorno1051', function () {return {restrict: 'E',templateUrl: '../modals/modalAgendarRetorno1051.html', scope: {}, controller: function ($scope, $element, $http, $compile, $rootScope) {g$.configTela('Agendar Retorno');}}});

@@ -1131,7 +1131,7 @@ app.controller("inicial", function ($scope, $http, $rootScope, $timeout, $compil
         }
 
         // Notificação Tarefa Socket
-        g$._socket = typeof (io) == "undefined" ? null : io.connect("https://dys.net.br");
+        g$._socket = typeof (io) == "undefined" ? null : io.connect("http://localhost:8000");
 
         g$.NotificationTarefa = function (params) {
             var params = g$.alterSargentos(params),
